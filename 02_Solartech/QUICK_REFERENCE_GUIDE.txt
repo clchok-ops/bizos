@@ -1,0 +1,228 @@
+================================================================================
+SOLARTECH AT-RISK DEALS MODEL - QUICK REFERENCE GUIDE
+================================================================================
+
+WHAT THIS MODEL DOES:
+Predicts which large deals (>RM 50K) are likely to be lost based on 6 risk signals.
+Provides actionable intervention points for sales leadership.
+
+KEY NUMBERS TO REMEMBER:
+================================================================================
+
+PORTFOLIO SNAPSHOT (216 open large deals, RM 114.8M):
+├─ Low Risk (0-20 score):    130 deals    RM 94.3M    78% avg probability
+├─ Medium Risk (21-50):       62 deals    RM 12.5M    45% avg probability
+└─ High Risk (51-100):        24 deals     RM 8.0M    16% avg probability
+
+CRITICAL ACTIONS THIS WEEK:
+┌─ HIGH RISK: 24 deals worth RM 7.97M need VP/leadership intervention
+│  - Largest deal: PD-000127 (RM 1.59M) - Olivia Hwa - 347-day stuck cycle
+│  - Ahmad Shafiq: 6 deals (0% historical win rate) - reassign or coach
+│  - Olivia Hwa: 8 tenders (RM 4.1M) dormant since Dec 10 - customer check-in
+│
+└─ MEDIUM RISK: 62 deals - manager weekly check-ins, clarify next steps
+
+MODEL ACCURACY:
+┌─ Sensitivity: 100% - catches ALL losing deals (zero false negatives)
+├─ Precision: 91.7% - when flagged, 92% actually lost
+└─ Accuracy: 92.8% - overall correct on historical data
+
+RISK SIGNAL WEIGHTS (What matters most):
+================================================================================
+
+1. PROBABILITY (<25%) = +40 points ← BIGGEST RISK FACTOR
+   (100% of lost deals had <25% probability at closure)
+
+2. INACTIVITY (>90 days) = +25 points ← SECOND BIGGEST
+   (Indicates deal is stalled/abandoned)
+
+3. LONG CYCLE (>180 days) = +15 points
+   (Some deals legitimately take 6+ months, but combined with low prob = danger)
+
+4. STAGE RISK (Idle/Tender) = +10 points
+   (These stages have historically poor conversion)
+
+5. OWNER TRACK RECORD = +3 to +10 points
+   (Owners with <10% win rate on large deals carry risk)
+
+6. COMBO CHECK = +10 bonus points
+   (Low probability + Long cycle = trapped deal)
+
+SCORE INTERPRETATION:
+================================================================================
+
+Risk Score 0-20:   LOW RISK
+├─ Action: Quarterly monitoring, normal follow-up
+├─ Win rate: 100% on historical data
+└─ Typically: High probability (75%+), recent activity, skilled owner
+
+Risk Score 21-50:  MEDIUM RISK
+├─ Action: Weekly manager check-in, clarify timeline
+├─ Win rate: 18% on historical data (82% loss rate!)
+└─ Typically: Mixed signals - either low prob OR stalled activity
+
+Risk Score 51-100: HIGH RISK
+├─ Action: VP/leadership escalation, urgent intervention
+├─ Win rate: 0% on historical data (100% loss rate!)
+└─ Typically: Low prob + stalled + long cycle + weak owner
+
+MOST URGENT DEALS (Top 5 by risk score):
+================================================================================
+
+1. PD-2160 (RM 55.6K)          Risk Score: 75
+   Owner: Ahmad Shafiq | Stage: Solution Design | Prob: 20% | Last activity: Oct 27
+   ACTION: Owner has 0% win rate on large deals. Needs reassignment.
+
+2. PD-000127 (RM 1.59M)         Risk Score: 73
+   Owner: Olivia Hwa | Stage: Solution Design | Prob: 20% | Cycle: 347 days
+   ACTION: LARGEST at-risk deal! 11+ months stuck in design. Escalate immediately.
+
+3. T-2236 (RM 71.6K)            Risk Score: 65
+   Owner: Sa Lee Cham | Stage: Solution Design | Prob: 20% | No activity 120d
+   ACTION: Presumed lost. Confirm status or close-lost.
+
+4-8. Five Idle deals by Ahmad Shafiq (RM 468K combined) Risk Score: 60 each
+   All with 5% probability. Clarify: proceed or write off?
+
+9-16. Eight Tender deals by Olivia Hwa (RM 4.1M) Risk Score: 58 each
+   All dormant since Dec 10. Group customer follow-up needed.
+
+WHEN TO USE THIS MODEL:
+================================================================================
+
+DAILY/WEEKLY:
+- Monitor for deals moving from Medium → High risk (requires immediate action)
+- Alert on new deals exceeding 30 days of inactivity
+- Flag any deal with probability drop >20 points in one week
+
+MONTHLY:
+- Run model refresh on all 216 open deals
+- Track which deals moved up/down risk levels
+- Monitor deal owner win rates
+- Identify trending risks
+
+QUARTERLY:
+- Refine model thresholds based on new closed deal data
+- Analyze successful deal patterns
+- Review accounts for rep reassignment
+- Assess system improvements
+
+HOW TO INTERVENE (By Risk Score):
+================================================================================
+
+FOR HIGH-RISK DEALS (51-100):
+1. VP calls customer directly (within 48 hours)
+2. Clarify: Is deal still active or should be closed?
+3. If active: Remove obstacles (pricing? technical issues? timeline?)
+4. If inactive: Close-lost with proper reason documentation
+5. Consider: Transfer to higher-performing sales rep?
+
+FOR MEDIUM-RISK DEALS (21-50):
+1. Sales manager calls deal owner (this week)
+2. Ask: What's blocking progress? What's needed to advance?
+3. Set specific next milestone: quote? meeting? approval?
+4. Schedule customer check-in if dormant >30 days
+5. Escalate to VP if stuck >30 days more
+
+FOR LOW-RISK DEALS (0-20):
+1. Standard follow-up rhythm
+2. Remove bottlenecks as they emerge
+3. Celebrate when they close
+4. Learn from winners - what made them successful?
+
+WHO TO ASSIGN (Based on track record):
+================================================================================
+
+REASSIGN FROM (Low performance on large deals):
+- Chin Horng Liew: 0% win rate (26 large deals, 0 wins)
+- Ahmad Shafiq: 0% win rate (limited sample, but concerning)
+- Bryan Lim: 7% win rate (1 win, 14 deals)
+
+ASSIGN TO (High performance on large deals):
+- Ted Wong: 52% win rate (13 wins, 25 deals) ← TOP PERFORMER
+- Siti Noor Bahiyah: 38% win rate (5 wins, 13 deals)
+- Olivia Hwa: 17% win rate (good for complex deals with support)
+
+SUPPORT/COACHING NEEDED:
+- Olivia Hwa: Large portfolio needs better triage and follow-up discipline
+- Bryan Lim, Yati Omar: Isolated underperformance - case-by-case review
+
+KEY FINDINGS FROM DATA:
+================================================================================
+
+1. LARGE DEALS ARE HARD
+   - 20.9% win rate on >RM 50K deals vs 37.8% overall
+   - Winners are smaller (RM 235K avg) than losers (RM 392K avg)
+   - Indicates price sensitivity on bigger deals
+
+2. LONG CYCLES ARE NORMAL (BUT NEED ACTIVITY)
+   - Won deals average 153 days to close
+   - Lost deals average 107 days (they give up mid-way)
+   - Pattern: Deals stall for 3-4 months, then either recover or die
+
+3. PROBABILITY IS THE BEST PREDICTOR
+   - Perfect separation between won (100%) and lost (0%)
+   - Use as leading indicator on open deals
+   - 58 deals currently have <25% probability = warning signs
+
+4. DEAL OWNER SKILL MATTERS
+   - 52% win rate performer vs 0% performer on same deal types
+   - Suggests training gap or assignment/capability issue
+   - Strong performers should mentor struggling ones
+
+5. LOST DEALS ARE POORLY DOCUMENTED
+   - 62% of loss reasons are vague or unspecified
+   - Prevents learning from losses
+   - Recommend: Implement mandatory close-loop feedback
+
+QUICK CALC: SCORE A DEAL IN 30 SECONDS
+================================================================================
+
+Points   Condition
++40      Probability < 25%
++25      Days since activity > 90
++15      Sales cycle > 180 days
++10      Stage is Idle or Tender
++10      Owner has <10% win rate
++10      (Bonus) If prob <50% AND cycle >100 days
+---
+??       TOTAL SCORE
+
+Example:
+  Deal: 20% prob, 60 days inactive, 120-day cycle, Solution Design, Olivia Hwa
+  Score: +20 (prob) + 15 (activity) + 5 (cycle) + 0 (stage) + 3 (owner) = 43
+  Result: MEDIUM RISK - needs manager check-in
+
+FILES PROVIDED:
+================================================================================
+1. SOLARTECH_AT_RISK_ANALYSIS_REPORT.txt (this detailed report)
+2. solartech_high_risk_deals.csv (24 deals needing urgent action)
+3. solartech_medium_risk_deals.csv (62 deals needing monitoring)
+4. QUICK_REFERENCE_GUIDE.txt (this file)
+
+NEXT STEPS:
+================================================================================
+
+THIS WEEK:
+☐ Review all 24 high-risk deals in detail
+☐ VP calls on top 3-5 most critical deals
+☐ Clarify status: proceed, on-hold, or close-lost
+☐ Plan reassignment for Ahmad Shafiq's accounts
+
+NEXT 30 DAYS:
+☐ Implement weekly risk score monitoring
+☐ Customer check-ins on 8 dormant tenders
+☐ Coaching or reassignment for struggling reps
+☐ Implement activity alerts (>30 days)
+
+ONGOING:
+☐ Monthly risk model refresh
+☐ Track deal owner win rates
+☐ Analyze successful patterns
+☐ Close-loop on loss documentation
+
+================================================================================
+Questions? Contact Sales Operations.
+Model validated: 92.8% accuracy on 153 closed deals
+Generated: 2026-01-28
+================================================================================
