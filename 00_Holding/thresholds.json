@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-31",
+  "notes": "Thresholds for n8n monitoring workflows. Adjust based on experience.",
+
+  "kinme": {
+    "food_cost_pct_max": 0.35,
+    "beverage_cost_pct_max": 0.25,
+    "prime_cost_pct_max": 0.65,
+    "revenue_drop_pct": 0.20,
+    "covers_drop_pct": 0.15,
+    "avg_spend_change_pct": 0.10,
+    "waste_pct_max": 0.05
+  },
+
+  "trading": {
+    "max_drawdown_pct": 0.05,
+    "max_single_position_pct": 0.20,
+    "daily_loss_limit_pct": 0.02,
+    "win_rate_min": 0.40,
+    "consecutive_losses_alert": 5
+  },
+
+  "solartech": {
+    "pipeline_drop_pct": 0.20,
+    "stalled_deal_days": 14,
+    "win_rate_drop_pct": 0.10,
+    "inventory_below_par_alert": true
+  },
+
+  "hippos": {
+    "pipeline_drop_pct": 0.20,
+    "stalled_deal_days": 14,
+    "job_margin_min_pct": 0.25,
+    "inventory_below_par_alert": true
+  },
+
+  "wci": {
+    "on_time_delivery_min_pct": 0.90,
+    "production_backlog_max_days": 7,
+    "material_below_reorder_alert": true,
+    "scrap_rate_max_pct": 0.03
+  }
+}

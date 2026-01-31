@@ -1,0 +1,270 @@
+================================================================================
+HIPPOS OPERATIONS FRAMEWORK - QUICK REFERENCE CARD
+================================================================================
+
+FILE REFERENCE GUIDE
+
+README.md
+  Purpose: Getting started guide
+  Read first: YES
+  Time: 10 minutes
+  Use when: First time setup, common scenarios, troubleshooting
+  Key sections: Getting Started, Common Patterns, Monthly Checklist
+
+HIPPOS_SYSTEM.md
+  Purpose: Strategic business framework
+  Read first: MAYBE (after README)
+  Time: 15 minutes
+  Use when: Understanding business model, defining metrics, strategy review
+  Key sections: Business Overview, KPI Framework, Zoho Integration
+
+DATA_REQUIREMENTS.md
+  Purpose: Zoho export specifications
+  Read first: ONLY IF EXPORTING DATA
+  Time: 15 minutes
+  Use when: Exporting data from Zoho, data quality checks
+  Key sections: CRM Exports, Inventory Exports, Books Exports, Monthly Workflow
+
+SETUP_CHECKLIST.md
+  Purpose: Implementation timeline
+  Read first: AFTER README (Week 1)
+  Time: Reference document
+  Use when: Following 4-week implementation plan
+  Key sections: Pre-Launch, Week 1-4 Tasks, Success Criteria
+
+INDEX.md
+  Purpose: File navigation and usage scenarios
+  Read first: OPTIONAL (for reference)
+  Time: Reference document
+  Use when: Looking for specific usage patterns or metrics
+  Key sections: File Manifest, Usage Scenarios, Metrics Reference
+
+hippos_dashboard.xlsx
+  Purpose: Excel workbook with pre-built formulas
+  Read first: AFTER README
+  Time: N/A (tool, not reading)
+  Use when: Entering data, tracking KPIs, monthly reporting
+  Sheets: Job Costing, Customer Tracker, Pricing Master, Pipeline/Leads, Monthly KPIs
+
+================================================================================
+FIRST 30 MINUTES
+
+1. Read this card (3 minutes)
+2. Open README.md and read "Files Overview" (3 minutes)
+3. Read "Getting Started" section (10 minutes)
+4. Open hippos_dashboard.xlsx and review each sheet (10 minutes)
+5. Identify your first data sources in Zoho (4 minutes)
+
+================================================================================
+COMMON QUESTIONS
+
+Q: Where do I start?
+A: Open README.md and read the "Getting Started" section (10 minutes)
+
+Q: How long will setup take?
+A: 10-15 hours total, spread over 4 weeks. Follow SETUP_CHECKLIST.md
+
+Q: How long does it take per month after setup?
+A: 2-4 hours per month for data entry and analysis
+
+Q: What data do I need from Zoho?
+A: Follow DATA_REQUIREMENTS.md - lists exact exports needed
+
+Q: Can I customize the Excel file?
+A: Yes! Add rows, change formulas, add sheets as needed. All documented.
+
+Q: Can I link this to Zoho automatically?
+A: Not yet. Use monthly CSV exports for now. Future: ask Zoho about API.
+
+Q: The Excel file has a formula error - what do I do?
+A: See README.md "Troubleshooting" section or INDEX.md "Troubleshooting"
+
+Q: I have more than 10 jobs/20 customers - what do I do?
+A: Copy rows as needed. See SETUP_CHECKLIST.md "Common Questions" section
+
+================================================================================
+KEY METRICS QUICK LOOKUP
+
+REVENUE METRICS
+  Total Revenue: Monthly KPIs sheet, cell B12
+  Avg Revenue per Job: Monthly KPIs sheet, cell B16
+  Revenue per Technician: Monthly KPIs sheet, cell B17
+
+PROFITABILITY METRICS
+  Gross Profit: Monthly KPIs sheet, cell B21
+  Gross Margin %: Monthly KPIs sheet, cell B22
+  Labor Cost %: Monthly KPIs sheet, cell B24
+  Material Cost %: Monthly KPIs sheet, cell B26
+  Net Profit: Monthly KPIs sheet, cell B28
+  Net Margin %: Monthly KPIs sheet, cell B29
+
+CUSTOMER METRICS
+  Repeat Customer Rate: Monthly KPIs sheet, cell B35
+  Average LTV: Monthly KPIs sheet, cell B37
+  LTV:CAC Ratio: Monthly KPIs sheet, cell B39
+  Payback Period: Monthly KPIs sheet, cell B40
+
+OPERATIONAL METRICS
+  Jobs Completed: Monthly KPIs sheet, cell B44
+  Labor Hours: Monthly KPIs sheet, cell B45
+  Avg Labor Cost per Job: Monthly KPIs sheet, cell B46
+
+PIPELINE METRICS
+  Weighted Pipeline Value: Pipeline sheet, cell B26
+  Average Deal Size: Pipeline sheet, cell B27
+  Average Days in Pipeline: Pipeline sheet, cell B29
+
+================================================================================
+COLOR CODING IN EXCEL
+
+Blue Font   = Input cells (you enter data here)
+Black Font  = Formulas (calculations)
+Green Font  = Linked formulas (pull from other sheets)
+
+================================================================================
+MONTHLY WORKFLOW (After First Month)
+
+Week 1: Export data from Zoho (1 hour)
+  - CRM: Customers, Jobs, Leads
+  - Inventory: Products, POs
+  - Books: Invoices, Labor, Expenses
+
+Week 2: Update Excel (2 hours)
+  - Job Costing: Enter month's jobs
+  - Customer Tracker: Update customer data
+  - Verify all formulas calculate
+
+Week 3: Analyze (1 hour)
+  - Review Monthly KPIs dashboard
+  - Compare to prior month
+  - Identify variances
+
+Week 4: Report (1 hour)
+  - Present to leadership
+  - Discuss insights
+  - Plan next month
+
+Total: 5 hours per month
+
+================================================================================
+EXCEL SHEETS AT A GLANCE
+
+JOB COSTING
+  What: Track every service job
+  Inputs: Job ID, labor hours, rate, materials, revenue
+  Outputs: Gross margin $, gross margin %
+  How often: Daily/Weekly (entry), Monthly (summary)
+
+CUSTOMER TRACKER
+  What: Track lifetime value and repeat business
+  Inputs: Customer ID, total jobs, total revenue, last service date
+  Outputs: Repeat yes/no, days since service, repeat rate
+  How often: Monthly (after job costing complete)
+
+PRICING MASTER
+  What: Product catalog and pricing strategy
+  Inputs: Product name, COGS, selling price
+  Outputs: Markup %, pricing assumptions
+  How often: Quarterly or when prices change
+
+PIPELINE & LEADS
+  What: Sales opportunity tracking
+  Inputs: Lead ID, value, probability, days in pipeline
+  Outputs: Weighted value, pipeline metrics
+  How often: Weekly (leads), Monthly (summary)
+
+MONTHLY KPIs
+  What: Master dashboard pulling all data
+  Inputs: Assumptions (CAC, labor rate, overhead)
+  Outputs: All key metrics automatically
+  How often: Monthly (auto-updates when other sheets updated)
+
+================================================================================
+TROUBLESHOOTING QUICK LINKS
+
+Problem: Formula shows error (#DIV/0!, #VALUE!, #REF!)
+Solution: See README.md "Troubleshooting" section
+
+Problem: My numbers don't match Zoho
+Solution: See DATA_REQUIREMENTS.md "Troubleshooting Common Export Issues"
+
+Problem: I don't understand a metric
+Solution: See HIPPOS_SYSTEM.md "KPI Dashboard Structure" section
+
+Problem: I need to add more rows
+Solution: See SETUP_CHECKLIST.md "Common Questions During Setup"
+
+Problem: I don't know what to enter
+Solution: See README.md "Common Data Entry Patterns"
+
+================================================================================
+SUPPORT RESOURCES
+
+Documentation questions: README.md
+Data export questions: DATA_REQUIREMENTS.md
+Business model questions: HIPPOS_SYSTEM.md
+Implementation timeline: SETUP_CHECKLIST.md
+File navigation: INDEX.md
+Excel formulas: README.md (Troubleshooting section)
+
+================================================================================
+SUCCESS INDICATORS (How to know it's working)
+
+After Week 1:
+  ✓ All files are open and accessible
+  ✓ You understand what data you need from Zoho
+  ✓ You've exported your first data
+
+After Week 2:
+  ✓ Job Costing sheet has data
+  ✓ Customer Tracker sheet has data
+  ✓ Excel formulas are calculating (no errors)
+
+After Week 3:
+  ✓ Pricing Master is populated with your products
+  ✓ Monthly KPIs assumptions are entered
+  ✓ All calculated metrics make sense
+
+After Week 4:
+  ✓ You can answer "What was our profit?" in 5 minutes
+  ✓ You can identify your top 5 customers in 2 minutes
+  ✓ You're ready for monthly recurring use
+
+After Month 1:
+  ✓ Monthly reporting takes <4 hours
+  ✓ Leadership is using metrics to make decisions
+  ✓ You can see month-to-month trends
+
+================================================================================
+ESTIMATED TIME INVESTMENT
+
+First Month:
+  Documentation review: 30 minutes
+  Data collection: 3-4 hours
+  Framework population: 4-5 hours
+  Analysis & review: 2 hours
+  TOTAL: 10-15 hours
+
+Months 2+:
+  Data collection: 1 hour
+  Framework population: 2 hours
+  Analysis: 1 hour
+  Leadership review: 1 hour
+  TOTAL: 5 hours per month
+
+Annual time savings:
+  First month saves: 5-10 hours vs. manual process
+  Monthly ongoing savings: 1-2 hours vs. manual process
+  Annual savings: 48-60 hours
+
+================================================================================
+READY TO BEGIN?
+
+Step 1: Open README.md
+Step 2: Read "Getting Started" section
+Step 3: Follow SETUP_CHECKLIST.md starting tomorrow
+
+Questions? See support resources above.
+
+Good luck!
+================================================================================
