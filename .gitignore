@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Raw data exports (keep in _INBOX but don't version)
+_INBOX/*.xls
+_INBOX/*.xlsx
+_INBOX/*.csv
+
+# Credentials (never commit)
+*.env
+credentials.json
+secrets.json
+
+# Large binary files (use Git LFS or keep local)
+# Uncomment if you want to exclude Excel workbooks from versioning
+# *.xlsx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# n8n exports (optional - uncomment if you want to version these)
+# n8n_workflows/
