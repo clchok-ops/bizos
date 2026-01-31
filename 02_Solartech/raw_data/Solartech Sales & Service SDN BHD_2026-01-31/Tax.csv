@@ -1,0 +1,5 @@
+Tax Name,Tax Percentage,Tax Type,Account To Track Sales,Account To Track Purchases,Tax Status,Value Added Tax
+SST,8.000000,tax,Tax Payable,Tax Payable,Active,true
+5%,5.000000,tax,Tax Payable,Tax Payable,Active,true
+SST 5%,5.000000,tax,Tax Payable,Tax Payable,Active,true
+(SST 10),10.000000,tax,Tax Payable,Tax Payable,Active,true
