@@ -1,4 +1,10 @@
-# BizOS Context File
+> **SESSION SNAPSHOT** (Quick Read)
+> > **Last:** 2026-02-01 | **Flags:** 6 | **Task:** Handoff infrastructure
+> > > **Summary:** Updated startup skill (Chrome-first), cleaned GLOBAL_STANDARDS.md, adding session handoff
+> > >
+> > > ---
+> > >
+> > > # BizOS Context File
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 **Last Updated**: 2026-01-31
