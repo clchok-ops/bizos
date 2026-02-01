@@ -1,13 +1,13 @@
 > **SESSION SNAPSHOT** (Quick Read)
 > > **Last:** 2026-02-01 | **Flags:** 6 | **Task:** Handoff infrastructure
-> > > **Summary:** Updated startup skill (Chrome-first), cleaned GLOBAL_STANDARDS.md, adding session handoff
+> > > **Summary:** Updated startup skill (Chrome-first), cleaned GLOBAL_STANDARDS.md, created end-session skill for handoffs
 > > >
 > > > ---
 > > >
 > > > # BizOS Context File
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
-**Last Updated**: 2026-01-31
+**Last Updated**: 2026-02-01
 **Updated By**: Claude (Solartech risk model built)
 
 ---
