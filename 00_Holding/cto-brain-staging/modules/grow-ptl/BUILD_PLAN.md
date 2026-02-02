@@ -45,6 +45,7 @@
 | 121_Count source | Auto from 121_Log | 2026-02-02 |
 | Overall calculation | Automated via Power Automate | 2026-02-02 |
 | PIP notifications | Not necessary at this time | 2026-02-02 |
+| PTL_Score column naming | Person/Period (not Player/PTL_Period) | 2026-02-02 |
 
 ### Power Automate Flow: "PTL - Calculate 121_Count" ✅ WORKING
 ```
