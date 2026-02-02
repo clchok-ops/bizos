@@ -32,6 +32,7 @@
 **T-2236** (RM 71.6K) - Sa Lee Cham
 - **Status**: Solution Design, no activity 125 days
 - **Days flagged**: 1
+- **Last action**: Unknown (no activity logged in CRM)
 - **Recommended action**:
   1. Review last communication
   2. Attempt contact via alternate channel
@@ -40,6 +41,8 @@
 
 **PD-2160** (RM 55.6K) - Ahmad Shafiq Affandi Muhamad
 - **Status**: Solution Design, no activity 97 days
+- **Days flagged**: 1
+- **Last action**: Unknown (no activity logged in CRM)
 - **Context**: Owner has 23% win rate (below 32% benchmark)
 - **Recommended action**:
   1. Review deal with Sales Manager
@@ -88,6 +91,15 @@
 | Idle | 41 | RM 5.2M |
 | Tender | 23 | RM 4.1M |
 | Other | 111 | RM 21.1M |
+
+---
+
+## Yesterday's Activity
+
+*Data limitation: Current export is from Jan 28. Need daily export for this section.*
+
+- Activity data not available in current export
+- To enable: Configure Zoho to send daily deals export with activity timestamps
 
 ---
 

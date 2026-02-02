@@ -81,6 +81,18 @@
 
 ---
 
+## Yesterday's Activity
+
+**Feb 1, 2026:**
+- 5 new enquiries received
+- 2 opportunities created (Solar Water Heater)
+- 3 troubleshooting requests logged
+- Owners assigned: Atie (4), FY Lim (1)
+
+*For future briefs: Need activity log from Zoho to show follow-up actions taken*
+
+---
+
 ## Data Needs
 
 To improve this brief, we need:
