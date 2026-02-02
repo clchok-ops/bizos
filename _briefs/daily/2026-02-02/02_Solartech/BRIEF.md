@@ -1,6 +1,6 @@
 # Solartech Daily Brief - Feb 2, 2026
 
-**Data as of**: Jan 28, 2026 (Deals export)
+**Data as of**: Jan 31, 2026 (Ongoing Deals Report - Filtered for Actions)
 
 ---
 
@@ -8,103 +8,76 @@
 
 | Metric | Value | Benchmark | Trend | Status |
 |--------|-------|-----------|-------|--------|
-| Active Pipeline | RM 122.8M | - | → | 🟢 |
-| Large Deals (>RM 50K) | RM 114.8M (216 deals) | - | → | 🟢 |
-| Win Rate | 37.8% | 32% | → | 🟢 |
-| Stuck Deals (>90d) | 3 | 0 | → | 🟡 |
-| At-Risk Value | RM 20.5M | - | → | 🟡 |
+| Deals Needing Action | 87 | - | → | 🟡 |
+| Pipeline (Action Deals) | RM 14.1M | - | → | 🟢 |
+| Total Collected | RM 3.4M | - | → | 🟢 |
+| Outstanding Amount | RM 10.8M | - | → | 🟡 |
+| Deals w/ Outstanding Payment | 70 | 0 | → | 🔴 |
 
 ---
 
-## Flags Requiring Action
+## 🔴 Top Priority: Outstanding Collections
 
-### 🟡 Warning
+**Total Outstanding: RM 10,770,155 across 70 deals**
 
-**T-2360** (RM 75.6K) - Yati Omar
-- **Status**: Solution Design, no activity 95 days
-- **Days flagged**: 1
-- **Last action**: Unknown (no activity logged in CRM)
-- **Recommended action**:
-  1. Call customer to confirm project status
-  2. Update stage or probability based on response
-- **Escalate to**: Sales Manager if no update by Feb 9
+| Deal | Outstanding | Owner | Action |
+|------|-------------|-------|--------|
+| PD-000092 | RM 970,300 | Ted Wong | Follow up on payment |
+| PD-000018 | RM 776,471 | Olivia Hwa | Follow up on payment |
+| PD-000131-1 | RM 760,150 | Olivia Hwa | Follow up on payment |
+| PD-000256 | RM 737,200 | Olivia Hwa | Follow up on payment |
+| PD-000020 | RM 489,588 | Olivia Hwa | Follow up on payment |
 
-**T-2236** (RM 71.6K) - Sa Lee Cham
-- **Status**: Solution Design, no activity 125 days
-- **Days flagged**: 1
-- **Last action**: Unknown (no activity logged in CRM)
-- **Recommended action**:
-  1. Review last communication
-  2. Attempt contact via alternate channel
-  3. If unresponsive, move to Lost
-- **Escalate to**: Sales Manager if no update by Feb 9
-
-**PD-2160** (RM 55.6K) - Ahmad Shafiq Affandi Muhamad
-- **Status**: Solution Design, no activity 97 days
-- **Days flagged**: 1
-- **Last action**: Unknown (no activity logged in CRM)
-- **Context**: Owner has 23% win rate (below 32% benchmark)
-- **Recommended action**:
-  1. Review deal with Sales Manager
-  2. Consider reassignment to higher performer
-  3. Or close if unqualified
-- **Escalate to**: Sales Manager if no update by Feb 5 (faster due to performance concern)
+**Top 5 = RM 3.73M** (35% of total outstanding)
 
 ---
 
 ## Pipeline Concentration Risk
 
-| Owner | Pipeline | % of Total | Win Rate | Risk |
-|-------|----------|------------|----------|------|
-| Olivia Hwa | RM 82.3M | 67% | 38% | 🟡 High concentration |
-| Ted Wong | RM 15.9M | 13% | 52% | 🟢 Top performer |
-| Bryan Lim | RM 12.4M | 10% | 36% | 🟢 |
-| Yati Omar | RM 9.2M | 7% | 78% | 🟢 High win rate |
+| Owner | Deals | Pipeline Value | % of Total |
+|-------|-------|----------------|------------|
+| Olivia Hwa | 69 | RM 12,814,752 | 91% |
+| Ted Wong | 15 | RM 1,241,085 | 9% |
+| Ahmad Shafiq | 1 | RM 35,200 | <1% |
+| Sa Lee Cham | 1 | RM 100 | <1% |
 
-**Risk**: 67% of pipeline with one person. If Olivia is unavailable, significant exposure.
-
-**Recommendation**: Review Olivia's capacity. Consider redistributing some deals to Ted (high win rate) or Yati (highest win rate).
+**Risk**: 91% of action-required pipeline with Olivia Hwa. Extremely high concentration.
 
 ---
 
-## Team Performance
+## Deal Status Distribution
 
-| Owner | Pipeline | Win Rate | vs Benchmark | Stuck Deals |
-|-------|----------|----------|--------------|-------------|
-| Yati Omar | RM 9.2M | 78% | +46% ✓ | 1 |
-| Ted Wong | RM 15.9M | 52% | +20% ✓ | 0 |
-| Olivia Hwa | RM 82.3M | 38% | +6% | 0 |
-| Bryan Lim | RM 12.4M | 36% | +4% | 0 |
-| Ahmad Shafiq | RM 4.2M | 23% | -9% ⚠️ | 1 |
-| Sa Lee Cham | - | - | - | 1 |
+| Status | Count |
+|--------|-------|
+| Fully Paid, Fully Delivered | 64 |
+| Chui Geok (?) | 12 |
+| Fully Paid only | 3 |
+| Fully Paid, Pending Docs | 3 |
+| Other | 5 |
 
----
-
-## Stage Distribution
-
-| Stage | Deals | Value |
-|-------|-------|-------|
-| Solution Design | 292 | RM 45.2M |
-| Fulfilment | 147 | RM 28.1M |
-| Delivery/Claims | 142 | RM 22.4M |
-| Negotiation/Review | 53 | RM 18.7M |
-| Idle | 41 | RM 5.2M |
-| Tender | 23 | RM 4.1M |
-| Other | 111 | RM 21.1M |
+*Note: "Chui Geok" appears to be a person tag rather than a status - needs CRM cleanup.*
 
 ---
 
 ## Yesterday's Activity
 
-*Data limitation: Current export is from Jan 28. Need daily export for this section.*
+- Report generated: Jan 31, 2026 9:00 PM
+- New daily reports configured in Zoho CRM
+- Pipeline being actively monitored
 
-- Activity data not available in current export
-- To enable: Configure Zoho to send daily deals export with activity timestamps
+---
+
+## Data Pipeline Status
+
+- ✅ Zoho CRM reports now configured (Daily @ 9PM, CSV)
+- ✅ Email forwarding to _INBOX working
+- ⚠️ Need "Confirm PV Sales", "Non-confirm PV Sales", "Paid Invoices" reports for full picture
+- Next: Tonight's 9PM reports will provide fresh data
 
 ---
 
 ## Data Quality Notes
 
-- Last data export: Jan 28, 2026
-- Deals missing Last Activity Time: 12%
-- Recommendation: Request fresh export for current state
+- Source: Ongoing Deals Report_Filtered for Actions (Jan 31)
+- This is a FILTERED view showing only deals requiring action
+- Full pipeline data in separate Deals export (Jan 28)
