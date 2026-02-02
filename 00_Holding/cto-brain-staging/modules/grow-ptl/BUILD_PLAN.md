@@ -1,8 +1,8 @@
 # PTL System Build Plan
 
-**Status**: IN PROGRESS - ~45% Complete
+**Status**: IN PROGRESS - ~50% Complete
 **Date**: 2026-02-02
-**Last Updated**: 2026-02-02
+**Last Updated**: 2026-02-02 (Session 2)
 **Approach**: Hybrid (Keep site, isolate old from new)
 
 ---
@@ -19,9 +19,11 @@
 - [x] PTL Population Guide document created
 - [x] Traffic light formatting on ALL status columns (KR_Status, Grow_Status, 121_Status, Overall_Status)
 - [x] Power Automate flow "PTL - Calculate 121_Count" created (draft - needs refinement)
+- [x] 121_Log extended with Player lookup (→ People) and PTL_Period lookup (→ PTL_Periods)
+- [x] Power Automate flow refined with Filter Query: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
 
 ### 🔄 In Progress
-- [ ] Refine Power Automate flow (add filter by Player/Period, add PTL_Score update action)
+- [ ] Power Automate: Add PTL_Score update action (count → 121_Count field)
 - [ ] Power Automate: Overall_Score/Overall_Status calculation
 - [ ] Real employee data population (ongoing as we build)
 
