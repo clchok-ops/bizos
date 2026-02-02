@@ -1,19 +1,8 @@
->Next Session Focus> SESSION SNAPSHOT**SESSION SNAPSHOT** (Quick Read)> **Last:** 2026-02-02 | **Flags:** 6 | **Task:** Hippos BizOS automation> > > **Summary:** Completed Hippos BizOS automation: 4 reports (CRM, Inventory x2, Analytics) scheduled daily 9PM CSV
-> > >
-> > > ---
-> > >
-> > > # BizOS Context File
+# BizOS Context File
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
-<<<<<<< HEAD
-
-**Last Updated**: 2026-02-02
-**Updated By**: Claude (Hippos BizOS automation)
-
-=======
 **Last Updated**: 2026-02-02
 **Updated By**: Claude (Brain sync fix + Hippos status update)
->>>>>>> 8bc7db9 (Auto-sync: 2026-02-02 14:43)
 
 ---
 
