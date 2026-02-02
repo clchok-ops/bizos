@@ -166,19 +166,16 @@ Direct link:
 - [x] Reports configured as Daily (not Weekly)
 - [x] Export format set to CSV (not XLS)
 - [x] Scheduled for 9PM daily
-- [ ] Emails arriving at automation@solartech.com.my
+- [x] Emails arriving at automation@solartech.com.my
 
-### Email-to-_INBOX Pipeline (⚠️ NOT WORKING)
-- [ ] automation@solartech.com.my receiving emails from Zoho
-- [ ] Inbox rules forwarding attachments to iCloud
-- [ ] Files landing in BizOS/_INBOX/ folder
+### Email-to-_INBOX Pipeline (✅ WORKING)
+- [x] automation@solartech.com.my receiving emails from Zoho
+- [x] Inbox rules forwarding attachments to iCloud
+- [x] Files landing in BizOS/_INBOX/zoho/ folder
 
-**Issue identified (Feb 2, 2026)**: Zoho reports ARE running correctly (last scheduled = Yesterday), but Solartech data is NOT appearing in _INBOX. Hippos/Kinme data IS arriving. Problem is likely:
-1. automation@solartech.com.my inbox rules not configured for Solartech reports, OR
-2. Zoho sending to wrong recipient, OR
-3. Emails going to spam
+**Issue resolved (Feb 2, 2026)**: Mail.app rule wasn't applying automatically to existing emails. Fixed by manually applying rules. Future emails should process automatically.
 
-**Action needed**: Check automation@solartech.com.my inbox for Zoho CRM emails from past few days.
+**Root cause**: AppleScript mail rule was created after some emails arrived; existing emails weren't retroactively processed.
 
 ---
 
