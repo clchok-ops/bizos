@@ -221,6 +221,9 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 | 2026-01-31 | Kinme | COST | Discount rate 2% avg (21.7% was anomaly day) | Resolved |
 | 2026-01-31 | Kinme | DATA | Food costs not tracked in POS - need inventory solution | Open |
 | 2026-01-31 | Kinme | OPS | Tuesday lowest revenue day - opportunity for promo | Open |
+| 2026-02-02 | Kinme | STOCK | ⚠️ Premium whisky low: Hibiki 21, Yamazaki 12, Hakushu 18 LE = 1 bottle each | **ACTIVE** |
+| 2026-02-02 | Kinme | STOCK | House umeshu 2020 (5L pour) out of stock | **ACTIVE** |
+| 2026-02-02 | Kinme | STOCK | Sapporo cans out of stock | Open |
 | 2026-02-01 | Infrastructure | SETUP | Configure cto-brain auto-sync (mirror bizos pattern) | Open |
 | 2026-02-01 | Hippos | BUILD | GROW/PTL architecture mapped - see cto-brain/modules/grow-ptl/ | Open |
 
