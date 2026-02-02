@@ -1,6 +1,6 @@
 # PTL System Build Plan
 
-**Status**: IN PROGRESS - ~35% Complete
+**Status**: IN PROGRESS - ~45% Complete
 **Date**: 2026-02-02
 **Last Updated**: 2026-02-02
 **Approach**: Hybrid (Keep site, isolate old from new)
@@ -17,11 +17,12 @@
 - [x] Basic Power BI dashboard deployed (Free license)
 - [x] Test data in PTL_Score (3 rows: Green/Yellow/Red)
 - [x] PTL Population Guide document created
+- [x] Traffic light formatting on ALL status columns (KR_Status, Grow_Status, 121_Status, Overall_Status)
+- [x] Power Automate flow "PTL - Calculate 121_Count" created (draft - needs refinement)
 
 ### 🔄 In Progress
-- [ ] Power Automate: 121_Count auto-calculation from 121_Log ← **NEXT**
-- [ ] Power Automate: Overall_Score/Overall_Status calculation ← **NEXT**
-- [ ] Traffic light formatting (background colors for status columns)
+- [ ] Refine Power Automate flow (add filter by Player/Period, add PTL_Score update action)
+- [ ] Power Automate: Overall_Score/Overall_Status calculation
 - [ ] Real employee data population (ongoing as we build)
 
 ### ⏳ Pending
