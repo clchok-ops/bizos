@@ -21,11 +21,12 @@
 - [x] Power Automate flow "PTL - Calculate 121_Count" created (draft - needs refinement)
 - [x] 121_Log extended with Player lookup (→ People) and PTL_Period lookup (→ PTL_Periods)
 - [x] Power Automate flow refined with Filter Query: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
+- [x] Power Automate: Complete 121_Count flow with PTL_Score update (5-step flow with For each loop)
 
 ### 🔄 In Progress
-- [ ] Power Automate: Add PTL_Score update action (count → 121_Count field)
 - [ ] Power Automate: Overall_Score/Overall_Status calculation
 - [ ] Real employee data population (ongoing as we build)
+- [ ] End-to-end testing of 121_Count automation
 
 ### ⏳ Pending
 - [ ] Grow_Log list creation
@@ -44,6 +45,16 @@
 | 121_Count source | Auto from 121_Log | 2026-02-02 |
 | Overall calculation | Automated via Power Automate | 2026-02-02 |
 | PIP notifications | Not necessary at this time | 2026-02-02 |
+
+### Power Automate Flow: "PTL - Calculate 121_Count"
+```
+Flow Structure (5 steps):
+1. When an item is created or modified (121_Log trigger)
+2. Get items (121_Log) - Filter: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
+3. Compose - Expression: length(body('Get_items')?['value'])
+4. Get items 1 (PTL_Score) - Filter: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
+5. For each → Update item (PTL_Score.121_Score = Compose output)
+```
 
 ### Scoring Configuration (Option C)
 | Area | Weight | Status |
