@@ -1,6 +1,6 @@
 # 🌅 Morning Brief - Feb 2, 2026
 
-**Generated**: 2026-02-02 08:30
+**Generated**: 2026-02-02 08:45 (refreshed)
 **Data as of**: Solartech Jan 28, Hippos Feb 1, Kinme Jan 31
 
 ---
