@@ -56,8 +56,6 @@
 **Status**: Journal created, ready to use
 **Approach**: Learn and build methodology before committing to strategies
 **Current Focus**: Start logging trades, observe patterns
-<<<<<<< HEAD
-=======
 
 **Open Items**:
 - [x] Set up trading journal structure → trading_journal.xlsx created
@@ -415,4 +413,3 @@ BizOS/
 ---
 
 *End of Context File*
->>>>>>> 8bc7db9 (Auto-sync: 2026-02-02 14:43)
