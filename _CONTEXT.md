@@ -406,9 +406,19 @@ BizOS/
 
 **Session Protocol**:
 1. Claude reads `_CONTEXT.md`
-2. Check `_INBOX/` for new items
+2. **🔴 CHECK `_INBOX/` FOR NEW DATA** (Critical - don't skip!)
+   - `ls -la _INBOX/` and `ls -la _INBOX/zoho/`
+   - Report new files with dates
+   - Offer to process before other work
 3. Work on highest priority from "Next Session Focus"
 4. Update `_CONTEXT.md` before session ends
+
+**_INBOX File Types**:
+| Source | Pattern | Action |
+|--------|---------|--------|
+| Zoho CRM | `*Deals*.csv`, `*Enquiry*.csv` | Update risk model |
+| Zoho Inventory | `*Inventory*.csv` | Check stock levels |
+| Eats365 | `*.xls` | Update Kinme metrics |
 
 ---
 
