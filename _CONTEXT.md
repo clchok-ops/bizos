@@ -2,7 +2,7 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 **Last Updated**: 2026-02-02
-**Updated By**: Claude (Brain sync fix + Hippos status update)
+**Updated By**: Claude (_INBOX processing: Kinme Jan analysis, Hippos Feb 1 enquiries)
 
 ---
 
@@ -38,9 +38,9 @@
 |--------|------|--------|---------------|------------|
 | Trading (IBKR) | Investment | 🟡 Setting up | 2026-01-31 | — |
 | Solartech | B2B Distribution | 🟡 Risk model active | 2026-01-31 | RM 20.5M at risk |
-| Hippos | B2C Retail | 🟢 Automation configured | 2026-02-01 | 4 daily reports |
+| Hippos | B2C Retail | 🟢 Data flowing | 2026-02-02 | 5 enquiries/day |
 | WCI | Manufacturing | 🟡 To map | — | — |
-| Kinme | F&B (Izakaya) | 🟢 Analyzed | 2026-01-31 | 2% avg discount |
+| Kinme | F&B (Izakaya) | 🟢 Jan analyzed | 2026-02-02 | RM 227K/month |
 
 
 **Legend**: 🟢 Healthy | 🟡 Needs attention | 🔴 Critical
