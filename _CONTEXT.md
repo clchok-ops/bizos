@@ -424,6 +424,20 @@ BizOS/
 3. Work on highest priority from "Next Session Focus"
 4. Update `_CONTEXT.md` before session ends
 
+**Commands**:
+| Command | What it does |
+|---------|--------------|
+| `startup` | Full startup: read brain, check _INBOX, report status |
+| `brief` | Generate daily briefs in `_briefs/daily/{date}/` |
+
+**Brief Generation** (when user says "brief"):
+1. Process any new _INBOX files first
+2. Generate `_briefs/daily/{date}/_CTO_SUMMARY.md`
+3. Generate entity briefs: `02_Solartech/BRIEF.md`, `03_Hippos/BRIEF.md`
+4. Generate person briefs for flagged individuals
+5. Update `_FLAG_TRACKER.md` with new/aged flags
+6. Report summary to user
+
 **_INBOX File Types**:
 | Source | Pattern | Action |
 |--------|---------|--------|
