@@ -23,6 +23,7 @@
 **T-2360** (RM 75.6K) - Yati Omar
 - **Status**: Solution Design, no activity 95 days
 - **Days flagged**: 1
+- **Last action**: Unknown (no activity logged in CRM)
 - **Recommended action**:
   1. Call customer to confirm project status
   2. Update stage or probability based on response
