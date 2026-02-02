@@ -1,8 +1,56 @@
 # PTL System Build Plan
 
-**Status**: APPROVED - Ready to Build
+**Status**: IN PROGRESS - ~35% Complete
 **Date**: 2026-02-02
+**Last Updated**: 2026-02-02
 **Approach**: Hybrid (Keep site, isolate old from new)
+
+---
+
+## Current Build Status
+
+### ✅ Completed
+- [x] PTL_Score list created with all columns (KR, Grow, 121 areas visible; Kaizen, Customer hidden)
+- [x] People list exists (87 employees)
+- [x] PTL_Periods list created (H1/H2 structure)
+- [x] 121_Log list created with full schema
+- [x] Basic Power BI dashboard deployed (Free license)
+- [x] Test data in PTL_Score (3 rows: Green/Yellow/Red)
+- [x] PTL Population Guide document created
+
+### 🔄 In Progress
+- [ ] Power Automate: 121_Count auto-calculation from 121_Log ← **NEXT**
+- [ ] Power Automate: Overall_Score/Overall_Status calculation ← **NEXT**
+- [ ] Traffic light formatting (background colors for status columns)
+- [ ] Real employee data population (ongoing as we build)
+
+### ⏳ Pending
+- [ ] Grow_Log list creation
+- [ ] KR_Log list creation
+- [ ] Microsoft Forms for 121 entry
+- [ ] Power BI dashboard updates (add 121 area)
+- [ ] Entity filter views (Solartech/Hippos/WCI)
+- [ ] Archive old 50+ individual PTL lists
+
+### ❌ Not Needed (Per User Decision)
+- PIP notifications/workflows
+
+### Key Decisions Made This Session
+| Decision | Choice | Date |
+|----------|--------|------|
+| 121_Count source | Auto from 121_Log | 2026-02-02 |
+| Overall calculation | Automated via Power Automate | 2026-02-02 |
+| PIP notifications | Not necessary at this time | 2026-02-02 |
+
+### Scoring Configuration (Option C)
+| Area | Weight | Status |
+|------|--------|--------|
+| KR | 20 pts | Active |
+| Grow | 15 pts | Active |
+| 121 | 15 pts | Active |
+| Kaizen | 25 pts | Hidden |
+| Customer | 25 pts | Hidden |
+| **Total** | **100 pts** | |
 
 ---
 
