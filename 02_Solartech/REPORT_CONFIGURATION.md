@@ -1,20 +1,22 @@
 # Solartech Report Configuration Guide
 
 > **Purpose**: Configure automated reports from Zoho CRM and Zoho Inventory to feed the 360° analysis loop
-> **Last Updated**: 2026-02-01
-> **Status**: PENDING MANUAL CONFIGURATION
+> **Last Updated**: 2026-02-02
+> **Status**: ✅ ZOHO CRM CONFIGURED | ⚠️ EMAIL FORWARDING NOT VERIFIED
 
 ---
 
 ## Current State
 
-### Zoho CRM Scheduled Reports (org798433294)
-| Report Name | Current Frequency | Recommended | Format | Recipient |
-|-------------|-------------------|-------------|--------|-----------|
-| Paid Invoices (Weekly Report) | Weekly | **Daily** | XLS → CSV | automation@solartech.com.my |
-| Non-confirm PV Sales (Weekly Report) | Weekly | **Daily** | XLS → CSV | automation@solartech.com.my |
-| Confirm PV Sales (Weekly Report) | Weekly | **Daily** | XLS → CSV | automation@solartech.com.my |
-| Ongoing Deals (Daily Report) | Daily | Keep | CSV | automation@solartech.com.my |
+### Zoho CRM Scheduled Reports (org798433294) - ✅ VERIFIED 2026-02-02
+| Report Name | Frequency | Format | Time | Next Run | Status |
+|-------------|-----------|--------|------|----------|--------|
+| Confirm PV Sales | Daily | CSV | 9PM | Feb 2 | ✅ |
+| Non-confirm PV Sales | Daily | CSV | 9PM | Feb 2 | ✅ |
+| Paid Invoices (Weekly Report) | Daily | CSV | 9PM | Feb 2 | ✅ |
+| Ongoing Deals Report_Filtered for Actions | Daily | CSV | 9PM | Feb 2 | ✅ |
+
+**Note**: There are also 3 WEEKLY versions of these reports (still running) - can be disabled once daily flow is confirmed working.
 
 ### Zoho Inventory Scheduled Reports (org833030419)
 | Report Name | Current Frequency | Recommended | Format | Recipient |
