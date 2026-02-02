@@ -1,8 +1,8 @@
 # PTL System Build Plan
 
-**Status**: IN PROGRESS - ~55% Complete
+**Status**: IN PROGRESS - ~60% Complete
 **Date**: 2026-02-02
-**Last Updated**: 2026-02-02 (Session 3)
+**Last Updated**: 2026-02-02 (Session 4)
 **Approach**: Hybrid (Keep site, isolate old from new)
 
 ---
@@ -22,11 +22,11 @@
 - [x] 121_Log extended with Player lookup (→ People) and PTL_Period lookup (→ PTL_Periods)
 - [x] Power Automate flow refined with Filter Query: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
 - [x] Power Automate: Complete 121_Count flow with PTL_Score update (5-step flow with For each loop)
+- [x] End-to-end testing of 121_Count automation ✅ VERIFIED WORKING
 
 ### 🔄 In Progress
 - [ ] Power Automate: Overall_Score/Overall_Status calculation
 - [ ] Real employee data population (ongoing as we build)
-- [ ] End-to-end testing of 121_Count automation
 
 ### ⏳ Pending
 - [ ] Grow_Log list creation
@@ -46,14 +46,17 @@
 | Overall calculation | Automated via Power Automate | 2026-02-02 |
 | PIP notifications | Not necessary at this time | 2026-02-02 |
 
-### Power Automate Flow: "PTL - Calculate 121_Count"
+### Power Automate Flow: "PTL - Calculate 121_Count" ✅ WORKING
 ```
 Flow Structure (5 steps):
 1. When an item is created or modified (121_Log trigger)
 2. Get items (121_Log) - Filter: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
 3. Compose - Expression: length(body('Get_items')?['value'])
-4. Get items 1 (PTL_Score) - Filter: PlayerId eq [trigger] and PTL_PeriodId eq [trigger]
+4. Get items 1 (PTL_Score) - Filter: PersonId eq [trigger PlayerId] and PeriodId eq [trigger PTL_PeriodId]
+   Note: PTL_Score uses "Person" and "Period" column names (not "Player" and "PTL_Period")
 5. For each → Update item (PTL_Score.121_Score = Compose output)
+
+Tested: Feb 2, 2026 - Successfully updates 121_Score when 121_Log entries are added/modified
 ```
 
 ### Scoring Configuration (Option C)
