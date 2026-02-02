@@ -130,8 +130,8 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 ---
 
 ### 03_Hippos Operations
-**Status**: BizOS automation configured — 4 daily reports scheduled
-**Type**: B2C retail/service (currently Water Hippos)
+**Status**: Data flowing, first analysis complete
+**Type**: B2C retail/service (Super Hippo = solar water heaters)
 **Systems**: Zoho CRM, Zoho Inventory, Zoho Analytics
 **Transition**: Moving to solar and energy management this year
 
@@ -141,12 +141,18 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 3. Inventory Movements → automation@solartech.com.my
 4. Analytics Dashboard → automation@solartech.com.my
 
+**Latest Data (Feb 1, 2026)**:
+- 5 new enquiries
+- 2 Opportunities (Solar Water Heater)
+- 3 Troubleshooting requests
+- Owners: Atie Hashim (4), FY Lim (1)
+
 **Open Items**:
 - [x] Map current systems → Zoho (CRM, Inventory, Analytics)
 - [x] Configure daily automated reports → 4 reports, 9PM daily
+- [x] First daily data received and analyzed → Feb 2
 - [ ] Understand B2C pricing and job costing
 - [ ] Document transition plan to solar/energy
-- [ ] First daily data received and analyzed
 
 **Recent Decisions**:
 - [2026-02-01] Configured 4 Zoho reports to send daily CSV to automation email
@@ -173,15 +179,17 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 ---
 
 ### 05_Kinme
-**Status**: CFO Toolkit built, needs food cost input
+**Status**: January data analyzed, monitoring active
 **Type**: Japanese upmarket izakaya (sake, sashimi, grill)
 **Systems**: Eats365 (POS) - https://www.eats365pos.com/
 
-**Key Metrics (2026-01-31)**:
-- Net Sales: RM 10,643
-- Covers: 26
-- Avg Spend: RM 409 ✅
-- Discount Rate: 21.7% ⚠️ HIGH
+**Key Metrics (January 2026 - Full Month)**:
+- Net Sales: RM 227,519 (RM 7,339/day avg)
+- Covers: 1,728 (56/day avg)
+- Avg Spend: RM 131.69 ✅
+- Discount Rate: 2.43% ✅ (Jan 31 was anomaly)
+- Best Day: Thursday (RM 12,477 avg)
+- Worst Day: Tuesday (RM 3,992 avg) ⚠️
 
 **Open Items**:
 - [x] Identify POS system → Eats365 (confirmed)
