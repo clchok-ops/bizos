@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-03 | **Flags:** 8 | **Task:** PTL Data Entry Design
-> **Summary:** Designed PTL data entry mechanism for all 5 scoring areas. Created FORMS_SETUP_GUIDE.md with copy-paste specs for 6 Microsoft Forms. G-WORK-001 rule added to GLOBAL_STANDARDS. cto-brain sync verified working.
+> **Last:** 2026-02-03 | **Flags:** 8 | **Task:** ClaudeHub Migration
+> **Summary:** Migrated to ClaudeHub architecture. All 3 brains (bizos, cto-brain, trading) now in single folder with unified auto-sync. Added G-WORK-002 and G-ARCH-001 rules. No more browser wrestling for GitHub edits.
 
 **Last Updated**: 2026-02-03
-**Updated By**: Claude (PTL data entry mechanism, forms setup guide, cto-brain sync verification)
+**Updated By**: Claude (ClaudeHub migration, architecture consolidation, new rules)
 ---
 
 
