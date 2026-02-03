@@ -248,6 +248,15 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 ### 2026-02
 
+**[2026-02-03] ClaudeHub Architecture Migration**
+- **Decision**: Consolidate all 3 brains (bizos, cto-brain, trading) into single ClaudeHub folder with unified auto-sync
+- **Rationale**: Browser automation for GitHub editing fundamentally broken (CodeMirror blocks input). Local file access = instant, reliable. Single mount point = simpler workflow.
+- **Outcome**: Implemented — see G-ARCH-001 in cto-brain/GLOBAL_STANDARDS.md
+- **Components**:
+  - `~/iCloud/ClaudeHub/` — Single folder with all repos
+  - `~/Automation/scripts/sync_all.sh` — Unified sync script
+  - `com.claudehub.sync.plist` — launchd job (every 30s)
+
 **[2026-02-01] 360° Loop Architecture**
 - **Decision**: Use existing email→iCloud routing (automation@solartech.com.my → _INBOX/) instead of complex n8n/WorkDrive setup
 - **Rationale**: Simpler = more reliable. Email routing already works. Avoid over-engineering.
@@ -280,6 +289,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Compressed timeline: Historical data analysis vs waiting to observe
 - Risk scoring with specific thresholds (not vague "at risk" labels)
 - Backtest validation (92.8% accuracy) before recommending
+- **[G-ARCH-001]** ClaudeHub consolidation: single mount → access to all brains → local read/write → auto-sync to GitHub. Eliminated all browser wrestling.
 
 ### What Didn't Work
 - Zoho MCP `get_deal_by_name` and `list_open_deals` returning API errors
@@ -287,6 +297,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Zoho CRM new UI causes browser automation timeouts (forms don't respond reliably)
 - Complex n8n/WorkDrive architecture → over-engineering when email routing already exists
 - Browser automation for Power Automate/Forms → blocked by React SPA security, wasted 20+ min before switching to artifact approach
+- **[G-WORK-002]** Browser automation for GitHub file edits → CodeMirror editor blocks all programmatic input (form_input, JS setValue, typing). Solution: local file edits + auto-sync
 
 ---
 
@@ -413,15 +424,18 @@ Trading   ──► IBKR
 
 **Folder Structure**:
 ```
-BizOS/
-├── _CONTEXT.md      ← You are here (Claude's memory)
-├── _INBOX/          ← Drop files for Claude to process
-├── 00_Holding/      ← Portfolio-level artifacts
-├── 01_Trading/      ← IBKR (isolated)
-├── 02_Solartech/    ← B2B distribution
-├── 03_Hippos/       ← B2C retail
-├── 04_WCI/          ← Manufacturing
-└── 05_Kinme/        ← F&B
+~/iCloud/ClaudeHub/           ← Mount this in Cowork
+├── bizos/                    ← Business systems brain
+│   ├── _CONTEXT.md           ← You are here (Claude's memory)
+│   ├── _INBOX/               ← Drop files for Claude to process
+│   ├── 01_Trading/ → 05_Kinme/
+│   └── ...
+├── cto-brain/                ← Shared engineering rules
+│   ├── GLOBAL_STANDARDS.md   ← Rules (read at startup)
+│   └── modules/grow-ptl/
+└── trading/                  ← Trading systems brain
+    ├── _CONTEXT.md
+    └── ARCHITECTURE.md
 ```
 
 **Session Protocol**:
