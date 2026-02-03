@@ -319,7 +319,11 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 > What to prioritize in the next working session
 
 ### Immediate
-1. **Build PTL Phase 1: 121 System** — Create 121_Log SharePoint list + Forms + Power Automate flows
+1. **[CHOK] Build PTL Phase 1: 121 System** — Setup guides complete, ready for Chok to implement
+   - SharePoint list: `cto-brain/modules/grow-ptl/121_SHAREPOINT_SETUP.md`
+   - Forms: `cto-brain/modules/grow-ptl/121_FORMS_SETUP.md`
+   - Power Automate: `cto-brain/modules/grow-ptl/121_POWER_AUTOMATE_SETUP.md`
+   - Master checklist: `cto-brain/modules/grow-ptl/121_BUILD_CHECKLIST.md`
 2. **Build PTL Phase 2: Kaizen System** — Create Kaizen_Log list + submission form + review flow
 
 ### Pending (Chok Config)
@@ -334,6 +338,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - ~~Set up cto-brain auto-sync~~ ✅ Already working
 - ~~Commit GROW/PTL architecture~~ ✅ Already in cto-brain
 - ~~Design PTL data entry mechanism~~ ✅ DATA_ENTRY_MECHANISM.md + FORMS_SETUP_GUIDE.md
+- ~~121 System setup guides~~ ✅ 2026-02-03 (4 docs: SharePoint, Forms, Power Automate, Checklist)
 
 ### Blocked
 - Zoho MCP `list_open_deals` returning API errors — needs troubleshooting
