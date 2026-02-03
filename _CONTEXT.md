@@ -1,8 +1,8 @@
 # BizOS Context File
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
-**Last Updated**: 2026-02-02
-**Updated By**: Claude (_INBOX processing: Kinme Jan analysis, Hippos Feb 1 enquiries)
+**Last Updated**: 2026-02-03
+**Updated By**: Claude (PTL infra work, added G-WORK-001 efficiency rule)
 
 ---
 
@@ -268,6 +268,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Historical data eliminates "observation period" - can build models same day
 - Backtesting on closed deals validates model before going live
 - 4,209 deals → actionable risk model in <15 minutes
+- **[G-WORK-001] Efficiency-first**: Always find most efficient path before starting work. Avoid browser automation for config UIs (Power Automate, Forms, Power BI) — prefer copy-paste guides, JSON configs, CLI tools. Browser wrestling = 20min, artifact creation = 2min.
 
 ### Cross-Entity Patterns
 - (Pending Hippos/WCI analysis for comparison)
@@ -282,6 +283,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Need to troubleshoot MCP connection for write access
 - Zoho CRM new UI causes browser automation timeouts (forms don't respond reliably)
 - Complex n8n/WorkDrive architecture → over-engineering when email routing already exists
+- Browser automation for Power Automate/Forms → blocked by React SPA security, wasted 20+ min before switching to artifact approach
 
 ---
 
