@@ -2,8 +2,7 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 **Last Updated**: 2026-02-02
-**Updated By**: Claude (_INBOX processing: Kinme Jan analysis, Hippos Feb 1 enquiries)
-
+**Updated By**: Claude (PTL 121_Count flow fixed & tested - ~60% complete)
 ---
 
 
