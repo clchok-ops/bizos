@@ -50,7 +50,7 @@ class ZohoClient:
 
     # API endpoints
     TOKEN_URL = "https://accounts.zoho.com/oauth/v2/token"
-    API_BASE = "https://www.zohoapis.com/crm/v6"
+    API_BASE = "https://www.zohoapis.com/crm/v2"  # v2 works without explicit fields
 
     # Retry configuration (G-API-001)
     MAX_RETRIES = 3
@@ -389,9 +389,9 @@ class ZohoClient:
             True if connection successful
         """
         try:
-            result = self.get_users()
-            user_count = len(result.get("users", []))
-            logger.info(f"Connection successful! Found {user_count} users.")
+            result = self.get_deals(per_page=1)
+            deals = result.get("data", [])
+            logger.info(f"Connection successful! Can access Deals module.")
             return True
         except Exception as e:
             logger.error(f"Connection test failed: {e}")
