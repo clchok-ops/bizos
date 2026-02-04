@@ -1,3 +1,8 @@
+---
+name: startup
+description: "Session startup checklist. Use when user says 'startup', 'startup bizos', 'startup solartech', 'startup brain', or 'startup trading'. Reads from local ClaudeHub folder."
+---
+
 # Startup
 
 Resume context for the session. Token-efficient by default.
