@@ -2,87 +2,114 @@
 
 Resume context for the session. Token-efficient by default.
 
-## Commands
-
-| Command | Loads | Use Case |
-|---------|-------|----------|
-| `startup` | _CONTEXT.md only (~60 lines) | Quick check-in, planning |
-| `startup [entity]` | _CONTEXT + entity/_ENTITY.md | Deep work on one entity |
-| `startup build` | _CONTEXT + GLOBAL_STANDARDS | Technical/coding work |
-| `startup crm` | _CONTEXT + CRM mode note | Pipeline/deal work |
-| `startup full` | Everything | Rare, cross-system work |
-
-**Entities:** `solartech`, `hippos`, `kinme`, `wci`, `trading`
-
-**Brains:** `startup trading` loads trading/_CONTEXT.md instead of bizos
-
-## Checklist
-
-### 1. Mount ClaudeHub (if needed)
+## Command Reference
 
 ```
-~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub
+startup [brain] [focus] [+build]
 ```
 
-### 2. Detect Command
+| Command | Loads | Tokens | Use Case |
+|---------|-------|--------|----------|
+| `startup` | bizos lite | ~500 | Quick check-in |
+| `startup solartech` | bizos + solartech | ~1,000 | Entity work |
+| `startup hippos` | bizos + hippos | ~1,000 | Entity work |
+| `startup kinme` | bizos + kinme | ~1,000 | Entity work |
+| `startup wci` | bizos + wci | ~1,000 | Entity work |
+| `startup bizos` | bizos full (all entities) | ~2,500 | Bizos infra work |
+| `startup brain` | cto-brain + GLOBAL_STANDARDS | ~3,500 | Engineering rules |
+| `startup trading` | trading brain | ~500 | Trading work |
+| `startup build` | bizos + GLOBAL_STANDARDS | ~3,500 | Technical work |
+| `startup [entity] build` | bizos + entity + GLOBAL_STANDARDS | ~4,000 | Technical + entity |
+| `startup trading build` | trading + GLOBAL_STANDARDS | ~3,500 | Technical + trading |
 
-Parse user input:
-- No args → lite (context only)
-- Entity name → context + that entity
-- `build` → context + GLOBAL_STANDARDS.md
-- `crm` → context + CRM mode reminder
-- `full` → context + all entities + standards
-- `trading` → switch to trading brain
+**Modifiers:**
+- `build` — adds GLOBAL_STANDARDS.md (works with any brain)
+- `crm` — adds CRM mode reminder (Zoho MCP limitations)
 
-### 3. Read Files
+---
 
-**Lite (default):**
+## Parsing Logic
+
+1. **Detect brain:**
+   - `brain` → cto-brain
+   - `trading` → trading brain
+   - `bizos` → bizos full
+   - anything else → bizos lite (default)
+
+2. **Detect focus (bizos only):**
+   - `solartech` → 02_Solartech/_ENTITY.md
+   - `hippos` → 03_Hippos/_ENTITY.md
+   - `kinme` → 05_Kinme/_ENTITY.md
+   - `wci` → 04_WCI/_ENTITY.md
+
+3. **Detect modifiers:**
+   - `build` → add GLOBAL_STANDARDS.md
+   - `crm` → add CRM reminder
+
+4. **Special cases:**
+   - `startup brain` implies build (engineering work needs standards)
+
+---
+
+## File Loading
+
+### Bizos Lite (default)
 ```
 bizos/_CONTEXT.md
 ```
 
-**Entity focus (e.g., `startup solartech`):**
+### Bizos + Entity
 ```
 bizos/_CONTEXT.md
+bizos/[folder]/_ENTITY.md
+```
+
+### Bizos Full
+```
+bizos/_CONTEXT.md
+bizos/01_Trading/_ENTITY.md
 bizos/02_Solartech/_ENTITY.md
+bizos/03_Hippos/_ENTITY.md
+bizos/04_WCI/_ENTITY.md
+bizos/05_Kinme/_ENTITY.md
 ```
 
-**Build mode:**
+### CTO Brain
 ```
-bizos/_CONTEXT.md
+cto-brain/_CONTEXT.md
 cto-brain/GLOBAL_STANDARDS.md
 ```
 
-**CRM mode:**
-```
-bizos/_CONTEXT.md
-+ remind: Zoho list_open_deals broken, use get_deal_by_name or exports
-```
-
-**Full mode:**
-```
-bizos/_CONTEXT.md
-bizos/*/_ENTITY.md (all 5)
-cto-brain/GLOBAL_STANDARDS.md
-```
-
-**Trading brain:**
+### Trading Brain
 ```
 trading/_CONTEXT.md
 ```
 
-### 4. Check _INBOX (BizOS only)
+### + Build Modifier
+Add to any of the above:
+```
+cto-brain/GLOBAL_STANDARDS.md
+```
 
+---
+
+## Checklist
+
+### 1. Mount ClaudeHub
+```
+~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub
+```
+
+### 2. Parse command and read files
+Use parallel `Read` calls for efficiency.
+
+### 3. Check _INBOX (bizos only)
 ```bash
 ls -la bizos/_INBOX/
 ls -la bizos/_INBOX/zoho/
 ```
 
-Report new files with dates. Skip if empty.
-
-### 5. Report
-
-Keep it tight:
+### 4. Report (keep tight)
 
 ```
 ## 🚀 [Brain] — [Mode]
@@ -90,39 +117,37 @@ Keep it tight:
 **Resuming from [date].**
 
 ### Flags ([X] active)
-[table of flags]
+[table]
 
 ### Focus
-[next session priority]
+[next priority]
 
 ### _INBOX
-[new files or "Empty"]
+[new files or skip if empty]
 
 ---
-Ready. What are we working on?
+Ready. What's the focus?
 ```
 
-**Don't include:**
-- Brain loaded checklist (obvious)
-- Mini-kaizen scan (noise)
-- Mode descriptions (user knows)
+---
 
-### 6. Mode Switching
+## Mode Switching
 
-User can say `mode build`, `mode lite`, `mode crm` mid-session.
+Mid-session: `mode build`, `mode lite`, `mode crm`
 
-When switching:
-- `mode build` → Read GLOBAL_STANDARDS.md if not already loaded
-- `mode lite` → Just acknowledge
-- `mode crm` → Remind about Zoho MCP limitation
+- `mode build` → Read GLOBAL_STANDARDS if not loaded
+- `mode lite` → Acknowledge
+- `mode crm` → Remind: Zoho `list_open_deals` broken, use `get_deal_by_name`
 
-## File Locations
+---
+
+## File Structure
 
 ```
 ClaudeHub/
 ├── bizos/
-│   ├── _CONTEXT.md          ← Slim core (flags, focus, status)
-│   ├── _archive/            ← Decisions, learnings, systems (reference)
+│   ├── _CONTEXT.md          ← Slim (flags, focus, status)
+│   ├── _archive/            ← Decisions, learnings (reference)
 │   ├── _INBOX/              ← Drop files for processing
 │   ├── 01_Trading/_ENTITY.md
 │   ├── 02_Solartech/_ENTITY.md
@@ -130,19 +155,23 @@ ClaudeHub/
 │   ├── 04_WCI/_ENTITY.md
 │   └── 05_Kinme/_ENTITY.md
 ├── cto-brain/
-│   └── GLOBAL_STANDARDS.md  ← Engineering rules (build mode)
+│   ├── _CONTEXT.md          ← Engineering work tracker
+│   └── GLOBAL_STANDARDS.md  ← Rules (loaded with build)
 └── trading/
     └── _CONTEXT.md          ← Trading brain
 ```
 
+---
+
 ## Token Budget
 
-| Mode | Est. Lines | Est. Tokens |
-|------|------------|-------------|
-| Lite | ~60 | ~500 |
-| Entity | ~120 | ~1,000 |
-| Build | ~420 | ~3,400 |
-| Full | ~600 | ~4,800 |
-| **Old startup** | **~930** | **~7,400** |
+| Mode | Est. Tokens | vs Old |
+|------|-------------|--------|
+| Lite | ~500 | -93% |
+| Entity | ~1,000 | -86% |
+| Bizos full | ~2,500 | -66% |
+| Brain | ~3,500 | -53% |
+| Build | ~3,500 | -53% |
+| **Old startup** | **~7,400** | baseline |
 
 Target: 80% of sessions use Lite or Entity mode.
