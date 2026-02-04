@@ -2,8 +2,9 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** iCloud Cleanup
-> **Summary:** Cleaned up duplicate brain folders from iCloud root. Deleted legacy `~/iCloud/bizos/`, `~/iCloud/trading-brain/`, and `~/iCloud/trading-brain-backup/` folders that were remnants from pre-ClaudeHub migration. All active work now exclusively in `~/iCloud/ClaudeHub/`.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Tool Mode System
+> **Mode:** 💬 Lite | **Suggested next:** Lite
+> **Summary:** Installed TOOL_MODES.md to cto-brain. Reviewed and approved token-efficiency framework for managing Claude's tool usage across sessions.
 
 **Last Updated**: 2026-02-04
 **Updated By**: Claude (iCloud folder cleanup)
