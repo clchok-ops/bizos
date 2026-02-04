@@ -319,6 +319,7 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Complex n8n/WorkDrive architecture → over-engineering when email routing already exists
 - Browser automation for Power Automate/Forms → blocked by React SPA security, wasted 20+ min before switching to artifact approach
 - **[G-WORK-002]** Browser automation for GitHub file edits → CodeMirror editor blocks all programmatic input (form_input, JS setValue, typing). Solution: local file edits + auto-sync
+- **[G-WORK-003]** [2026-02-04] Claude guidance gaps — Multiple "No response requested" moments when user needed explicit commands. User asked "guide me" and got no immediate response. User confused about what to follow. **Fix:** Always provide copy-pasteable terminal commands proactively. Never assume user knows next step.
 
 ---
 
@@ -338,24 +339,21 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate — PTL 121 System (In Progress)
-1. **Test Flow 1** — Submit test form, verify:
-   - SharePoint item created
-   - Partner email sent with Form 2 link
-   - Form filled and ready in browser (not submitted yet)
+### Immediate — Kaizen Architecture Phase 1
+1. **Build entity_monitor.py** — Solartech risk scoring via Zoho CRM API
+2. **Build system_monitor.py** — Sync health, flag aging checks
+3. **Test monitors** — Run manually, verify outputs
 
-2. **Wire Flow 2: 121-OnPartnerResponse** — Form 2 → Update item → Email for validation
-
-3. **Wire Flows 3-5** — See `cto-brain/modules/grow-ptl/121_POWER_AUTOMATE_SETUP.md`
-
-### Parked (Resume after PTL 121)
-4. **Kaizen Architecture Phase 1** — entity_monitor.py, system_monitor.py
+### Parked
+4. **PTL 121 System** — Test Flow 1, wire Flows 2-5
 5. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Completed This Session
-- ✅ Captured all 3 Form IDs (saved to 121_BUILD_CHECKLIST.md)
-- ✅ Flow 1 wired (121-OnSubmission)
-- ✅ Created detailed Power Automate guide for beginners (`FLOW1_DETAILED_GUIDE.md`)
+- ✅ Kaizen Phase 0 complete — Zoho CRM + Inventory API working
+- ✅ CRM: read deals ✅, write tasks ✅
+- ✅ Inventory: read items ✅, org_id captured
+- ✅ Credentials stored: ~/Automation/config/zoho.env
+- ✅ zoho_client.py exists with retry logic
 
 ### Blocked
 - Zoho MCP connector — broken (missing criteria param), using direct API instead
