@@ -349,13 +349,13 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Completed This Session
-- ✅ **PTL 121 Flow 1 FIXED** — 121-OnSubmission now working end-to-end
-  - Root cause: Compose was outside For each loop, couldn't access Create_item outputs
-  - Fix: Added Compose 1 + Send an email (V2) 1 INSIDE the For each loop
-  - Compose 1 expression: `concat('https://forms.office.com/...&r121id=', string(outputs('Create_item')?['body/ID']))`
-  - Test: Form submitted → Flow ran successfully → Email sent with correct Form 2 URL
-- ✅ Deleted old broken Compose and For each 1 actions outside loop
-- ✅ Flow saved and tested with green "Your flow ran successfully" confirmation
+- ✅ **PTL 121 Flow 2 COMPLETE** — 121-OnPartnerResponse working end-to-end
+  - Trigger: Form 2 submission
+  - Actions: Get response details → Get SharePoint item → Update B_ fields → Send email to Player A
+  - Fix: Dynamic content for "Record ID" not showing in Get item action — used Compose action to capture the value, then used Compose output
+  - Test: Form 2 submitted → SharePoint updated → Email sent to Player A
+- ✅ Created FLOW2_SETUP_GUIDE.md with step-by-step instructions
+- ✅ Updated 121_BUILD_CHECKLIST.md to mark Flow 2 complete
 
 ### Previously Completed
 - ✅ Kaizen Phase 0 — Zoho CRM + Inventory API working
