@@ -287,15 +287,20 @@ class ZohoClient:
 
     def search_deals(self, criteria: str, fields: List[str] = None) -> Dict[str, Any]:
         """
-        Search deals using COQL criteria.
+        Search deals using criteria.
 
         Args:
-            criteria: COQL criteria (e.g., "((Stage:equals:Qualification)and(Amount:greater_than:50000))")
+            criteria: Search criteria (e.g., "Amount:greater_than:50000")
+                      For multiple: "(Stage:equals:Qualification)and(Amount:greater_than:50000)"
             fields: List of fields to return
 
         Returns:
             API response with matching deals
         """
+        # Wrap in parentheses if not already
+        if not criteria.startswith("("):
+            criteria = f"({criteria})"
+
         params = {"criteria": criteria}
         if fields:
             params["fields"] = ",".join(fields)
