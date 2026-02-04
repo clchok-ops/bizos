@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Brain maintenance
-> **Summary:** Fixed startup repetition bug — _CONTEXT.md was triggering startup-like behavior on every response due to "Session Protocol" wording. Clarified that startup/inbox checks only run on explicit "startup" command, not every interaction.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Architecture Phase 0
+> **Summary:** Completed Zoho API setup — created Self Client, generated refresh token, built zoho_client.py with retry logic (G-API-001). API tested: 2,682 deals accessible via v2 API. COQL needs separate scope, using pagination + Python filtering instead.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (fixed startup repetition bug in _CONTEXT.md)
+**Updated By**: Claude (Kaizen Architecture Phase 0 complete)
 ---
 
 
@@ -338,19 +338,25 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate — PTL 121 System (In Progress)
-1. **Wire Power Automate Flows** — Connect forms to SharePoint list
-   - Flow 1: 121 Weekly Feedback → Create item in 121_Log_v2
-   - Flow 2: 121 Partner Response → Update B_* fields in list
-   - Flow 3: 121 Delivery Confirmation → Update A_Delivered/B_Delivered + calculate points
-   - See: `cto-brain/modules/grow-ptl/POWER_AUTOMATE_FLOWS.md`
+### Immediate — Kaizen Architecture Phase 1
+1. **Build entity_monitor.py** — Solartech risk monitoring
+   - Load all deals via pagination (2,682 total)
+   - Apply risk scoring model from _CONTEXT.md
+   - Output high-risk deals to REVIEW_BACKLOG.md
+   - Location: `bizos/automation/entity_monitor.py`
 
-2. **Update Field Display Names** (Deferred) — For better UX
-   - Internal names are locked (won't break flows)
-   - Display names can be prettified anytime
+2. **Build system_monitor.py** — Sync health, flag aging
+   - Check _INBOX for stale files
+   - Check flags > 3 days old
+   - Location: `bizos/automation/system_monitor.py`
 
-### Parked (Resume after PTL 121)
-3. **Kaizen Architecture Phase 0: Zoho API Setup** — See `cto-brain/designs/KAIZEN_ARCHITECTURE_v1.md`
+3. **Set up cron job** — Daily monitoring
+   - Run monitors at 8 AM
+   - Log output to `~/Automation/logs/`
+
+### Parked
+4. **PTL 121 System** — Wire Power Automate flows (see `cto-brain/modules/grow-ptl/`)
+5. **[CHOK] Update Zoho CRM/Inventory reports to Daily**
 4. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Next Steps
@@ -358,14 +364,15 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 6. **Define first autonomous action** — What can Claude auto-do?
 
 ### Completed This Session
-- ~~121_Log_v2 SharePoint list~~ ✅ All 23 columns created and verified
-- ~~Review PTL 121 Forms~~ ✅ All 3 forms checked:
-  - 121 Weekly Feedback (7 fields) — Main submission
-  - 121 Delivery Confirmation (5 fields) — Partner delivery check
-  - 121 Partner Response (8 fields) — Partner validation
+- ~~Kaizen Phase 0: Zoho API Setup~~ ✅
+  - Created Self Client at api-console.zoho.com
+  - Generated refresh token (scopes: modules.ALL, settings.ALL)
+  - Built `bizos/automation/zoho_client.py` with retry logic
+  - Tested: 2,682 deals accessible via v2 API
+  - Note: COQL needs `ZohoCRM.coql.READ` scope — using pagination instead
 
 ### Blocked
-- Zoho MCP `list_open_deals` returning API errors — needs troubleshooting
+- Zoho MCP connector — broken (missing criteria param), using direct API instead
 - Eats365 API access — pending developer account request
 
 ---
