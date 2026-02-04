@@ -14,10 +14,9 @@
 
 
 ### For Claude (me):
-1. **START of session**: Read this entire file before responding to user
-2. **DURING session**: Reference active decisions and entity states
-3. **END of session**: Update relevant sections with new information, decisions, learnings
-4. **Always**: Keep entries concise, actionable, and timestamped
+1. **On "startup" command**: Read this file + GLOBAL_STANDARDS.md, check _INBOX, report status
+2. **During session**: Reference as needed (don't re-read or re-report)
+3. **On "end session" command**: Update relevant sections with new info, decisions, learnings
 
 
 ### For Chok:
@@ -469,14 +468,12 @@ Trading   ──► IBKR
     └── ARCHITECTURE.md
 ```
 
-**Session Protocol**:
-1. Claude reads `_CONTEXT.md`
-2. **🔴 CHECK `_INBOX/` FOR NEW DATA** (Critical - don't skip!)
-   - `ls -la _INBOX/` and `ls -la _INBOX/zoho/`
-   - Report new files with dates
-   - Offer to process before other work
-3. Work on highest priority from "Next Session Focus"
-4. Update `_CONTEXT.md` before session ends
+**Startup Protocol** (only when user says "startup"):
+1. Read `_CONTEXT.md` + `GLOBAL_STANDARDS.md`
+2. Check `_INBOX/` for new files
+3. Report status and offer to help
+
+**During Session**: Reference context as needed. Update `_CONTEXT.md` at end.
 
 **Commands**:
 | Command | What it does |
