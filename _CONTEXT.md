@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Architecture Phase 0
-> **Summary:** Completed Zoho API setup — created Self Client, generated refresh token, built zoho_client.py with retry logic (G-API-001). API tested: 2,682 deals accessible via v2 API. COQL needs separate scope, using pagination + Python filtering instead.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System Build
+> **Summary:** Captured all 3 Form IDs. Wired Flow 1 (121-OnSubmission). Created detailed Power Automate guide for PA beginners. Test submission ready but not submitted.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (Kaizen Architecture Phase 0 complete)
+**Updated By**: Claude (PTL 121 Flow 1 wired)
 ---
 
 
@@ -338,38 +338,24 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate — Kaizen Architecture Phase 1
-1. **Build entity_monitor.py** — Solartech risk monitoring
-   - Load all deals via pagination (2,682 total)
-   - Apply risk scoring model from _CONTEXT.md
-   - Output high-risk deals to REVIEW_BACKLOG.md
-   - Location: `bizos/automation/entity_monitor.py`
+### Immediate — PTL 121 System (In Progress)
+1. **Test Flow 1** — Submit test form, verify:
+   - SharePoint item created
+   - Partner email sent with Form 2 link
+   - Form filled and ready in browser (not submitted yet)
 
-2. **Build system_monitor.py** — Sync health, flag aging
-   - Check _INBOX for stale files
-   - Check flags > 3 days old
-   - Location: `bizos/automation/system_monitor.py`
+2. **Wire Flow 2: 121-OnPartnerResponse** — Form 2 → Update item → Email for validation
 
-3. **Set up cron job** — Daily monitoring
-   - Run monitors at 8 AM
-   - Log output to `~/Automation/logs/`
+3. **Wire Flows 3-5** — See `cto-brain/modules/grow-ptl/121_POWER_AUTOMATE_SETUP.md`
 
-### Parked
-4. **PTL 121 System** — Wire Power Automate flows (see `cto-brain/modules/grow-ptl/`)
-5. **[CHOK] Update Zoho CRM/Inventory reports to Daily**
-4. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
-
-### Next Steps
-5. **Solartech: Validate high-risk deals** — Does the flagged list match reality?
-6. **Define first autonomous action** — What can Claude auto-do?
+### Parked (Resume after PTL 121)
+4. **Kaizen Architecture Phase 1** — entity_monitor.py, system_monitor.py
+5. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Completed This Session
-- ~~Kaizen Phase 0: Zoho API Setup~~ ✅
-  - Created Self Client at api-console.zoho.com
-  - Generated refresh token (scopes: modules.ALL, settings.ALL)
-  - Built `bizos/automation/zoho_client.py` with retry logic
-  - Tested: 2,682 deals accessible via v2 API
-  - Note: COQL needs `ZohoCRM.coql.READ` scope — using pagination instead
+- ✅ Captured all 3 Form IDs (saved to 121_BUILD_CHECKLIST.md)
+- ✅ Flow 1 wired (121-OnSubmission)
+- ✅ Created detailed Power Automate guide for beginners (`FLOW1_DETAILED_GUIDE.md`)
 
 ### Blocked
 - Zoho MCP connector — broken (missing criteria param), using direct API instead
