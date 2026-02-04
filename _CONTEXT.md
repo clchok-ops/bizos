@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System Build
-> **Summary:** Captured all 3 Form IDs. Wired Flow 1 (121-OnSubmission). Created detailed Power Automate guide for PA beginners. Test submission ready but not submitted.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Phase 0 — Zoho API Setup
+> **Summary:** Phase 0 complete. Zoho CRM API (read/write) and Inventory API (read) both working. Credentials stored in ~/Automation/config/zoho.env. zoho_client.py ready. Ready for Phase 1 monitors.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (PTL 121 Flow 1 wired)
+**Updated By**: Claude (Zoho API setup complete)
 ---
 
 
@@ -369,8 +369,8 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 | System | Used By | Integration Status | Notes |
 |--------|---------|-------------------|-------|
-| **Zoho CRM** | Solartech, Hippos | Active | Sales pipeline, contacts, deals |
-| **Zoho Inventory** | Solartech, Hippos | Active | Stock management, orders |
+| **Zoho CRM** | Solartech, Hippos | ✅ API Ready | Read/write via zoho_client.py, refresh token in zoho.env |
+| **Zoho Inventory** | Solartech, Hippos | ✅ API Ready | Read via direct API, org_id=833030419 |
 | **Zoho Analytics** | Solartech, Hippos | Active | Dashboards and reporting |
 | **Odoo (MRP)** | WCI | Active | Manufacturing, BOMs, work orders |
 | **Odoo (Inventory)** | WCI | Active | Warehouse management |
