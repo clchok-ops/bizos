@@ -15,85 +15,92 @@ startup [brain] [focus] [+build]
 
 | Command | Loads | Tokens | Use Case |
 |---------|-------|--------|----------|
-| `startup` | bizos lite | ~500 | Quick check-in |
-| `startup solartech` | bizos + solartech | ~1,000 | Entity work |
-| `startup hippos` | bizos + hippos | ~1,000 | Entity work |
-| `startup kinme` | bizos + kinme | ~1,000 | Entity work |
-| `startup wci` | bizos + wci | ~1,000 | Entity work |
-| `startup bizos` | bizos full (all entities) | ~2,500 | Bizos infra work |
-| `startup brain` | cto-brain + GLOBAL_STANDARDS | ~3,500 | Engineering rules |
-| `startup trading` | trading brain | ~500 | Trading work |
-| `startup build` | bizos + GLOBAL_STANDARDS | ~3,500 | Technical work |
-| `startup [entity] build` | bizos + entity + GLOBAL_STANDARDS | ~4,000 | Technical + entity |
-| `startup trading build` | trading + GLOBAL_STANDARDS | ~3,500 | Technical + trading |
+| `startup` | bizos lite + critical rules | ~700 | Quick check-in |
+| `startup solartech` | bizos + solartech + critical | ~1,200 | Entity work |
+| `startup hippos` | bizos + hippos + critical | ~1,200 | Entity work |
+| `startup kinme` | bizos + kinme + critical | ~1,200 | Entity work |
+| `startup wci` | bizos + wci + critical | ~1,200 | Entity work |
+| `startup bizos` | bizos full + critical | ~2,700 | Bizos infra work |
+| `startup brain` | cto-brain + GLOBAL_STANDARDS | ~3,700 | Engineering rules |
+| `startup trading` | trading + critical | ~700 | Trading work |
+| `startup build` | bizos + GLOBAL_STANDARDS | ~3,700 | Technical work |
+
+**Always loaded:** `cto-brain/CRITICAL_RULES.md` (~200 tokens)
 
 **Modifiers:**
-- `build` — adds GLOBAL_STANDARDS.md (works with any brain)
+- `build` — adds full GLOBAL_STANDARDS.md
 - `crm` — adds CRM mode reminder (Zoho MCP limitations)
 
 ---
 
 ## Parsing Logic
 
-1. **Detect brain:**
+1. **Always load first:**
+   - `cto-brain/CRITICAL_RULES.md` (every startup, every brain)
+
+2. **Detect brain:**
    - `brain` → cto-brain
    - `trading` → trading brain
    - `bizos` → bizos full
    - anything else → bizos lite (default)
 
-2. **Detect focus (bizos only):**
+3. **Detect focus (bizos only):**
    - `solartech` → 02_Solartech/_ENTITY.md
    - `hippos` → 03_Hippos/_ENTITY.md
    - `kinme` → 05_Kinme/_ENTITY.md
    - `wci` → 04_WCI/_ENTITY.md
 
-3. **Detect modifiers:**
+4. **Detect modifiers:**
    - `build` → add GLOBAL_STANDARDS.md
    - `crm` → add CRM reminder
 
-4. **Special cases:**
-   - `startup brain` implies build (engineering work needs standards)
+5. **Special cases:**
+   - `startup brain` implies build (engineering work needs full standards)
 
 ---
 
 ## File Loading
 
+### Always (every startup)
+```
+cto-brain/CRITICAL_RULES.md
+```
+
 ### Bizos Lite (default)
 ```
-bizos/_CONTEXT.md
++ bizos/_CONTEXT.md
 ```
 
 ### Bizos + Entity
 ```
-bizos/_CONTEXT.md
-bizos/[folder]/_ENTITY.md
++ bizos/_CONTEXT.md
++ bizos/[folder]/_ENTITY.md
 ```
 
 ### Bizos Full
 ```
-bizos/_CONTEXT.md
-bizos/01_Trading/_ENTITY.md
-bizos/02_Solartech/_ENTITY.md
-bizos/03_Hippos/_ENTITY.md
-bizos/04_WCI/_ENTITY.md
-bizos/05_Kinme/_ENTITY.md
++ bizos/_CONTEXT.md
++ bizos/01_Trading/_ENTITY.md
++ bizos/02_Solartech/_ENTITY.md
++ bizos/03_Hippos/_ENTITY.md
++ bizos/04_WCI/_ENTITY.md
++ bizos/05_Kinme/_ENTITY.md
 ```
 
 ### CTO Brain
 ```
-cto-brain/_CONTEXT.md
-cto-brain/GLOBAL_STANDARDS.md
++ cto-brain/_CONTEXT.md
++ cto-brain/GLOBAL_STANDARDS.md
 ```
 
 ### Trading Brain
 ```
-trading/_CONTEXT.md
++ trading/_CONTEXT.md
 ```
 
 ### + Build Modifier
-Add to any of the above:
 ```
-cto-brain/GLOBAL_STANDARDS.md
++ cto-brain/GLOBAL_STANDARDS.md
 ```
 
 ---
@@ -106,7 +113,7 @@ cto-brain/GLOBAL_STANDARDS.md
 ```
 
 ### 2. Parse command and read files
-Use parallel `Read` calls for efficiency.
+Use parallel `Read` calls. Always include CRITICAL_RULES.md.
 
 ### 3. Check _INBOX (bizos only)
 ```bash
@@ -146,6 +153,20 @@ Mid-session: `mode build`, `mode lite`, `mode crm`
 
 ---
 
+## Improvement Loop
+
+When failures happen mid-session:
+```
+learn "[what failed and why]"
+```
+
+This triggers the learn skill which:
+1. Logs to FAILURE_LOG.md
+2. Extracts rule → adds to CRITICAL_RULES.md
+3. Rule active on next startup
+
+---
+
 ## File Structure
 
 ```
@@ -154,14 +175,11 @@ ClaudeHub/
 │   ├── _CONTEXT.md          ← Slim (flags, focus, status)
 │   ├── _archive/            ← Decisions, learnings (reference)
 │   ├── _INBOX/              ← Drop files for processing
-│   ├── 01_Trading/_ENTITY.md
-│   ├── 02_Solartech/_ENTITY.md
-│   ├── 03_Hippos/_ENTITY.md
-│   ├── 04_WCI/_ENTITY.md
-│   └── 05_Kinme/_ENTITY.md
+│   └── [entity]/_ENTITY.md  ← Entity-specific context
 ├── cto-brain/
 │   ├── _CONTEXT.md          ← Engineering work tracker
-│   └── GLOBAL_STANDARDS.md  ← Rules (loaded with build)
+│   ├── CRITICAL_RULES.md    ← 13 critical rules (ALWAYS loaded)
+│   └── GLOBAL_STANDARDS.md  ← Full rules (build mode)
 └── trading/
     └── _CONTEXT.md          ← Trading brain
 ```
@@ -172,11 +190,11 @@ ClaudeHub/
 
 | Mode | Est. Tokens | vs Old |
 |------|-------------|--------|
-| Lite | ~500 | -93% |
-| Entity | ~1,000 | -86% |
-| Bizos full | ~2,500 | -66% |
-| Brain | ~3,500 | -53% |
-| Build | ~3,500 | -53% |
+| Lite | ~700 | -91% |
+| Entity | ~1,200 | -84% |
+| Bizos full | ~2,700 | -64% |
+| Brain | ~3,700 | -50% |
+| Build | ~3,700 | -50% |
 | **Old startup** | **~7,400** | baseline |
 
-Target: 80% of sessions use Lite or Entity mode.
+Critical rules add ~200 tokens but prevent repeat failures.
