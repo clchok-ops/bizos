@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 """
 Quick test script for Zoho API connection.
-Run this to verify credentials are working.
-
-Usage:
-    python test_connection.py
+Usage: python3 test_connection.py
 """
 
 import sys
 from pathlib import Path
-
-# Add parent to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
 from zoho_client import ZohoClient
@@ -21,12 +16,10 @@ def main():
     print("=" * 50)
 
     try:
-        # Initialize client
         print("\n1. Loading credentials...")
         client = ZohoClient()
         print("   OK - Credentials loaded")
 
-        # Test deals access
         print("\n2. Testing Deals module...")
         deals_result = client.get_deals(per_page=5)
         deals = deals_result.get("data", [])
@@ -34,41 +27,41 @@ def main():
         for deal in deals[:3]:
             name = deal.get('Deal_Name', 'Unknown')
             stage = deal.get('Stage', 'Unknown')
-            amount = deal.get('Amount', 0)
+            amount = deal.get('Amount') or 0
             print(f"      - {name} | {stage} | RM {amount:,.0f}")
 
-        # Test COQL (this is what we'll use for risk monitoring)
-        print("\n3. Testing COQL query...")
-        coql_result = client.coql_query(
-            "SELECT Deal_Name, Amount, Stage FROM Deals LIMIT 3"
-        )
-        coql_deals = coql_result.get("data", [])
-        print(f"   OK - COQL working. Returned {len(coql_deals)} records")
+        print("\n3. Testing pagination (page 2)...")
+        page2 = client.get_deals(page=2, per_page=5)
+        deals2 = page2.get("data", [])
+        print(f"   OK - Pagination works. Page 2 has {len(deals2)} deals")
 
-        # Test COQL with filter (large deals)
-        print("\n4. Testing COQL filter (deals > 50K)...")
-        large_result = client.coql_query(
-            "SELECT Deal_Name, Amount, Stage FROM Deals WHERE Amount > 50000 LIMIT 5"
-        )
-        large_deals = large_result.get("data", [])
-        print(f"   OK - Found {len(large_deals)} large deals:")
-        for deal in large_deals[:3]:
-            print(f"      - {deal.get('Deal_Name')} | RM {deal.get('Amount', 0):,.0f}")
+        print("\n4. Counting total deals...")
+        total = 0
+        page = 1
+        while True:
+            result = client.get_deals(page=page, per_page=200)
+            data = result.get("data", [])
+            if not data:
+                break
+            total += len(data)
+            page += 1
+            if page > 50:  # Safety limit
+                break
+        print(f"   OK - Total deals accessible: {total}")
 
         print("\n" + "=" * 50)
         print("ALL TESTS PASSED!")
         print("Zoho API ready for Kaizen Architecture")
         print("=" * 50)
+        print("\nNote: COQL queries need ZohoCRM.coql.READ scope.")
+        print("We'll use pagination + Python filtering instead.")
         return True
 
     except Exception as e:
         print(f"\nERROR: {e}")
-        print("\nTroubleshooting:")
-        print("  1. Check .env file has correct credentials")
-        print("  2. Ensure refresh token hasn't been revoked")
-        print("  3. Verify API scopes in Zoho console")
+        import traceback
+        traceback.print_exc()
         return False
-
 
 if __name__ == "__main__":
     success = main()
