@@ -2,12 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Tool Mode System
-> **Mode:** 💬 Lite | **Suggested next:** Lite
-> **Summary:** Installed Tool Mode system (TOOL_MODES.md + updated skills). Token-efficiency framework for managing Claude's tool usage — 4 modes (Lite/Build/CRM/Full), defaults to Lite 80% of time.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 Flow 2
+> **Summary:** Built and tested Flow 2 (121-OnPartnerResponse). Form 2 submission now updates SharePoint and emails Player A. Fix: Used Compose action to pass Record ID to Get item (dynamic content workaround).
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (Tool Mode system install)
+**Updated By**: Claude (PTL 121 Flow 2 complete)
 ---
 
 
@@ -341,10 +340,9 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 > What to prioritize in the next working session
 
 ### Immediate — PTL 121 System Remaining Flows
-1. **Flow 2 (121-LogUpdate)** — Wire Form 2 submission to update SharePoint log
-2. **Flow 3 (121-ScoringEngine)** — Calculate PTL scores from log data
-3. **Flow 4 (121-AlertGenerator)** — Generate alerts based on thresholds
-4. **Flow 5 (121-Dashboard)** — Power BI dashboard integration
+1. **Flow 3 (121-OnFinalValidation)** — Email reply triggers completion + supervisor notification
+2. **Flow 4 (121-WeeklyDeliveryCheck)** — Monday scheduled flow for delivery confirmation
+3. **Flow 5 (121-OnDeliveryConfirmed)** — Award points based on Form 3 submission
 
 ### Parked
 - **Kaizen Architecture Phase 1** — entity_monitor.py, system_monitor.py
