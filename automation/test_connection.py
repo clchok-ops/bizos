@@ -37,21 +37,23 @@ def main():
             amount = deal.get('Amount', 0)
             print(f"      - {name} | {stage} | RM {amount:,.0f}")
 
-        # Test search
-        print("\n3. Testing search (large deals >50K)...")
-        search_result = client.search_deals(
-            criteria="Amount:greater_than:50000",
-        )
-        large_deals = search_result.get("data", [])
-        print(f"   OK - Search working. Found {len(large_deals)} large deals")
-
-        # Test COQL
-        print("\n4. Testing COQL query...")
+        # Test COQL (this is what we'll use for risk monitoring)
+        print("\n3. Testing COQL query...")
         coql_result = client.coql_query(
             "SELECT Deal_Name, Amount, Stage FROM Deals LIMIT 3"
         )
         coql_deals = coql_result.get("data", [])
         print(f"   OK - COQL working. Returned {len(coql_deals)} records")
+
+        # Test COQL with filter (large deals)
+        print("\n4. Testing COQL filter (deals > 50K)...")
+        large_result = client.coql_query(
+            "SELECT Deal_Name, Amount, Stage FROM Deals WHERE Amount > 50000 LIMIT 5"
+        )
+        large_deals = large_result.get("data", [])
+        print(f"   OK - Found {len(large_deals)} large deals:")
+        for deal in large_deals[:3]:
+            print(f"      - {deal.get('Deal_Name')} | RM {deal.get('Amount', 0):,.0f}")
 
         print("\n" + "=" * 50)
         print("ALL TESTS PASSED!")
