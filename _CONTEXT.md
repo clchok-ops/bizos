@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Cleanup
-> **Summary:** Deleted old brain folders from iCloud root (bizos, trading-brain, trading-brain-backup). All pre-migration remnants removed. ClaudeHub is now the single source of truth.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Architecture
+> **Summary:** Hard architecture review revealed BizOS was documentation pretending to be automation. Designed Kaizen Architecture v1: 6-layer system (Observation→Classification→Response→Review→Kaizen→Learning). Created infrastructure docs. Ready for Phase 0 (Zoho API setup).
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (old folder cleanup)
+**Updated By**: Claude (kaizen architecture design + documentation)
 ---
 
 
@@ -248,6 +248,19 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 > Record of decisions made and their outcomes
 
 ### 2026-02
+
+**[2026-02-04] Kaizen Architecture v1**
+- **Decision**: Redesign BizOS from task-management to kaizen engine
+- **Problem**: Previous architecture was "well-documented manual system masquerading as automated" — flags accumulated without action, rules existed without enforcement, learning was documented but not applied
+- **Solution**: 6-layer architecture (Observation → Classification → Response → Review → Kaizen → Learning) with:
+  - Continuous monitoring (entity + system + supply chain)
+  - Context-aware classification (CRITICAL/COLLECT/SUPPRESS)
+  - Scheduled reviews (weekly + monthly)
+  - Built-in kaizen mechanisms for self-improvement
+- **Entity Model**: Solartech (parent/distributor) ← WCI (manufacturing) → Hippos (residential B2C distribution partner)
+- **Outcome**: Design documented, infrastructure files created
+- **Implementation**: Phased build starting with Zoho API foundation
+- **Docs**: `cto-brain/designs/KAIZEN_ARCHITECTURE_v1.md`
 
 **[2026-02-04] Old Brain Folder Cleanup**
 - **Decision**: Delete legacy brain folders from iCloud root (pre-migration remnants)
