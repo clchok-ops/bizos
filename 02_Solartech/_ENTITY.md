@@ -1,0 +1,49 @@
+# Solartech Operations
+
+**Status:** 🟡 Risk model active | **Last:** 2026-01-31
+**Type:** Parent company, B2B distribution (solar/boiler/water)
+**Systems:** Zoho CRM (MCP connected), Zoho Inventory, SalesIQ
+
+---
+
+## Key Metrics
+- Total Pipeline: RM 207.9M (4,209 deals)
+- Active Pipeline: RM 114.8M (216 large deals >RM 50K)
+- Win Rate: 37.8% overall, **20.9% on large deals** ⚠️
+- At-Risk Value: **RM 20.5M** (24 high + 62 medium risk)
+
+## Risk Model (92.8% accuracy)
+
+| Signal | Points |
+|--------|--------|
+| Probability < 25% | +40 |
+| No activity > 90 days | +25 |
+| Sales cycle > 180 days | +15 |
+| Stage = Idle/Tender | +10 |
+| Owner win rate < 10% | +10 |
+
+Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
+
+## 🚨 Urgent Deals
+1. **PD-000127** (RM 1.59M) - Olivia Hwa - 347 days stuck
+2. **8 Tenders** (RM 4.1M) - Olivia Hwa - Dormant since Dec 10
+3. **PD-2160** (RM 55.6K) - Ahmad Shafiq - Owner 0% win rate
+
+## Pipeline Concentration Risk
+- Olivia Hwa + Siti Noor Bahiyah control 70% (RM 145M)
+- Top: Ted Wong 52% win rate
+- Bottom: Ahmad Shafiq, Chin Horng Liew 0%
+
+## Open Items
+- [x] Map systems → Zoho
+- [x] Export deals → 4,209 analyzed
+- [x] Build risk model → 92.8% accuracy
+- [x] Identify at-risk → RM 20.5M flagged
+- [ ] Validate high-risk list with Chok
+- [ ] Enable daily automated scan
+- [ ] Test Zoho write access for auto-flagging
+
+## Learnings
+- Large deals have 20.9% win rate vs 37.8% overall
+- Lost deals 67% larger than won (RM 392K vs RM 234K)
+- Owner performance varies 52 percentage points
