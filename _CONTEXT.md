@@ -4,10 +4,10 @@
 > **SESSION SNAPSHOT** (Quick Read)
 > **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Tool Mode System
 > **Mode:** 💬 Lite | **Suggested next:** Lite
-> **Summary:** Installed TOOL_MODES.md to cto-brain. Reviewed and approved token-efficiency framework for managing Claude's tool usage across sessions.
+> **Summary:** Installed Tool Mode system (TOOL_MODES.md + updated skills). Token-efficiency framework for managing Claude's tool usage — 4 modes (Lite/Build/CRM/Full), defaults to Lite 80% of time.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (iCloud folder cleanup)
+**Updated By**: Claude (Tool Mode system install)
 ---
 
 
