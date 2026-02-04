@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Architecture
-> **Summary:** Hard architecture review revealed BizOS was documentation pretending to be automation. Designed Kaizen Architecture v1: 6-layer system (Observation→Classification→Response→Review→Kaizen→Learning). Created infrastructure docs. Ready for Phase 0 (Zoho API setup).
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System Build
+> **Summary:** Completed 121_Log_v2 SharePoint list (all 23 columns). Reviewed all 3 PTL Microsoft Forms: 121 Weekly Feedback (7 fields), 121 Delivery Confirmation (5 fields), 121 Partner Response (8 fields). Infrastructure ready for Power Automate flow wiring.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (kaizen architecture design + documentation)
+**Updated By**: Claude (PTL 121 SharePoint list + forms review)
 ---
 
 
@@ -339,21 +339,19 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate — Kaizen Architecture Implementation
-1. **Phase 0: Zoho API Setup** — Foundation for all monitoring
-   - Go to https://api-console.zoho.com/
-   - Create Self Client
-   - Generate refresh token with CRM scopes
-   - Test connection
-   - See: `cto-brain/designs/KAIZEN_ARCHITECTURE_v1.md`
+### Immediate — PTL 121 System (In Progress)
+1. **Wire Power Automate Flows** — Connect forms to SharePoint list
+   - Flow 1: 121 Weekly Feedback → Create item in 121_Log_v2
+   - Flow 2: 121 Partner Response → Update B_* fields in list
+   - Flow 3: 121 Delivery Confirmation → Update A_Delivered/B_Delivered + calculate points
+   - See: `cto-brain/modules/grow-ptl/POWER_AUTOMATE_FLOWS.md`
 
-2. **Phase 1: Core Monitors** — After Zoho API working
-   - Build entity_monitor.py (Solartech risk monitoring)
-   - Build system_monitor.py (sync health, flag aging)
-   - Set up cron job
+2. **Update Field Display Names** (Deferred) — For better UX
+   - Internal names are locked (won't break flows)
+   - Display names can be prettified anytime
 
-### Parked (Resume after Kaizen infra)
-3. **[CHOK] Build PTL Phase 1: 121 System** — Setup guides in `cto-brain/modules/grow-ptl/`
+### Parked (Resume after PTL 121)
+3. **Kaizen Architecture Phase 0: Zoho API Setup** — See `cto-brain/designs/KAIZEN_ARCHITECTURE_v1.md`
 4. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Next Steps
