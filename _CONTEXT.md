@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System Build
-> **Summary:** Completed 121_Log_v2 SharePoint list (all 23 columns). Reviewed all 3 PTL Microsoft Forms: 121 Weekly Feedback (7 fields), 121 Delivery Confirmation (5 fields), 121 Partner Response (8 fields). Infrastructure ready for Power Automate flow wiring.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Brain maintenance
+> **Summary:** Fixed startup repetition bug — _CONTEXT.md was triggering startup-like behavior on every response due to "Session Protocol" wording. Clarified that startup/inbox checks only run on explicit "startup" command, not every interaction.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (PTL 121 SharePoint list + forms review)
+**Updated By**: Claude (fixed startup repetition bug in _CONTEXT.md)
 ---
 
 
