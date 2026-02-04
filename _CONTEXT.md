@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Kaizen Phase 0 — Zoho API Setup
-> **Summary:** Phase 0 complete. Zoho CRM API (read/write) and Inventory API (read) both working. Credentials stored in ~/Automation/config/zoho.env. zoho_client.py ready. Ready for Phase 1 monitors.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System — Flow 1 Fix
+> **Summary:** Fixed Flow 1 (121-OnSubmission) in Power Automate. Root cause: Compose action was outside For each loop but referencing outputs from Create_item inside loop. Moved Compose 1 + Send email inside loop. Full end-to-end test passed — form submission triggers flow, creates SharePoint item, generates Form 2 URL with r121id, sends email to partner.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (Zoho API setup complete)
+**Updated By**: Claude (PTL 121 Flow 1 fix + test)
 ---
 
 
@@ -339,17 +339,27 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate — Kaizen Architecture Phase 1
-1. **Build entity_monitor.py** — Solartech risk scoring via Zoho CRM API
-2. **Build system_monitor.py** — Sync health, flag aging checks
-3. **Test monitors** — Run manually, verify outputs
+### Immediate — PTL 121 System Remaining Flows
+1. **Flow 2 (121-LogUpdate)** — Wire Form 2 submission to update SharePoint log
+2. **Flow 3 (121-ScoringEngine)** — Calculate PTL scores from log data
+3. **Flow 4 (121-AlertGenerator)** — Generate alerts based on thresholds
+4. **Flow 5 (121-Dashboard)** — Power BI dashboard integration
 
 ### Parked
-4. **PTL 121 System** — Test Flow 1, wire Flows 2-5
-5. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
+- **Kaizen Architecture Phase 1** — entity_monitor.py, system_monitor.py
+- **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Completed This Session
-- ✅ Kaizen Phase 0 complete — Zoho CRM + Inventory API working
+- ✅ **PTL 121 Flow 1 FIXED** — 121-OnSubmission now working end-to-end
+  - Root cause: Compose was outside For each loop, couldn't access Create_item outputs
+  - Fix: Added Compose 1 + Send an email (V2) 1 INSIDE the For each loop
+  - Compose 1 expression: `concat('https://forms.office.com/...&r121id=', string(outputs('Create_item')?['body/ID']))`
+  - Test: Form submitted → Flow ran successfully → Email sent with correct Form 2 URL
+- ✅ Deleted old broken Compose and For each 1 actions outside loop
+- ✅ Flow saved and tested with green "Your flow ran successfully" confirmation
+
+### Previously Completed
+- ✅ Kaizen Phase 0 — Zoho CRM + Inventory API working
 - ✅ CRM: read deals ✅, write tasks ✅
 - ✅ Inventory: read items ✅, org_id captured
 - ✅ Credentials stored: ~/Automation/config/zoho.env
