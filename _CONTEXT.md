@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 System — Flow 1 Fix
-> **Summary:** Fixed Flow 1 (121-OnSubmission) in Power Automate. Root cause: Compose action was outside For each loop but referencing outputs from Create_item inside loop. Moved Compose 1 + Send email inside loop. Full end-to-end test passed — form submission triggers flow, creates SharePoint item, generates Form 2 URL with r121id, sends email to partner.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** iCloud Cleanup
+> **Summary:** Cleaned up duplicate brain folders from iCloud root. Deleted legacy `~/iCloud/bizos/`, `~/iCloud/trading-brain/`, and `~/iCloud/trading-brain-backup/` folders that were remnants from pre-ClaudeHub migration. All active work now exclusively in `~/iCloud/ClaudeHub/`.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (PTL 121 Flow 1 fix + test)
+**Updated By**: Claude (iCloud folder cleanup)
 ---
 
 
