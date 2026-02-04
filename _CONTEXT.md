@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-03 | **Flags:** 8 | **Task:** ClaudeHub Migration
-> **Summary:** Migrated to ClaudeHub architecture. All 3 brains (bizos, cto-brain, trading) now in single folder with unified auto-sync. Added G-WORK-002 and G-ARCH-001 rules. No more browser wrestling for GitHub edits.
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Cleanup
+> **Summary:** Deleted old brain folders from iCloud root (bizos, trading-brain, trading-brain-backup). All pre-migration remnants removed. ClaudeHub is now the single source of truth.
 
-**Last Updated**: 2026-02-03
-**Updated By**: Claude (ClaudeHub migration, architecture consolidation, new rules)
+**Last Updated**: 2026-02-04
+**Updated By**: Claude (old folder cleanup)
 ---
 
 
@@ -248,6 +248,14 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 > Record of decisions made and their outcomes
 
 ### 2026-02
+
+**[2026-02-04] Old Brain Folder Cleanup**
+- **Decision**: Delete legacy brain folders from iCloud root (pre-migration remnants)
+- **Deleted**:
+  - `~/iCloud/bizos/` — Only had PRICING_RULES_WORKBOOK.xlsx (already in ClaudeHub) + empty _INBOX
+  - `~/iCloud/trading-brain/` — Older _CONTEXT.md (99 lines vs 119 in ClaudeHub)
+  - `~/iCloud/trading-brain-backup/` — Redundant backup
+- **Outcome**: iCloud Drive cleaned up. All active work now exclusively in `~/iCloud/ClaudeHub/`
 
 **[2026-02-03] ClaudeHub Architecture Migration**
 - **Decision**: Consolidate all 3 brains (bizos, cto-brain, trading) into single ClaudeHub folder with unified auto-sync
