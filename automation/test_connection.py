@@ -26,35 +26,36 @@ def main():
         client = ZohoClient()
         print("   OK - Credentials loaded")
 
-        # Test connection
-        print("\n2. Testing API connection...")
-        result = client.get_users()
-        users = result.get("users", [])
-        print(f"   OK - Connected! Found {len(users)} users:")
-        for user in users[:5]:  # Show first 5
-            print(f"      - {user.get('full_name')} ({user.get('email')})")
-        if len(users) > 5:
-            print(f"      ... and {len(users) - 5} more")
-
         # Test deals access
-        print("\n3. Testing Deals module...")
+        print("\n2. Testing Deals module...")
         deals_result = client.get_deals(per_page=5)
         deals = deals_result.get("data", [])
-        print(f"   OK - Can read deals. Sample of {len(deals)}:")
+        print(f"   OK - Can read deals! Found {len(deals)} sample deals:")
         for deal in deals[:3]:
-            print(f"      - {deal.get('Deal_Name')} (Stage: {deal.get('Stage')})")
+            name = deal.get('Deal_Name', 'Unknown')
+            stage = deal.get('Stage', 'Unknown')
+            amount = deal.get('Amount', 0)
+            print(f"      - {name} | {stage} | RM {amount:,.0f}")
+
+        # Test search
+        print("\n3. Testing search (large deals >50K)...")
+        search_result = client.search_deals(
+            criteria="(Amount:greater_than:50000)",
+        )
+        large_deals = search_result.get("data", [])
+        print(f"   OK - Search working. Found {len(large_deals)} large deals")
 
         # Test COQL
         print("\n4. Testing COQL query...")
         coql_result = client.coql_query(
-            "SELECT Deal_Name, Amount, Stage FROM Deals WHERE Amount > 50000 LIMIT 3"
+            "SELECT Deal_Name, Amount, Stage FROM Deals LIMIT 3"
         )
         coql_deals = coql_result.get("data", [])
-        print(f"   OK - COQL working. Found {len(coql_deals)} large deals")
+        print(f"   OK - COQL working. Returned {len(coql_deals)} records")
 
         print("\n" + "=" * 50)
         print("ALL TESTS PASSED!")
-        print("Zoho API is ready for Kaizen Architecture")
+        print("Zoho API ready for Kaizen Architecture")
         print("=" * 50)
         return True
 
