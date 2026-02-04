@@ -40,7 +40,7 @@ def main():
         # Test search
         print("\n3. Testing search (large deals >50K)...")
         search_result = client.search_deals(
-            criteria="(Amount:greater_than:50000)",
+            criteria="Amount:greater_than:50000",
         )
         large_deals = search_result.get("data", [])
         print(f"   OK - Search working. Found {len(large_deals)} large deals")
