@@ -2,11 +2,11 @@
 > **Purpose**: This is Claude's persistent memory. Read this at the START of every session. Update it at the END of every session.
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** PTL 121 Flow 2
-> **Summary:** Built and tested Flow 2 (121-OnPartnerResponse). Form 2 submission now updates SharePoint and emails Player A. Fix: Used Compose action to pass Record ID to Get item (dynamic content workaround).
+> **Last:** 2026-02-04 | **Flags:** 8 | **Task:** Skill updates
+> **Summary:** Updated startup and end-session skills to include Tool Modes (Lite/Build/CRM/Full). Created TOOL_MODES.md in cto-brain. Packaged .skill files for installation.
 
 **Last Updated**: 2026-02-04
-**Updated By**: Claude (PTL 121 Flow 2 complete)
+**Updated By**: Claude (skill updates)
 ---
 
 
