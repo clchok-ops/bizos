@@ -339,17 +339,22 @@ Risk Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 
 > What to prioritize in the next working session
 
-### Immediate
-1. **[CHOK] Build PTL Phase 1: 121 System** — Setup guides complete, ready for Chok to implement
-   - SharePoint list: `cto-brain/modules/grow-ptl/121_SHAREPOINT_SETUP.md`
-   - Forms: `cto-brain/modules/grow-ptl/121_FORMS_SETUP.md`
-   - Power Automate: `cto-brain/modules/grow-ptl/121_POWER_AUTOMATE_SETUP.md`
-   - Master checklist: `cto-brain/modules/grow-ptl/121_BUILD_CHECKLIST.md`
-2. **Build PTL Phase 2: Kaizen System** — Create Kaizen_Log list + submission form + review flow
+### Immediate — Kaizen Architecture Implementation
+1. **Phase 0: Zoho API Setup** — Foundation for all monitoring
+   - Go to https://api-console.zoho.com/
+   - Create Self Client
+   - Generate refresh token with CRM scopes
+   - Test connection
+   - See: `cto-brain/designs/KAIZEN_ARCHITECTURE_v1.md`
 
-### Pending (Chok Config)
-3. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
-4. **[CHOK] Create missing reports** — Win/Loss, Aging Deals
+2. **Phase 1: Core Monitors** — After Zoho API working
+   - Build entity_monitor.py (Solartech risk monitoring)
+   - Build system_monitor.py (sync health, flag aging)
+   - Set up cron job
+
+### Parked (Resume after Kaizen infra)
+3. **[CHOK] Build PTL Phase 1: 121 System** — Setup guides in `cto-brain/modules/grow-ptl/`
+4. **[CHOK] Update Zoho CRM/Inventory reports to Daily** — See `02_Solartech/REPORT_CONFIGURATION.md`
 
 ### Next Steps
 5. **Solartech: Validate high-risk deals** — Does the flagged list match reality?
