@@ -34,24 +34,27 @@
 
 ---
 
-## 2. Conflict Analysis
+## 2. Conflict Analysis & Decisions
 
-### ✅ NO CONFLICTS
+### ✅ CONFIRMED APPROACH: Parallel Fields
+
+| Decision | Outcome |
+|----------|---------|
+| Category handling | **Parallel fields** — Add `Category_Code` alongside existing `Product Category` |
+| Zone storage | **Store in Zoho** (not calculated on export) |
+| CONTRACT in Margins | **Keep** — Used for outsourced services margins |
+| D- prefix items | **Duplicates** — Mark for deactivation |
+
+### ✅ NO BREAKING CHANGES
 
 | Check | Result |
 |-------|--------|
 | Business Unit alignment | ✅ 9/9 BUs match between Item Master and Margins |
-| Category naming | ✅ Will ADD Category_Code, not replace Category |
-| Brand naming | ✅ Will ADD Brand_Code, not replace Brand |
+| Category naming | ✅ ADD Category_Code as NEW field, keep Product Category |
+| Brand naming | ✅ ADD Brand_Code as NEW field, keep Brand |
 | SKU format | ✅ Keep existing SKUs, add Vendor_SKU as optional |
-
-### ⚠️ DECISIONS NEEDED
-
-| Issue | Options | Recommendation |
-|-------|---------|----------------|
-| CONTRACT in Margins | 1) Add to BU list 2) Remove from Margins | Clarify with Kwan — is this used? |
-| Zone auto-derive? | 1) Store in Zoho 2) Calculate on export | Store in Zoho (simpler queries) |
-| Item_Type scope | Apply to Items only, or also Composites? | Apply to all (unified schema) |
+| Active records | ✅ Existing data untouched, new fields populate over time |
+| User workflow | ✅ Users continue with Product Category, Category_Code for system use |
 
 ---
 
