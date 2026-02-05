@@ -54,6 +54,14 @@ Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - [ ] Test Zoho write access for auto-flagging
 
 ## Learnings
+
+**Pipeline Risk:**
 - Large deals have 20.9% win rate vs 37.8% overall
 - Lost deals 67% larger than won (RM 392K vs RM 234K)
 - Owner performance varies 52 percentage points
+
+**PTL 121 Automation (2026-02-06):**
+- Power Automate email To field has hidden mode switch for dynamic expressions
+- Must click ⚙️ → "Use dynamic content" to accept expressions in loops
+- Person-picker mode (default) silently rejects expressions - no error message
+- Timezone must be Singapore Standard Time (UTC+08:00) for local business hours
