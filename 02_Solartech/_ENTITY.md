@@ -1,6 +1,6 @@
 # Solartech Operations
 
-**Status:** 🟢 PTL Flow 4 built | **Last:** 2026-02-06
+**Status:** 🟡 PTL Flow 5 ready to build | **Last:** 2026-02-06
 **Type:** Parent company, B2B distribution (solar/boiler/water)
 **Systems:** Zoho CRM (MCP connected), Zoho Inventory, SalesIQ
 
@@ -40,9 +40,13 @@ Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - [x] Flow 2: Partner response handler (Form 2 → SharePoint + email)
 - [x] Flow 3: Final validation (email trigger → supervisor notification)
 - [x] Flow 4: Weekly delivery check (scheduled Monday 9AM SGT)
-- [ ] Flow 5: Delivery confirmation handler (Form 3 → points)
+- [ ] Flow 5: Delivery confirmation handler (Form 3 → points) ⚠️ **Implementation guide ready**
 - [ ] End-to-end testing
 - [ ] Pilot rollout
+
+**Documentation Created (2026-02-06):**
+- PTL_Flow5_Implementation.md (step-by-step build guide)
+- PTL_121_System_Overview.md (complete architecture diagram)
 
 **Pipeline Risk:**
 - [x] Map systems → Zoho
