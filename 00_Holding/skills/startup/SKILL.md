@@ -107,10 +107,20 @@ cto-brain/CRITICAL_RULES.md
 
 ## Checklist
 
-### 1. Mount ClaudeHub
+### 1. Mount ClaudeHub (REQUIRED)
+
+**Check if mounted:**
+```bash
+ls /mnt/ClaudeHub/bizos/_CONTEXT.md 2>/dev/null
 ```
-~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub
+
+**If NOT mounted → request it:**
 ```
+mcp__cowork__request_cowork_directory
+```
+Path: `~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub`
+
+**STOP if mount fails.** Cannot proceed without ClaudeHub access.
 
 ### 2. Parse command and read files
 Use parallel `Read` calls. Always include CRITICAL_RULES.md.
