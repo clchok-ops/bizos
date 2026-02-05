@@ -319,7 +319,7 @@ All items MUST have Item_Type:
 - `COMP_SALES` — Sales composites (pricing bundles)
 
 ### Rule A3: No Duplicate SKUs
-SKU must be unique. Use `D-` prefix ONLY to mark items for deactivation (not for variants).
+SKU must be unique. `D-` prefix marks duplicate items for deactivation.
 
 ### Rule A4: Composite Validation
 All `Mapped Item SKU` in Composite Master must exist in Item Master before activation.
