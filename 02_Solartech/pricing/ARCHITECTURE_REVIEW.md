@@ -195,19 +195,87 @@ REPORTING:
 - Items with Category_Code: 864 (57%)
 - Items Needing Review: 660 (43%) — highlighted yellow
 
-### Phase 3: Bulk Update
+### Phase 3: Master File Updates (PENDING - Team to finalize first)
 
-- [ ] Export Zoho items
-- [ ] Merge with mapping file
+- [ ] Team finalizes SKU Item Master & SKU Composite Master updates
+- [ ] Add new columns to master sheets (copies, not originals):
+  - Category_Code, Brand_Code, Zone, Item_Type, Vendor_SKU
+- [ ] Apply mapping rules (see Section 7 below)
+- [ ] Review and validate mappings
+
+### Phase 4: Zoho Import
+
+- [ ] Export fresh Zoho items
+- [ ] Merge master files with new field columns
 - [ ] Import to Zoho (update mode)
 - [ ] Validate counts match
 
-### Phase 4: Composites
+### Phase 5: Composites
 
 - [ ] Update Composite Master with new fields
 - [ ] Validate all mapped SKUs exist
-- [ ] Mark D- items as Inactive/Duplicate
+- [ ] D- prefix items: Keep active for now, remove later when confirmed
+
+---
+
+## 7. Mapping Rules (Confirmed)
+
+### 7.1 Category_Code Assignment
+
+**From Category field:**
+
+| Category Pattern | Code | Zone |
+|-----------------|------|------|
+| 1. Inverters | INV | S |
+| 2. Energy Storage / Storge | ESS | S |
+| 3. BOS & Protection (all variants) | BOS | S |
+| 4. PV Module/Modules | MOD | S |
+| 5. Hot Water System/Systems | HWS | W |
+| 6. Water Treatment | WTS | W |
+| 7. Water Consumables | WCN | W |
+| 8. Fasteners | FAS | G |
+| 9. Consumables | CNS | G |
+| 10. Tools & PPE | TOL | G |
+| 11. Mechanical Infra | MEC | G |
+| 12. Electrical Infra | ELE | G |
+| 13. Mounting & Structure | MNT | G |
+| 14. Services / Labour & Fees / Equipment Rental | SVC | V |
+
+### 7.2 Brand_Code Assignment
+
+**KINETICO special rules:**
+- Contains "CARTRIDGE" or "MEDIA" (salt/resin) → **WCN** (consumable)
+- Everything else (systems, parts, MACH models) → **WTS**
+- Note: MACH is a model name, not a category indicator
+
+**Brand → Code mapping (from BRAND_CODE_MASTER.md)**
+
+### 7.3 Item_Type Assignment
+
+**SKU Item Master:**
+- All existing items → **ITEM**
+
+**SKU Composite Master:**
+- No Sub-Category → **COMP_SALES**
+- Has Sub-Category → **COMP_OPS** (pending team updates)
+
+### 7.4 D- Prefix Items
+
+- Keep **Active** for now
+- Remove/deactivate later when confirmed all deals no longer use them
+
+---
+
+## 8. Working Files (Source of Truth)
+
+| File | Purpose | Key Sheet |
+|------|---------|-----------|
+| **SKU Item Master.xlsm** | Item management | The SKU Master |
+| **SKU Composite Master.xlsx** | Composite management | The Composite Master |
+
+**Workflow:** Zoho Export → PASTE_ZOHO_HERE → MASTER (ID↔SKU correlation) → Update MASTER → Import to Zoho
 
 ---
 
 *Review Date: 2026-02-05*
+*Next: Team to finalize master updates, then apply mapping rules*
