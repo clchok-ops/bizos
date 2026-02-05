@@ -101,14 +101,30 @@ INV, ESS, BOS, MOD, HWS, WTS, WCN...
 | Labour & Fees | SVC | (merge into Services) |
 | Equipment Rental | SVC | (merge into Services) |
 
-### 2.3 Zone Assignment
+### 2.3 Zone vs Business Unit (Distinct Purposes)
 
-| Zone | Code | Business Units |
-|------|------|----------------|
-| Solar | S | Solar: Residential, Commercial, Infrastructure |
-| Water | W | Water: Residential, Commercial, Infrastructure, Recurring |
-| General | G | Services, Tools, Mechanical |
-| Services | V | Labour & Fees, Equipment Rental |
+**Zone** = Manages allowed categories (warehouse/inventory focus)
+
+| Zone | Code | Allowed Categories |
+|------|------|-------------------|
+| Solar | S | INV, ESS, BOS, MOD |
+| Water | W | HWS, WTS, WCN |
+| General | G | MEC, ELE, FAS, CNS, TOL, MNT |
+| Services | V | SVC |
+
+**Business Unit** = Drives pricing tiers/margins
+
+| Business Unit | Pricing Tier | Dealer? |
+|---------------|--------------|---------|
+| Solar: Residential (B2C) | 62.5% margin | Yes (56%) |
+| Solar: Commercial (C&I) | 62.5% margin | No |
+| Solar: Infrastructure | 62.5% margin | No |
+| Water: Residential (B2C) | TBD | TBD |
+| Water: Commercial (C&I) | TBD | TBD |
+| Water: Infrastructure | TBD | TBD |
+| Water: Recurring Care (Opex) | TBD | TBD |
+| Services: Labour & Fees | 90% margin | No |
+| Services: Equipment Rental | TBD | No |
 
 ---
 
@@ -167,7 +183,7 @@ These need standardization and code assignment:
 | PV INSTALLATION KIT | → MNT subcategory |
 | COMBINER BOX PREFAB | → BOS subcategory |
 | BATTERY KIT PREFAB | → ESS subcategory |
-| Stump | ❌ Invalid — needs review |
+| Stump | → MNT subcategory |
 
 ---
 
