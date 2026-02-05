@@ -1,7 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-04 | **Flags:** 8 active | **Mode:** 💬 Lite
+**Last:** 2026-02-05 | **Flags:** 8 active | **Mode:** 🖥️ CRM Deep Dive
+
+> **SESSION SNAPSHOT** (Quick Read)
+> **Last:** 2026-02-05 | **Flags:** 8 | **Task:** Zoho CRM Architecture Documentation
+> **Mode:** 🖥️ CRM | **Suggested next:** 💬 Lite or 🔧 Build (PTL flows)
+> **Summary:** Completed 100% Zoho CRM architecture documentation v1.4 — added Layout Rules, Quotes module (B2B/B2C, IPP), Approval Processes, Users/Profiles/Roles hierarchy
 
 ---
 
@@ -27,6 +32,8 @@
 - Flow 4: 121-WeeklyDeliveryCheck
 - Flow 5: 121-OnDeliveryConfirmed
 
+**Completed:** SOLARTECH_ARCHITECTURE.md v1.4 (100% Zoho CRM documented)
+
 **Parked:** Kaizen Architecture Phase 1, Zoho report frequency updates
 
 ---
@@ -36,7 +43,7 @@
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
 | Trading | 🟡 Setting up | Jan 31 | Journal ready, no trades logged |
-| Solartech | 🟡 Risk model | Jan 31 | RM 20.5M flagged, API ready |
+| Solartech | 🟢 Documented | Feb 5 | Architecture v1.4 complete, API ready |
 | Hippos | 🟢 Flowing | Feb 2 | 5 enquiries/day, daily reports on |
 | WCI | 🟡 To map | — | Odoo identified |
 | Kinme | 🟢 Analyzed | Feb 2 | RM 227K/mo, stock alerts active |
