@@ -171,19 +171,29 @@ REPORTING:
 - [ ] Clarify CONTRACT business unit
 - [ ] Decide who creates Zoho custom fields
 
-### Phase 1: Zoho Setup
+### Phase 1: Zoho Setup ✅ COMPLETE (2026-02-05)
 
-- [ ] Create 6 custom fields in Zoho Inventory
-- [ ] Set up dropdown values for Zone, Item_Type, Status_Clean
+- [x] Create 5 custom fields in Zoho Inventory (Status_Clean deferred)
+  - Category_Code (Text, Mandatory)
+  - Brand_Code (Text, Mandatory, Default: OEM)
+  - Zone (Dropdown: S/W/G/V, Mandatory)
+  - Vendor_SKU (Text, Optional)
+  - Item_Type (Dropdown: ITEM/COMP_OPS/COMP_SALES, Mandatory, Default: ITEM)
+- [x] Set up dropdown values for Zone, Item_Type
 - [ ] Test with 1 item manually
 
-### Phase 2: Data Preparation
+### Phase 2: Data Preparation ✅ COMPLETE (2026-02-05)
 
-- [ ] Generate mapping file from CLEANUP_WORKBOOK
-- [ ] Map all 404 items to Category_Code
-- [ ] Map all 20 brands to Brand_Code
-- [ ] Calculate Zone for all items
-- [ ] Assign Item_Type (all existing = ITEM)
+- [x] Generate mapping file: `ZOHO_BULK_UPDATE_MAPPING.xlsx`
+- [x] Map 864 active items to Category_Code (660 need manual review)
+- [x] Map all brands to Brand_Code (33 brands → codes)
+- [x] Calculate Zone for all items with categories
+- [x] Assign Item_Type = ITEM for all existing items
+
+**Mapping File Stats:**
+- Total Active Items: 1,524
+- Items with Category_Code: 864 (57%)
+- Items Needing Review: 660 (43%) — highlighted yellow
 
 ### Phase 3: Bulk Update
 
