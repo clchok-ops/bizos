@@ -1,6 +1,6 @@
 # Solartech Operations
 
-**Status:** 🟡 Risk model active | **Last:** 2026-01-31
+**Status:** 🟢 PTL Flow 4 built | **Last:** 2026-02-06
 **Type:** Parent company, B2B distribution (solar/boiler/water)
 **Systems:** Zoho CRM (MCP connected), Zoho Inventory, SalesIQ
 
@@ -35,6 +35,16 @@ Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - Bottom: Ahmad Shafiq, Chin Horng Liew 0%
 
 ## Open Items
+
+**PTL 121 System:**
+- [x] Flow 2: Partner response handler (Form 2 → SharePoint + email)
+- [x] Flow 3: Final validation (email trigger → supervisor notification)
+- [x] Flow 4: Weekly delivery check (scheduled Monday 9AM SGT)
+- [ ] Flow 5: Delivery confirmation handler (Form 3 → points)
+- [ ] End-to-end testing
+- [ ] Pilot rollout
+
+**Pipeline Risk:**
 - [x] Map systems → Zoho
 - [x] Export deals → 4,209 analyzed
 - [x] Build risk model → 92.8% accuracy
