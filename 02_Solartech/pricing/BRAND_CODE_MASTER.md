@@ -114,14 +114,34 @@ Single source of truth for:
 
 ---
 
-## 3. Zone Codes
+## 3. Zone Codes (Category Management)
 
-| Zone | Code | Business Units |
-|------|------|----------------|
-| Solar | S | Solar: Residential, Commercial, Infrastructure |
-| Water | W | Water: Residential, Commercial, Infrastructure, Recurring Care |
-| General | G | Mechanical, Electrical, Tools, Consumables |
-| Services | V | Labour & Fees, Equipment Rental |
+**Purpose:** Zone manages allowed categories (warehouse/inventory focus)
+
+| Zone | Code | Allowed Categories |
+|------|------|--------------------|
+| Solar | S | INV, ESS, BOS, MOD |
+| Water | W | HWS, WTS, WCN |
+| General | G | MEC, ELE, FAS, CNS, TOL, MNT |
+| Services | V | SVC |
+
+**Auto-derivation:** Zone is calculated from Category_Code, not manually assigned.
+
+## 3.1 Business Unit Codes (Pricing Tiers)
+
+**Purpose:** Business Unit drives pricing/margins (separate from Zone)
+
+| Business Unit | Code | Margin | Dealer? |
+|---------------|------|--------|---------|
+| Solar: Residential (B2C) | SOL-B2C | 62.5% | Yes (56%) |
+| Solar: Commercial (C&I) | SOL-CI | 62.5% | No |
+| Solar: Infrastructure | SOL-INF | 62.5% | No |
+| Water: Residential (B2C) | WAT-B2C | TBD | TBD |
+| Water: Commercial (C&I) | WAT-CI | TBD | TBD |
+| Water: Infrastructure | WAT-INF | TBD | TBD |
+| Water: Recurring Care | WAT-RC | TBD | TBD |
+| Services: Labour & Fees | SVC-LAB | 90% | No |
+| Services: Equipment Rental | SVC-EQP | TBD | No |
 
 ---
 
