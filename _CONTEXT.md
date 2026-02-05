@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-05 | **Flags:** 8 active | **Mode:** 🖥️ CRM Deep Dive
+**Last:** 2026-02-05 | **Flags:** 8 active | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-05 | **Flags:** 8 | **Task:** Zoho CRM Architecture Documentation
-> **Mode:** 🖥️ CRM | **Suggested next:** 💬 Lite or 🔧 Build (PTL flows)
-> **Summary:** Completed 100% Zoho CRM architecture documentation v1.4 — added Layout Rules, Quotes module (B2B/B2C, IPP), Approval Processes, Users/Profiles/Roles hierarchy
+> **Last:** 2026-02-05 | **Flags:** 8 | **Task:** Startup/Learn/End-session skill redesign
+> **Mode:** 🔧 Build | **Suggested next:** 💬 Lite
+> **Summary:** Redesigned startup system — slim _CONTEXT.md (501→69 lines), CRITICAL_RULES.md (13 rules always loaded), learn skill for kaizen loop, entity-focused startup commands
 
 ---
 
@@ -32,7 +32,9 @@
 - Flow 4: 121-WeeklyDeliveryCheck
 - Flow 5: 121-OnDeliveryConfirmed
 
-**Completed:** SOLARTECH_ARCHITECTURE.md v1.4 (100% Zoho CRM documented)
+**Completed:**
+- SOLARTECH_ARCHITECTURE.md v1.4 (100% Zoho CRM documented)
+- Startup/learn/end-session skill redesign with kaizen loop
 
 **Parked:** Kaizen Architecture Phase 1, Zoho report frequency updates
 
