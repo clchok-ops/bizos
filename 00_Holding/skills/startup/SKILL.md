@@ -109,23 +109,27 @@ cto-brain/CRITICAL_RULES.md
 
 ### 1. Mount ClaudeHub (REQUIRED)
 
-**Try to read a file first using Glob:**
-```
-Glob: **/ClaudeHub/bizos/_CONTEXT.md
-```
-
-**If no results → request mount:**
+**ALWAYS request mount first:**
 ```
 mcp__cowork__request_cowork_directory
 ```
-User should select: `~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub`
 
-**After mount, use the returned VM path** (e.g., `/sessions/xxx/mnt/ClaudeHub/`)
+User selects: `~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeHub`
 
-**STOP if mount fails.** Cannot proceed without ClaudeHub access.
+The tool returns the VM path like `/sessions/xxx/mnt/ClaudeHub/` — **use this exact path** for all subsequent Read calls.
 
-### 2. Parse command and read files
-Use parallel `Read` calls with the mounted path. Always include CRITICAL_RULES.md.
+**STOP if mount fails or folder is empty.** Cannot proceed without ClaudeHub access.
+
+### 2. Read files using the mounted path
+
+Example for `startup solartech`:
+```
+Read: [VM_PATH]/cto-brain/CRITICAL_RULES.md
+Read: [VM_PATH]/bizos/_CONTEXT.md
+Read: [VM_PATH]/bizos/02_Solartech/_ENTITY.md
+```
+
+Use parallel Read calls. Always include CRITICAL_RULES.md.
 
 ### 3. Check _INBOX (bizos only)
 ```bash
