@@ -55,10 +55,11 @@
 ## Quick Ref
 
 **Startup commands:**
-- `startup` → This file only (lite)
-- `startup solartech` → This + Solartech entity
-- `startup build` → This + GLOBAL_STANDARDS (for technical work)
-- `startup full` → Everything
+- `startup` → This + CRITICAL_RULES (lite)
+- `startup [entity]` → This + entity + CRITICAL_RULES
+- `startup bizos` → Full bizos (all entities)
+- `startup brain` → CTO brain + GLOBAL_STANDARDS
+- `startup build` → This + GLOBAL_STANDARDS
 
 **Mid-session:** `mode build`, `mode lite`, `mode crm`
 
