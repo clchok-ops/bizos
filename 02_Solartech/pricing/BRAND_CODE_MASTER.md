@@ -160,7 +160,31 @@ Single source of truth for:
 
 ---
 
-## 5. Architecture Rules
+## 5. Item Type Codes
+
+| Item_Type | Description | Source |
+|-----------|-------------|--------|
+| `ITEM` | Standard inventory item | Item Master (404 items) |
+| `COMP_OPS` | Ops composite (internal assembly) | Ops Composite Master |
+| `COMP_SALES` | Sales composite (pricing bundle) | Sales Composite / Pricing Master |
+
+## 6. Vendor SKU Field
+
+**Purpose:** Store supplier's original code for traceability (reorders, warranty)
+
+| Field | Required | Example |
+|-------|----------|---------|
+| `SKU` | Yes | Internal code (11215, AV-421-63) |
+| `Vendor_SKU` | Optional | Supplier's code (HMS-2000-4T) |
+
+**Notes:**
+- Many KINETICO numeric codes ARE vendor codes — document in Vendor_SKU
+- COMP- prefix items → WCI vendor codes
+- Helps with: supplier reorders, warranty claims, cross-referencing
+
+---
+
+## 8. Architecture Rules
 
 ### Rule A1: New Items Must Have Codes
 All new items require:
@@ -191,6 +215,7 @@ Zone must match Business Unit:
 
 | Date | Change | By |
 |------|--------|-----|
+| 2026-02-05 | v1.1 — Added Item_Type, Vendor_SKU, BU pricing tiers | CTO Bot |
 | 2026-02-05 | v1.0 — Approved brand list from Kwan tab | CTO Bot |
 | 2026-02-03 | Draft v0.1 — Initial brand list | CTO Bot |
 
