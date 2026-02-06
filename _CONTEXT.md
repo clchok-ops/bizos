@@ -27,16 +27,18 @@
 
 ## Next Focus
 
-**Immediate:** PTL 121 remaining flows (3, 4, 5)
-- Flow 3: 121-OnFinalValidation
-- Flow 4: 121-WeeklyDeliveryCheck
-- Flow 5: 121-OnDeliveryConfirmed
+**Immediate:** Fill in role KPI targets
+- Solartech roles have templates, need actual RM targets
+- Hippos/WCI need role definitions
 
 **Completed:**
-- SOLARTECH_ARCHITECTURE.md v1.4 (100% Zoho CRM documented)
-- Startup/learn/end-session skill redesign with kaizen loop
+- PTL 100-pt framework (bizos/00_Holding/PTL_FRAMEWORK.md)
+- Role-based KPI structure for all 3 entities
+- Bizos structure cleanup + STRUCTURE.md
+- Structure validation in startup/end-session skills (staged)
+- F-012, F-013 logged + G-DOC-005, G-SKILL-001 added
 
-**Parked:** Kaizen Architecture Phase 1, Zoho report frequency updates
+**Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
 ---
 
@@ -45,9 +47,9 @@
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
 | Trading | 🟡 Setting up | Jan 31 | Journal ready, no trades logged |
-| Solartech | 🟢 Documented | Feb 5 | Architecture v1.4 complete, API ready |
-| Hippos | 🟢 Flowing | Feb 2 | 5 enquiries/day, daily reports on |
-| WCI | 🟡 To map | — | Odoo identified |
+| Solartech | 🟢 Structured | Feb 6 | Org chart, roles/, TTL_KPIS.md added |
+| Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
+| WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Analyzed | Feb 2 | RM 227K/mo, stock alerts active |
 
 **Deep dive:** `startup [entity]` to load full entity context.
