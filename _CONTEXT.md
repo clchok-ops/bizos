@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-05 | **Flags:** 8 active | **Mode:** 🔧 Build
+**Last:** 2026-02-06 | **Flags:** 8 active | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-05 | **Flags:** 8 | **Task:** Startup/Learn/End-session skill redesign
+> **Last:** 2026-02-06 | **Flags:** 8 | **Task:** PTL framework + bizos structure alignment
 > **Mode:** 🔧 Build | **Suggested next:** 💬 Lite
-> **Summary:** Redesigned startup system — slim _CONTEXT.md (501→69 lines), CRITICAL_RULES.md (13 rules always loaded), learn skill for kaizen loop, entity-focused startup commands
+> **Summary:** Documented PTL 100-pt model, created role-based KPI structure for all entities, major bizos cleanup (archived stale files, created STRUCTURE.md), added structure validation to skills, 3 new rules (G-DOC-005, G-SKILL-001)
 
 ---
 
