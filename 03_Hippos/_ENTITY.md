@@ -1,10 +1,12 @@
 # Hippos Operations
 
-**Status:** 🟢 Data flowing | **Last:** 2026-02-05
+**Status:** 🟢 Data flowing | **Last:** 2026-02-06
 **Type:** B2C retail/service (Super Hippo = solar water heaters)
 **Systems:** Zoho CRM (org685901257), Inventory (TBD)
 **Org ID:** 685901257 (separate from Solartech 798433294)
 **Transition:** Moving to solar and energy management this year
+
+**Related:** `TTL_KPIS.md`, `roles/`
 
 ---
 

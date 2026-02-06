@@ -1,8 +1,10 @@
 # WCI (Water-Care Industries)
 
-**Status:** 🟡 To map | **Last:** —
+**Status:** 🟡 To map | **Last:** 2026-02-06
 **Type:** Boiler manufacturer
 **Systems:** Odoo (MRP, Inventory, Sales/CRM)
+
+**Related:** `TTL_KPIS.md`, `roles/`
 
 ---
 
