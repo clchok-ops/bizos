@@ -6,6 +6,39 @@
 
 ---
 
+## Organization Structure
+
+```
+GROUP LEVEL (Shared Services)
+├── CEO: Dad
+├── COO: Chok
+├── Purchasing Lead: Kwan
+├── XP Lead: Yee Xiang
+├── People: Chui Geok
+└── Admin
+
+SOLARTECH
+├── Sales
+│   ├── B2C Specialists
+│   │   ├── Pods (new structure, building)
+│   │   └── Senior Solo: Bryan, Ted
+│   │
+│   └── B2B Specialists
+│       ├── BD Lead - Housing: Olivia
+│       ├── BD Lead - C&I: Bay
+│       ├── BD Solo: Shafiq
+│       └── Project Engineer
+│
+└── Operations (Head: Kima)
+    ├── Projects
+    └── Logistics
+        └── Warehouse
+```
+
+**Related:** `SALES_CHANNELS.md`, `COMPENSATION.md`
+
+---
+
 ## Key Metrics
 - Total Pipeline: RM 207.9M (4,209 deals)
 - Active Pipeline: RM 114.8M (216 large deals >RM 50K)
@@ -44,7 +77,7 @@ Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 - [ ] End-to-end testing
 - [ ] Pilot rollout
 
-**Documentation Created (2026-02-06):**
+**Documentation (in cto-brain/modules/grow-ptl/):**
 - PTL_Flow5_Implementation.md (step-by-step build guide)
 - PTL_121_System_Overview.md (complete architecture diagram)
 
