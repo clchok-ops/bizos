@@ -35,7 +35,7 @@ SOLARTECH
         └── Warehouse
 ```
 
-**Related:** `SALES_CHANNELS.md`, `COMPENSATION.md`
+**Related:** `TTL_KPIS.md`, `SALES_CHANNELS.md`, `COMPENSATION.md`, `roles/`
 
 ---
 
