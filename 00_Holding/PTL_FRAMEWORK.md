@@ -29,6 +29,27 @@ Team (Company/Entity)
 
 ---
 
+## Role-Based KPIs
+
+**Principle:** Framework is universal. Distinction is in role and responsibility.
+
+- All players use the same 5 areas with same weightings
+- Key Results KPIs are role-specific (what "success" means differs by role)
+- Grow, 121, Kaizen, Customer apply equally to all levels
+
+**Structure per entity:**
+```
+bizos/[entity]/
+├── _ENTITY.md           ← Org chart, TTL targets
+├── TTL_KPIS.md          ← Entity-level performance targets
+└── roles/
+    └── [Role].md        ← Key Results KPIs for that role
+```
+
+**Example:** A Pod Lead's Key Results include team metrics; an Associate's are individual targets. Both are measured on the same 20-point scale.
+
+---
+
 ## Scoring Model
 
 ### 5 Key Areas (100 points total)
