@@ -4,9 +4,9 @@
 **Last:** 2026-02-07 | **Flags:** 8 active | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-07 | **Flags:** 8 | **Task:** Full ClaudeHub conflict audit + structural fixes
+> **Last:** 2026-02-07 | **Flags:** 8 | **Task:** ClaudeHub cleanup completion + design review + skill evolution
 > **Mode:** 💬 Lite | **Suggested next:** 💬 Lite
-> **Summary:** Full ClaudeHub audit: removed 01_Trading from bizos (personal trading → trading/ repo), cleaned root orphans, fixed GLOBAL_STANDARDS (malformed code, rule count 14→20, added G-DOC-004/005), created Kinme roles/, fixed Pydantic v2 mismatch, documented read-only bridge for personal-finance, added `startup finance` command
+> **Summary:** Completed zoho-solartech migration (CONTEXT.md→_ENTITY.md, PROJECT_STANDARDS→zoho/ZOHO_STANDARDS.md, deleted stale ARCHITECTURE.md). Full design-vs-reality review (96% compliant). Fixed remaining 01_Trading refs in README, BIZOS_GUIDE, cto-brain/ARCHITECTURE. Created Kinme TTL_KPIS.md. Logged F-017 + G-WORK-006. Added S-009 pattern. Evolved startup/end-session skills with design spot-checks and cleanup backlog processing.
 
 ---
 
@@ -52,10 +52,10 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Solartech | 🟢 Structured | Feb 6 | Org chart, roles/, TTL_KPIS.md added |
+| Solartech | 🟢 Structured | Feb 7 | Zoho context merged into _ENTITY.md, zoho/ZOHO_STANDARDS.md created |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
-| Kinme | 🟢 Analyzed | Feb 2 | RM 227K/mo, stock alerts active |
+| Kinme | 🟢 Structured | Feb 7 | TTL_KPIS.md created, RM 227K/mo, stock alerts active |
 
 > **Note:** Trading removed from bizos 2026-02-07. Managed in separate `trading/` repo.
 
