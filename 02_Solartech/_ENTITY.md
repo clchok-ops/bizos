@@ -35,7 +35,49 @@ SOLARTECH
         └── Warehouse
 ```
 
-**Related:** `TTL_KPIS.md`, `SALES_CHANNELS.md`, `COMPENSATION.md`, `roles/`
+**Related:** `TTL_KPIS.md`, `SALES_CHANNELS.md`, `COMPENSATION.md`, `roles/`, `zoho/ZOHO_STANDARDS.md`
+
+---
+
+## Business Context
+
+**Domain:** waterhippos.com
+**Primary CRM Use:** Sales pipeline, customer management, service tracking
+
+**Key Workflows:**
+- Community Project: Drone inspection assessment reports → PDF via mail merge email (active)
+- Lead Assignment: Route incoming leads to sales reps (rules TBD)
+- Pipeline Risk: Automated deal health scoring (building)
+
+**Business Rules:**
+- Profit margin threshold: 15% (flag if below)
+- Daily kWp targets tracking
+- Sales performance dashboards
+
+**Stakeholders:**
+
+| Role | Needs | Primary System |
+|------|-------|----------------|
+| Sales Team | Lead management, deal tracking | Zoho CRM |
+| Operations | Installation scheduling, reports | Zoho CRM + Analytics |
+| Management | Dashboards, KPIs | Zoho Analytics |
+
+**Technical Constraints:**
+- Must work within Zoho ecosystem
+- Email: Office 365 (waterhippos.com, SPF + DKIM configured)
+- Limited budget for external tools (prefer Zoho-native)
+
+**Terminology:**
+
+| Term | Definition |
+|------|------------|
+| kWp | Kilowatt-peak — measure of solar panel output |
+
+**Historical Issues Resolved (Jan 2025):**
+- Mail merge module name mismatch
+- Email authentication (SPF/DKIM) configuration
+- PDF attachment size limits
+- Zoho Analytics multi-column sorting workaround
 
 ---
 
