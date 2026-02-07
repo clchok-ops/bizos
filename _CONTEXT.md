@@ -38,6 +38,12 @@
 - Structure validation in startup/end-session skills (staged)
 - F-012, F-013 logged + G-DOC-005, G-SKILL-001 added
 
+**Cleanup backlog** (fix opportunistically while working in this space):
+- [ ] `REVIEW_FRAMEWORK.md` at bizos root — not documented in STRUCTURE.md. Add to STRUCTURE.md or move to 00_Holding/
+- [ ] `automation/` folder at bizos root — Zoho Python client, not in STRUCTURE.md. Document in STRUCTURE.md under a new "Automation" section
+- [ ] Hippos, WCI, Kinme roles/ — scaffolded only (_ROLES_INDEX.md). Populate when doing entity work
+- [ ] 00_Holding/ has extra files (N8N_AUTOMATIONS, SETUP_CHECKLIST, SETUP_PLAYBOOK, thresholds.json) not listed in STRUCTURE.md
+
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
 ---
