@@ -1,6 +1,6 @@
 # Solartech Operations
 
-**Status:** 🟡 PTL Flow 5 ready to build | **Last:** 2026-02-06
+**Status:** 🟡 PTL Flow 5 ready to build | **Last:** 2026-02-07
 **Type:** Parent company, B2B distribution (solar/boiler/water)
 **Systems:** Zoho CRM (MCP connected), Zoho Inventory, SalesIQ
 
