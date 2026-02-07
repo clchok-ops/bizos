@@ -71,11 +71,12 @@ Each entity folder (`[NN]_[Name]/`) should have:
 
 | Folder | Name | Status |
 |--------|------|--------|
-| `01_Trading/` | Trading | Active |
 | `02_Solartech/` | Solartech | Active |
 | `03_Hippos/` | Hippos | Active |
 | `04_WCI/` | WCI | Active |
 | `05_Kinme/` | Kinme | Active |
+
+> **Note:** 01_Trading was removed from bizos on 2026-02-07. Personal trading is managed in the separate `trading/` repo. See `_archive/01_Trading/` for historical context.
 
 ---
 
@@ -94,7 +95,7 @@ Each entity folder (`[NN]_[Name]/`) should have:
 Run at session start and end:
 
 ```
-For each entity in [01-05]:
+For each entity in [02-05]:
   ✓ _ENTITY.md exists
   ✓ TTL_KPIS.md exists
   ✓ roles/ folder exists
