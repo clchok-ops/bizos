@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-06 | **Flags:** 8 active | **Mode:** 🔧 Build
+**Last:** 2026-02-07 | **Flags:** 8 active | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-06 | **Flags:** 8 | **Task:** PTL framework + bizos structure alignment
-> **Mode:** 🔧 Build | **Suggested next:** 💬 Lite
-> **Summary:** Documented PTL 100-pt model, created role-based KPI structure for all entities, major bizos cleanup (archived stale files, created STRUCTURE.md), added structure validation to skills, 3 new rules (G-DOC-005, G-SKILL-001)
+> **Last:** 2026-02-07 | **Flags:** 8 | **Task:** Full ClaudeHub conflict audit + structural fixes
+> **Mode:** 💬 Lite | **Suggested next:** 💬 Lite
+> **Summary:** Full ClaudeHub audit: removed 01_Trading from bizos (personal trading → trading/ repo), cleaned root orphans, fixed GLOBAL_STANDARDS (malformed code, rule count 14→20, added G-DOC-004/005), created Kinme roles/, fixed Pydantic v2 mismatch, documented read-only bridge for personal-finance, added `startup finance` command
 
 ---
 
@@ -46,11 +46,12 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Trading | 🟡 Setting up | Jan 31 | Journal ready, no trades logged |
 | Solartech | 🟢 Structured | Feb 6 | Org chart, roles/, TTL_KPIS.md added |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Analyzed | Feb 2 | RM 227K/mo, stock alerts active |
+
+> **Note:** Trading removed from bizos 2026-02-07. Managed in separate `trading/` repo.
 
 **Deep dive:** `startup [entity]` to load full entity context.
 
