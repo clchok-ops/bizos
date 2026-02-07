@@ -69,5 +69,6 @@
 
 **Locations:**
 - Entity details: `[entity]/_ENTITY.md`
-- Decisions/learnings: `_archive/`
+- Learning docs: `docs/` (FAILURE_LOG, BIZOS_RULES, BIZOS_PATTERNS, BIZOS_KAIZEN)
+- Historical decisions/learnings: `_archive/` (preserved, migrated to docs/)
 - Standards: `cto-brain/GLOBAL_STANDARDS.md`
