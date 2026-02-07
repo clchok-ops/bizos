@@ -2,7 +2,7 @@
 
 > Canonical map of what should exist. Validate at session start and end.
 
-**Last Updated:** 2026-02-06
+**Last Updated:** 2026-02-07
 
 ---
 
@@ -13,6 +13,17 @@
 | `_CONTEXT.md` | Session memory - read at startup, update at end | ✓ |
 | `STRUCTURE.md` | This file - canonical structure map | ✓ |
 | `README.md` | Repo overview for humans | ✓ |
+
+---
+
+## Learning Infrastructure (docs/)
+
+| File | Purpose |
+|------|---------|
+| `docs/FAILURE_LOG.md` | Post-mortems of bizos failures → rules |
+| `docs/BIZOS_RULES.md` | Preventive rules (System/Process/Model) |
+| `docs/BIZOS_PATTERNS.md` | Success patterns to replicate |
+| `docs/BIZOS_KAIZEN.md` | Experiments across 3 kaizen layers |
 
 ---
 
@@ -72,7 +83,7 @@ Each entity folder (`[NN]_[Name]/`) should have:
 
 | Folder | Purpose |
 |--------|---------|
-| `_archive/` | Superseded/deprecated files |
+| `_archive/` | Superseded/deprecated files (includes pre-structured learnings.md, decisions.md) |
 | `_briefs/` | Daily brief outputs (if active) |
 | `_INBOX/` | Processing queue |
 
