@@ -30,11 +30,12 @@ BizOS is an AI-powered operating system for managing your portfolio of businesse
 
 | Entity | Type | Primary System |
 |--------|------|----------------|
-| **Trading** | Investment (IBKR) | IBKR API |
 | **Solartech** | B2B Distribution | Zoho One |
 | **Hippos** | B2C Retail/Service | Zoho One |
 | **WCI** | Manufacturing | Odoo |
 | **Kinme** | F&B (Izakaya) | EatPOS365 |
+
+> **Note:** Trading was removed from bizos (2026-02-07). It lives in the separate `trading/` repo.
 
 ### Core Principles
 
@@ -120,12 +121,6 @@ BizOS/                          ← Root folder (synced to iCloud)
 │   ├── thresholds.json            - Alert threshold config
 │   ├── portfolio_dashboard.xlsx   - (future) Cross-entity view
 │   └── decision_log.md            - (future) Major decisions
-│
-├── 01_Trading/                 ← IBKR Trading (ISOLATED)
-│   ├── TRADING_SYSTEM.md          - Methodology & philosophy
-│   ├── journal.xlsx               - (future) Trade log
-│   ├── performance.xlsx           - (future) Metrics dashboard
-│   └── strategies/                - (future) Strategy docs
 │
 ├── 02_Solartech/               ← B2B Distribution
 │   ├── pricing_master.xlsx        - (future) Product pricing
@@ -220,30 +215,6 @@ You: "Let's wrap up - update context and summarize"
 ---
 
 ## Entity Breakdown
-
-### 01_Trading (IBKR)
-
-**Philosophy**: Learn first, systematize later. No rules until patterns emerge from data.
-
-**Key Files**:
-- `TRADING_SYSTEM.md` — Methodology, journal structure, metrics
-- `journal.xlsx` — Every trade logged with rationale and outcome
-- `performance.xlsx` — Metrics dashboard (win rate, drawdown, etc.)
-
-**Key Metrics**:
-| Metric | Description | Target |
-|--------|-------------|--------|
-| Win Rate | % trades profitable | >40% |
-| R-Multiple | Risk-adjusted return | >1.5 avg |
-| Max Drawdown | Peak-to-trough decline | <5% |
-| Profit Factor | Gross profit / gross loss | >1.5 |
-
-**Thresholds** (see `thresholds.json`):
-- Drawdown >5% → Alert
-- Daily loss >2% → Alert
-- 5 consecutive losses → Alert
-
----
 
 ### 02_Solartech (B2B Distribution)
 
@@ -660,13 +631,11 @@ Note: Consider which sections should be shared (maybe not Trading?).
 | `_CONTEXT.md` | Claude's memory | `/BizOS/` |
 | `thresholds.json` | Alert triggers | `/00_Holding/` |
 | `N8N_AUTOMATIONS.md` | Workflow specs | `/00_Holding/` |
-| `TRADING_SYSTEM.md` | Trading methodology | `/01_Trading/` |
 | `KINME_SYSTEM.md` | F&B CFO toolkit | `/05_Kinme/` |
 
 ### Entity-System Map
 
 ```
-Trading   → IBKR
 Solartech → Zoho (CRM, Inventory, Analytics)
 Hippos    → Zoho (CRM, Inventory, Analytics)
 WCI       → Odoo (MRP, Inventory, Sales)

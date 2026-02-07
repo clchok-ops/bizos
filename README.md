@@ -10,11 +10,12 @@ BizOS is a self-improving system for managing multiple business entities with au
 
 | Entity | Type | System | Status |
 |--------|------|--------|--------|
-| **Trading** | Investment (IBKR) | IBKR API | Active |
 | **Solartech** | B2B Distribution | Zoho One | Active |
 | **Hippos** | B2C Retail/Service | Zoho One | Active |
 | **WCI** | Manufacturing | Odoo | Active |
 | **Kinme** | F&B (Izakaya) | Eats365 | Active |
+
+> **Note:** Trading was removed from bizos on 2026-02-07. It lives in the separate `trading/` repo — see `cto-brain/GLOBAL_STANDARDS.md` → G-ARCH-001.
 
 ## Structure
 
@@ -23,7 +24,6 @@ BizOS/
 ├── _CONTEXT.md           # Claude's persistent memory
 ├── _INBOX/               # Drop zone for data imports
 ├── 00_Holding/           # Portfolio-level docs & config
-├── 01_Trading/           # IBKR trading system
 ├── 02_Solartech/         # B2B solar/boiler/water distribution
 ├── 03_Hippos/            # B2C retail (Water Hippos → Solar)
 ├── 04_WCI/               # Boiler manufacturing
