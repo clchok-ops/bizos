@@ -23,7 +23,7 @@
 - [x] Identify POS → Eats365
 - [x] Export sales data
 - [x] Build CFO Toolkit → kinme_cfo_toolkit.xlsx
-- [ ] Request Eats365 API developer access
+- [ ] Request Eats365 API developer access (Merchant Portal → Integration → Developer Portal → Connect New App)
 - [ ] Export 30 days historical for trends
 - [ ] Input food costs into toolkit
 - [ ] Investigate discount patterns
