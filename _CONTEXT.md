@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-07 | **Flags:** 8 active | **Mode:** 💬 Lite
+**Last:** 2026-02-08 | **Flags:** 8 active | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-07 | **Flags:** 8 | **Task:** ClaudeHub cleanup completion + design review + skill evolution
-> **Mode:** 💬 Lite | **Suggested next:** 💬 Lite
-> **Summary:** Completed zoho-solartech migration (CONTEXT.md→_ENTITY.md, PROJECT_STANDARDS→zoho/ZOHO_STANDARDS.md, deleted stale ARCHITECTURE.md). Full design-vs-reality review (96% compliant). Fixed remaining 01_Trading refs in README, BIZOS_GUIDE, cto-brain/ARCHITECTURE. Created Kinme TTL_KPIS.md. Logged F-017 + G-WORK-006. Added S-009 pattern. Evolved startup/end-session skills with design spot-checks and cleanup backlog processing.
+> **Last:** 2026-02-08 | **Flags:** 8 | **Task:** Agent end-game strategy + Builder Agent + n8n deployment
+> **Mode:** 💬 Lite | **Suggested next:** 🔧 Build
+> **Summary:** Designed full multi-agent strategy (cto-brain/designs/AGENT_STRATEGY_v1.md). Architecture: Builder Agent (brain) → n8n on Railway (muscle) → Telegram (interface). Built Builder Agent infrastructure (builder/, BUILD_LOG, CHECKLIST, RULES, specs). Packaged builder.skill. Deployed n8n on Railway (n8n-production-f0e6.up.railway.app). Created Telegram bot @chokops_bot. Generated Kinme Daily Sales workflow spec. Builder Agent skill installed and running build all.
 
 ---
 
@@ -27,7 +27,14 @@
 
 ## Next Focus
 
-**Immediate:** Fill in role KPI targets
+**Immediate:** Builder Agent generates all 7 n8n workflows
+- Builder skill running `build all` — generates workflow JSONs from specs
+- Import generated workflows into n8n on Railway
+- Add Telegram bot credentials to n8n (TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID)
+- Test first workflow (Kinme Daily Sales) end-to-end
+- Remaining workflow specs needed: Solartech Pipeline, Hippos/WCI Weekly, Trading Daily, Finance Listener, Morning Brief, Watchdog
+
+**Then:** Fill in role KPI targets
 - Solartech roles have templates, need actual RM targets
 - Hippos/WCI need role definitions
 
