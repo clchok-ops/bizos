@@ -4,9 +4,9 @@
 **Last:** 2026-02-08 | **Flags:** 8 active | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-08 | **Flags:** 8 | **Task:** Agent end-game strategy + Builder Agent + n8n deployment
-> **Mode:** 💬 Lite | **Suggested next:** 🔧 Build
-> **Summary:** Designed full multi-agent strategy (cto-brain/designs/AGENT_STRATEGY_v1.md). Architecture: Builder Agent (brain) → n8n on Railway (muscle) → Telegram (interface). Built Builder Agent infrastructure (builder/, BUILD_LOG, CHECKLIST, RULES, specs). Packaged builder.skill. Deployed n8n on Railway (n8n-production-f0e6.up.railway.app). Created Telegram bot @chokops_bot. Generated Kinme Daily Sales workflow spec. Builder Agent skill installed and running build all.
+> **Last:** 2026-02-08 | **Flags:** 8 | **Task:** Deploy @chokops_bot + WF02 to n8n
+> **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
+> **Summary:** Deployed @chokops_bot Telegram bot to n8n. Fixed WF02 chatId bug (invalid $credentials → $vars.TELEGRAM_CHAT_ID). Created Telegram + Anthropic credentials in n8n. WF02 imported. Eats365 API access pending (Merchant Portal → Integration → Developer Portal). Logged F-019 + G-BUILD-001. ⚠️ iCloud sync wiped builder/ files — need to recreate BUILD_LOG, CHECKLIST, RULES, specs, runbooks next session.
 
 ---
 
@@ -30,7 +30,9 @@
 **Immediate:** Builder Agent generates all 7 n8n workflows
 - Builder skill running `build all` — generates workflow JSONs from specs
 - Import generated workflows into n8n on Railway
-- Add Telegram bot credentials to n8n (TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID)
+- ~~Add Telegram bot credentials to n8n~~ ✅ Done (telegram_bot_token + TELEGRAM_CHAT_ID variable)
+- Request Eats365 API access (Merchant Portal → Integration → Developer Portal → Connect New App)
+- Recreate builder/ files wiped by iCloud sync (BUILD_LOG, CHECKLIST, RULES, WF02 JSON, runbooks, specs)
 - Test first workflow (Kinme Daily Sales) end-to-end
 - Remaining workflow specs needed: Solartech Pipeline, Hippos/WCI Weekly, Trading Daily, Finance Listener, Morning Brief, Watchdog
 
