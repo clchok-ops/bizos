@@ -53,6 +53,13 @@
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
+**Agent Infrastructure (new):**
+- Strategy: `cto-brain/designs/AGENT_STRATEGY_v1.md`
+- Builder: `cto-brain/builder/` (BUILD_LOG, CHECKLIST, RULES, specs/, artifacts/, runbooks/)
+- n8n: `https://n8n-production-f0e6.up.railway.app` (Railway, Asia/Kuala_Lumpur TZ)
+- Telegram: @chokops_bot (chat ID: 8412712971)
+- Builder skill: installed in Cowork (invoke with `builder`)
+
 ---
 
 ## Entity Status
