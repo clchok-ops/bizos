@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-08 | **Flags:** 8 active | **Mode:** 💬 Lite
+**Last:** 2026-02-09 | **Flags:** 8 active | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-08 | **Flags:** 8 | **Task:** Deploy @chokops_bot + WF02 to n8n
+> **Last:** 2026-02-09 | **Flags:** 8 | **Task:** Log F-020 iCloud sync wipe + add G-ARCH-003
 > **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
-> **Summary:** Deployed @chokops_bot Telegram bot to n8n. Fixed WF02 chatId bug (invalid $credentials → $vars.TELEGRAM_CHAT_ID). Created Telegram + Anthropic credentials in n8n. WF02 imported. Eats365 API access pending (Merchant Portal → Integration → Developer Portal). Logged F-019 + G-BUILD-001. ⚠️ iCloud sync wiped builder/ files — need to recreate BUILD_LOG, CHECKLIST, RULES, specs, runbooks next session.
+> **Summary:** Completed F-020 post-mortem (parallel session sync wipe that destroyed 8 builder/ files). Added G-ARCH-003 to GLOBAL_STANDARDS + CRITICAL_RULES: never run parallel write sessions to same ClaudeHub repo. 32 rules, 23 critical. Next: recover wiped files from git history, complete remaining 6 workflow specs, get Eats365 API for WF02 test.
 
 ---
 
