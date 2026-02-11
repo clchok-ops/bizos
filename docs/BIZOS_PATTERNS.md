@@ -43,7 +43,48 @@ Patterns can also be graduated from candidates after validation.
 
 ## Logged Patterns
 
-(none yet)
+### [P-BIZ-001] Fix Infrastructure Before Building Monitors
+**Added:** 2026-02-11
+**Layer:** System
+**Entity:** Solartech
+
+**The Pattern:**
+When operational pain points emerge (slow quoting, missed billing, customer dissatisfaction), investigate root cause before building monitoring bots. In Solartech's case, 7 pain points across the quote-to-delivery pipeline (slow quoting, stale prices, hot vs junk leads, quote-BOM disconnect, workplan missing details, missed SalesIQ msgs, no customer onboarding) traced back to Zoho configuration gaps and data quality issues — not missing alerts.
+
+**Why It Works:**
+Monitoring bots on top of broken infrastructure just give fancier alerts about the same mess. Fixing the source (pricing data, composite mappings, stage gating, mandatory fields) prevents failures rather than reporting them.
+
+**Evidence:**
+- 87% of SKUs have no pricing in Zoho → forces manual spreadsheet calc for every quote
+- 101 orphan composite mappings → quote line items disconnect from ops BOM
+- No mandatory fields at stage transitions → information lost at every handoff
+- All 7 pain points trace to data/config gaps, not missing visibility
+
+**When to Use:**
+Any time operational breakdowns are identified across an entity. Always map the full process pipeline and identify whether the fix is infrastructure (config, data, process gates) vs monitoring (alerts, dashboards, reports). Infrastructure first, monitoring second.
+
+---
+
+### [P-BIZ-002] Zoho CRM API v8 Enables Programmatic Infrastructure Deployment
+**Added:** 2026-02-11
+**Layer:** System
+**Entity:** Solartech
+
+**The Pattern:**
+Zoho CRM API v8 supports creating custom fields, workflow rules, email notifications, and deploying Deluge functions programmatically. Zoho Inventory API supports full CRUD on items, composites, and price lists. This means an agent can deploy Zoho infrastructure via API — not just generate guides for manual UI work.
+
+**Why It Works:**
+Reduces dependency on manual UI configuration. An agent can produce AND deploy Deluge scripts, workflow rules, data migrations, and validation functions. Only Blueprints require initial UI creation (API can modify existing ones only).
+
+**Evidence:**
+- CRM API v8: custom fields ✓, workflow rules ✓, email notifications ✓, Deluge functions ✓
+- Inventory API: items ✓, composites ✓, price lists ✓
+- Blueprints: UI-only for creation, API for modification
+- SalesIQ: partial API (visitor tracking, chat config), bot creation UI-only
+- Forms: data-focused API only, form creation UI-only
+
+**When to Use:**
+When scoping any Zoho automation project. Classify each piece of work as API-deployable vs UI-only. Design agent outputs accordingly — API artifacts for automatable work, step-by-step guides for UI-only work.
 
 ---
 
