@@ -26,6 +26,9 @@
 | 🟡 ACTIVE | System | O365 PA Agent — Phase 2 Template Library started. PnP CLI MCP operational (auth: cl.chok@waterhippos.com, 134+ flows visible). First template parameterized. | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
 | ⚪ Open | System | FORMAT_GAP: ARM export → Dataverse clientdata transformation untested. connectionReferences format + host.apiId may need adjustment on first real deploy. | 0d |
+| 🟡 ACTIVE | System | Zoho Infra Agent — scoped, API access verified (`zoho_infra_settings` credential in n8n). Next: build Cowork skill. See K-BIZ-001. | 0d |
+| ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
+| 🔴 URGENT | System | K-008: 4 artifacts built, 0 deployed since Feb 8 — deploy-before-expand discipline needed | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
 | ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
 
@@ -94,7 +97,7 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Solartech | 🟡 In Progress | Feb 9 | WF03 credentials clean, using n8n native credentials. Ready for e2e test. |
+| Solartech | 🟡 In Progress | Feb 11 | Zoho pain points mapped, API access verified, Zoho Infra Agent scoped as next build |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Structured | Feb 7 | TTL_KPIS.md created, RM 227K/mo, stock alerts active |
