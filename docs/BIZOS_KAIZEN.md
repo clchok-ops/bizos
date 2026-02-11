@@ -57,7 +57,39 @@ If we [change], then [outcome] because [reasoning].
 
 ## Active Experiments
 
-(none yet)
+### [K-BIZ-001] Zoho Infrastructure Agent — Cowork Skill for Solartech Zoho Platform Build-Out
+**Date:** 2026-02-11
+**Layer:** System
+**Entity:** Solartech (first), then cross-entity
+**Status:** Proposed
+
+**Hypothesis:**
+If we build a specialized Cowork skill (like the builder skill but for Zoho infrastructure) that reads Solartech business context + architecture audits + Zoho standards, and produces deployable artifacts (Deluge scripts, workflow rules, data migrations, API calls) + step-by-step guides (for UI-only config like Blueprints), then we can systematically resolve the 7 operational pain points in the quote-to-delivery pipeline faster than ad-hoc manual Zoho configuration.
+
+**Expected Result:**
+- Quoting time reduced (pricing in Zoho, no more spreadsheet calc)
+- Quote-BOM alignment enforced (validation on quote save)
+- Mandatory fields at stage transitions (prevent information loss at handoffs)
+- SalesIQ response monitoring active
+- Customer onboarding workflow triggered on deal close
+- All changes tracked and logged via BUILD_LOG
+
+**Duration:**
+4 weeks: Week 1 — skill design + API access validation. Week 2-3 — pricing/quoting infrastructure. Week 4 — workplan handoff + validation gates.
+
+**Risks Identified:**
+1. Zoho API write access scope not yet verified (metadata endpoints for workflow rules, custom fields)
+2. Data quality bottleneck — 660 items need manual category review by team (agent can't fix this)
+3. LLM agnosticism — n8n intelligence layer should abstract LLM calls for provider flexibility
+4. Zero workflows deployed since Feb 8 — risk of perpetual build mode without production deployment
+
+**Actual Result:**
+(pending)
+
+**Learning:**
+(pending)
+
+**Decision:** (pending)
 
 ---
 
