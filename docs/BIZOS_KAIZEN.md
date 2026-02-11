@@ -78,7 +78,7 @@ If we build a specialized Cowork skill (like the builder skill but for Zoho infr
 4 weeks: Week 1 — skill design + API access validation. Week 2-3 — pricing/quoting infrastructure. Week 4 — workplan handoff + validation gates.
 
 **Risks Identified:**
-1. Zoho API write access scope not yet verified (metadata endpoints for workflow rules, custom fields)
+1. ~~Zoho API write access scope not yet verified~~ ✅ Verified 2026-02-11 — `zoho_infra_settings` credential in n8n confirmed reading /crm/v8/settings/fields (Deals module). Write access TBD on first deploy.
 2. Data quality bottleneck — 660 items need manual category review by team (agent can't fix this)
 3. LLM agnosticism — n8n intelligence layer should abstract LLM calls for provider flexibility
 4. Zero workflows deployed since Feb 8 — risk of perpetual build mode without production deployment
