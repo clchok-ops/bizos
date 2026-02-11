@@ -98,7 +98,7 @@ See also: `_archive/learnings.md` for pre-structured learnings.
 
 | Category | Count | Trend |
 |----------|-------|-------|
-| CRM/Zoho | 0 | - |
+| CRM/Zoho | 1 | New |
 | Entity Ops | 0 | - |
 | Automation | 0 | - |
 | PTL/Performance | 0 | - |

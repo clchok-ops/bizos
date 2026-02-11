@@ -48,6 +48,26 @@ Rules are tagged by layer and category:
 
 ---
 
+### [R-BIZ-SYS-002] Ground API Reference Files in Verified Session Facts, Not General Knowledge
+**Severity:** 🔴 Critical
+**Added:** 2026-02-11
+**Origin:** Failure (F-BIZ-001: hallucinated Zoho API endpoints in skill reference file)
+
+**Rule:** When generating API reference files, endpoint documentation, or deployment matrices for skills or artifacts, always re-read the verified deployment matrix or API capability map from the session that originally tested these endpoints. Never regenerate API specifications from general knowledge — LLMs will confidently produce plausible-looking but wrong endpoints.
+
+**Process:**
+1. Before writing any API reference file, check if a previous session verified the API capabilities
+2. If verified facts exist (handoff notes, _CONTEXT.md, kaizen entries), use those as the source of truth
+3. For any endpoint included in a reference file, mark it as: ✅ Verified (session + date) or ⚠️ Unverified (needs testing)
+4. Never ship a skill with unverified endpoints marked as verified
+
+**Bad:** Generate `/crm/v8/settings/functions` from general knowledge (doesn't exist)
+**Good:** Re-read previous session's deployment matrix → confirm Deluge functions are NOT API-deployable → mark as UI-only
+
+**Why:** Reference files loaded by skills are trusted as authoritative. A hallucinated endpoint in a reference file becomes a persistent source of wrong information that will be re-read every time the skill runs.
+
+---
+
 ## Process Rules (R-BIZ-PROC)
 
 (none yet)
