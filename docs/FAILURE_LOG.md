@@ -2,8 +2,8 @@
 
 *Post-mortems of business operations failures. Each failure generates a preventive rule.*
 
-**Last Updated:** 2026-02-07
-**Total Failures Logged:** 2
+**Last Updated:** 2026-02-11
+**Total Failures Logged:** 3
 
 ---
 
@@ -103,6 +103,32 @@ No guardrail. The _CONTEXT.md file is writable, and the prohibition is behaviora
 
 ---
 
+### [F-BIZ-003] Queued Deployment of Business-Facing Artifacts Without User Requirements Input
+**Date:** 2026-02-11
+**Severity:** 🟡 Important
+**Layer:** Process
+**Entity:** Solartech
+
+**What Broke:**
+The zoho-infra skill sessions generated a complete Solartech quote template system (HTML Writer template, Deluge function, deployment runbook) using assumed business requirements — payment terms (50/40/10), warranty periods (25yr/10yr/5yr), 7 T&Cs, layout choices — without asking the user what they actually want their quotes to look like. The thread next-step was then set to "deploy quote template to Writer+CRM" as if the artifacts were validated and ready, when the user hadn't reviewed or shaped any of them.
+
+**Root Cause:**
+Builder momentum. The zoho-infra skill was being validated as a tool (can it generate artifacts?) and the quote template was treated as a proof-of-concept. But the thread log and _CONTEXT.md framed it as "ready to deploy" — conflating "the skill can produce output" with "the output is what the user wants." No requirements-gathering step was built into the workflow before artifact generation.
+
+**Why We Didn't Catch It:**
+The skill's design doesn't include a user-validation gate between "generate" and "deploy." The thread history tracks *what Claude did*, not *what the user approved*. So the next session saw "artifacts generated → deploy next" without any record that requirements were assumed, not confirmed.
+
+**Preventive Rule Added:**
+[R-BIZ-PROC-002] in BIZOS_RULES.md
+
+**Lessons:**
+- Builder agents optimise for "can I produce output?" but business-facing artifacts need a different bar: "does the user want this output?"
+- Thread next-steps should distinguish between "deploy (validated)" and "review with user (draft)"
+- Quote templates, proposals, pricing — anything customer-facing — requires explicit user sign-off on requirements before deployment is even discussed
+- The proof-of-concept was useful for validating the skill works; the mistake was framing it as deployment-ready
+
+---
+
 ## Historical Note
 
 Prior failures from early BizOS sessions (pre-2026-02-07) were logged to `cto-brain/FAILURE_LOG.md` as cross-system issues. Relevant entries:
@@ -129,6 +155,7 @@ See also: `_archive/learnings.md` for pre-structured learnings.
 | Automation | 0 | - |
 | PTL/Performance | 0 | - |
 | Documentation | 1 | New |
+| Process/Workflow | 1 | New |
 
 ---
 
