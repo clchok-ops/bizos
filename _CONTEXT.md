@@ -4,9 +4,9 @@
 **Last:** 2026-02-11 | **Flags:** 16 | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-11 | **Flags:** 16 | **Task:** Zoho Infra skill v1 built + PA Phase 2 steps 2.1-2.5 complete
-> **Mode:** 💬 Lite | **Suggested next:** 🔧 Build
-> **Summary:** Two parallel sessions completed: (1) PA Phase 2 — all reference files created (PA_RULES, CHECKLIST, CONNECTIONS, EXPRESSION_GUIDE, SPEC_TEMPLATE), ready for PA01 spec. (2) Zoho Infra — skill v1 built with Solartech quote template + Deluge script + deployment runbook. K-008 deploy stall persists.
+> **Last:** 2026-02-11 | **Flags:** 14 (2 resolved) | **Task:** K-008 RESOLVED — WF03 + Callback deployed, tested all-green
+> **Mode:** 🔧 Build | **Suggested next:** 📊 CRM
+> **Summary:** WF03 Solartech Pipeline Risk Monitor (Phase 2) deployed to n8n with callback handler. Both active, shadow mode on. Tested all nodes green. Railway Postgres recovered from crash. n8n volume removed (env var encryption key set instead). n8n MCP connector needs reconnect (marketplace doesn't support self-hosted URLs).
 
 ---
 
@@ -26,7 +26,7 @@
 | 🟡 ACTIVE | System | O365 PA Agent — Phase 2 steps 2.1-2.5 COMPLETE. All reference files created (PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE). Ready for PA01 spec (step 2.6). | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
 | ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
-| 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. Sample Solartech quote artifacts generated. Next: deploy WF03, then deploy quote template to Writer+CRM. | 0d |
+| 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. WF03 deployed ✅. Next: deploy quote template to Writer+CRM. | 0d |
 | ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
 | ✅ RESOLVED | System | K-008 RESOLVED: WF03 + Callback deployed to n8n, tested all-green. Shadow mode active. First scheduled run: tomorrow 7:30 AM MYT. | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
@@ -50,7 +50,7 @@
 - ~~Phase 2 — Validate template via canary deploy~~ ✅ Canary created, verified via PnP CLI (triggers+actions+connRefs intact), cleaned up. Format validated.
 - ~~Phase 2 Steps 2.1-2.5~~ ✅ COMPLETE — PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE created
 - Phase 2 — Write PA01 spec (PTL 121 Scoring) using PA_SPEC_TEMPLATE.md (step 2.6)
-- Deploy WF03 Solartech Pipeline Risk to n8n (K-008 priority)
+- ~~Deploy WF03 Solartech Pipeline Risk to n8n (K-008 priority)~~ ✅ Deployed + tested all-green. Shadow mode. First run tomorrow 7:30 AM MYT.
 - F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
 **Then:** Resume builder work and performance management
