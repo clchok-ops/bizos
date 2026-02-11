@@ -31,7 +31,20 @@ Rules are tagged by layer and category:
 
 ## System Rules (R-BIZ-SYS)
 
-(none yet)
+### [R-BIZ-SYS-001] Zoho OAuth Scopes Are Requested at Auth Flow, Not App Registration
+**Severity:** 🟡 Important
+**Added:** 2026-02-11
+**Origin:** Zoho Infrastructure Agent setup — Zoho API Console UX mismatch with documentation
+
+**Rule:** When registering a Server-based Application in Zoho API Console, there is no "scope" field. The console only asks for "Allowed HTTP Request Domains." Scopes (`ZohoCRM.settings.ALL`, `ZohoCRM.modules.ALL`, etc.) are requested during the OAuth authorization flow — typically handled by the client application (e.g., n8n's credential configuration).
+
+**Setup pattern for n8n:**
+1. Zoho API Console → Register app → add n8n domain to "Allowed HTTP Request Domains"
+2. n8n → Add credential → Zoho CRM OAuth2 API → paste Client ID + Secret
+3. Scopes configured in n8n's credential scope field (or passed during OAuth consent)
+4. Click Connect → Zoho prompts for consent with requested scopes
+
+**Credential:** `zoho_infra_settings` in n8n (verified 2026-02-11, read access to `/crm/v8/settings/fields` confirmed)
 
 ---
 
