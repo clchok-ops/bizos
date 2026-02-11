@@ -23,9 +23,9 @@
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
 | ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
-| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 Template Library started. PnP CLI MCP operational (auth: cl.chok@waterhippos.com, 134+ flows visible). First template parameterized. | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 Template Library. FORMAT_GAP validated ✅ — canary deploy+verify+cleanup clean. Template format confirmed. Ready for PA01 spec. | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
-| ⚪ Open | System | FORMAT_GAP: ARM export → Dataverse clientdata transformation untested. connectionReferences format + host.apiId may need adjustment on first real deploy. | 0d |
+| ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
 | 🟡 ACTIVE | System | Zoho Infra Agent — scoped, API access verified (`zoho_infra_settings` credential in n8n). Next: build Cowork skill. See K-BIZ-001. | 0d |
 | ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
 | 🔴 URGENT | System | K-008: 4 artifacts built, 0 deployed since Feb 8 — deploy-before-expand discipline needed | 0d |
@@ -47,8 +47,9 @@
 - ~~Phase 1 O365 PA Agent — Build WF-PA-HEALTHCHECK~~ ✅ Healthcheck v1 operational (6/6 checks pass)
 - ~~Phase 1 Steps 1.7-1.9 — PnP CLI MCP~~ ✅ Installed, authenticated, verified (flow list, SP list read)
 - ~~Phase 2 Step 1 — Seed flow~~ ✅ PTL_Seed_Scheduled_SP_Read created, exported, parameterized
-- Phase 2 — Validate template via canary deploy (blocked by F-036 until security role resolved OR test with System Admin)
-- Phase 2 — Write PA01 spec (PTL 121 Scoring) using scheduled_sp_process template
+- ~~Phase 2 — Validate template via canary deploy~~ ✅ Canary created, verified via PnP CLI (triggers+actions+connRefs intact), cleaned up. Format validated.
+- Phase 2 — Create PA_CHECKLIST.md, PA_RULES.md, PA_CONNECTIONS.md (step 2.4)
+- Phase 2 — Write PA01 spec (PTL 121 Scoring) using scheduled_sp_process template (step 2.6)
 - F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
 **Then:** Resume builder work and performance management
