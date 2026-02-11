@@ -128,7 +128,7 @@ See also: `_archive/learnings.md` for pre-structured learnings.
 | Entity Ops | 0 | - |
 | Automation | 0 | - |
 | PTL/Performance | 0 | - |
-| Documentation | 0 | - |
+| Documentation | 1 | New |
 
 ---
 

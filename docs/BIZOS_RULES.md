@@ -3,7 +3,7 @@
 *Rules generated from business operations failures and near-misses. Prevents recurring mistakes.*
 
 **Last Updated:** 2026-02-07
-**Total Rules:** 0
+**Total Rules:** 1
 
 ---
 
@@ -70,7 +70,21 @@ Rules are tagged by layer and category:
 
 ## Process Rules (R-BIZ-PROC)
 
-(none yet)
+### [R-BIZ-PROC-001] Never Edit _CONTEXT.md Directly — Use Handoff Files
+**Severity:** 🟡 Important
+**Added:** 2026-02-11
+**Origin:** Failure (F-BIZ-002: direct _CONTEXT.md edit during session)
+
+**Rule:** Never edit `_CONTEXT.md` files directly during a session. All state changes (flag resolutions, snapshot updates, entity status, cleanup backlog additions) must go through a handoff file in `_SESSIONS/pending/`. The next startup reconciles the handoff into `_CONTEXT.md`.
+
+**Even if:**
+- The change seems trivial (resolving a flag)
+- No parallel sessions are active right now
+- The change is "obviously correct"
+
+**Why:** `_CONTEXT.md` is shared mutable state. Direct edits bypass reconciliation, risk merge conflicts with parallel sessions, and create duplicate work (handoff still needs to capture the same changes). The handoff pattern exists specifically to serialize writes.
+
+**Exception:** Entity files (`_ENTITY.md`) are OK to edit directly — they're per-entity with low collision risk.
 
 ---
 
