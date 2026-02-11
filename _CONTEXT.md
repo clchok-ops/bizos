@@ -4,9 +4,9 @@
 **Last:** 2026-02-11 | **Flags:** 16 | **Mode:** 💬 Lite
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-11 | **Flags:** 16 | **Task:** PA Phase 2 — FORMAT_GAP validated, template format confirmed, canaries cleaned
-> **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
-> **Summary:** PA Phase 2 template format VALIDATED — canary deploy via `m365 request` (G-BUILD-008) confirmed Dataverse accepts parameterized template. Both canaries cleaned up. G-BUILD-007 validated. Zoho Infra Agent scoped (prior session). K-008 deployment stall flagged. Next: PA_RULES/CHECKLIST/CONNECTIONS (step 2.4), PA01 spec (step 2.6).
+> **Last:** 2026-02-11 | **Flags:** 16 | **Task:** Zoho Infra skill v1 built + PA Phase 2 steps 2.1-2.5 complete
+> **Mode:** 💬 Lite | **Suggested next:** 🔧 Build
+> **Summary:** Two parallel sessions completed: (1) PA Phase 2 — all reference files created (PA_RULES, CHECKLIST, CONNECTIONS, EXPRESSION_GUIDE, SPEC_TEMPLATE), ready for PA01 spec. (2) Zoho Infra — skill v1 built with Solartech quote template + Deluge script + deployment runbook. K-008 deploy stall persists.
 
 ---
 
@@ -28,7 +28,7 @@
 | ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
 | 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. Sample Solartech quote artifacts generated. Next: deploy WF03, then deploy quote template to Writer+CRM. | 0d |
 | ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
-| 🔴 URGENT | System | K-008: 4 artifacts built, 0 deployed since Feb 8 — deploy-before-expand discipline needed | 0d |
+| 🔴 URGENT | System | K-008: 5+ artifacts built, 0 deployed since Feb 8 — WF03 deploy is next session priority | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
 | ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
 
@@ -48,8 +48,9 @@
 - ~~Phase 1 Steps 1.7-1.9 — PnP CLI MCP~~ ✅ Installed, authenticated, verified (flow list, SP list read)
 - ~~Phase 2 Step 1 — Seed flow~~ ✅ PTL_Seed_Scheduled_SP_Read created, exported, parameterized
 - ~~Phase 2 — Validate template via canary deploy~~ ✅ Canary created, verified via PnP CLI (triggers+actions+connRefs intact), cleaned up. Format validated.
-- Phase 2 — Create PA_CHECKLIST.md, PA_RULES.md, PA_CONNECTIONS.md (step 2.4)
-- Phase 2 — Write PA01 spec (PTL 121 Scoring) using scheduled_sp_process template (step 2.6)
+- ~~Phase 2 Steps 2.1-2.5~~ ✅ COMPLETE — PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE created
+- Phase 2 — Write PA01 spec (PTL 121 Scoring) using PA_SPEC_TEMPLATE.md (step 2.6)
+- Deploy WF03 Solartech Pipeline Risk to n8n (K-008 priority)
 - F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
 **Then:** Resume builder work and performance management
@@ -78,6 +79,8 @@
 - [x] `startup_v2.skill` + `builder_v3.skill` at ClaudeHub root — ✅ Deleted
 - [ ] 1 duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected) — minor, needs grep to identify
 - [ ] cto-brain/builder/artifacts/_test_dv_create.sh — diagnostic script, safe to delete manually
+- [ ] dv_create_body.json at ClaudeHub root — temp file from canary test, needs manual delete
+- [ ] Multiple stale active sessions in _SESSIONS/active/ — needs cleanup
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
@@ -89,6 +92,7 @@
 - Telegram: @chokops_bot — 7 domain chats (Solartech, Hippos, WCI, Kinme, Trading, Finance, System)
 - PnP CLI MCP: authenticated as cl.chok@waterhippos.com (env: Default-1d05fa1e, 134+ flows, `--asAdmin` required for flow ops)
 - PA Templates: `cto-brain/builder/templates/pa/` (scheduled_sp_process.json parameterized, raw exports in _raw/)
+- PA Reference files: `cto-brain/builder/o365_pa/` (PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE)
 - Builder skill: installed in Cowork (invoke with `builder`)
 - Build sequence: WF03 Solartech → WF04 Hippos → WF05 WCI → WF06 Trading → WF07 Finance → WF02 Kinme → WF08 Watchdog
 
@@ -98,7 +102,7 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Solartech | 🟡 In Progress | Feb 11 | Zoho pain points mapped, API access verified, Zoho Infra Agent scoped as next build |
+| Solartech | 🟡 In Progress | Feb 11 | Zoho Infra skill built, quote artifacts generated. Entity values needed for Writer upload. |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Structured | Feb 7 | TTL_KPIS.md created, RM 227K/mo, stock alerts active |
