@@ -1,0 +1,8 @@
+Status,Date,Expected Shipment Date,Sales Order#,Customer Name,Amount
+Draft,06 Feb 2026,07 Feb 2026,DR14564,Muhamad Nor Amin Mohd Subri,"MYR5,727.00"
+Draft,06 Feb 2026,06 Feb 2026,DR14566,Zulfazli Mohd Sofiuddin,"MYR4,777.00"
+Draft,06 Feb 2026,12 Feb 2026,DR14568,Muhamad Nor Amin Mohd Subri,"MYR5,727.00"
+Draft,06 Feb 2026,06 Feb 2026,DR14565,Muhammad Hamizan Mohd Salleh,MYR360.00
+Draft,06 Feb 2026,06 Feb 2026,DR14563,Muhammad Hamizan Mohd Salleh,"MYR3,647.00"
+Draft,06 Feb 2026,09 Feb 2026,DR14567,Ted Wong,"MYR1,170.00"
+TOTAL,,,,,"MYR21,408.00"

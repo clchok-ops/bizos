@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-09 | **Flags:** 8 active | **Mode:** 🔧 Build
+**Last:** 2026-02-10 | **Flags:** 12 | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-09 | **Flags:** 8 | **Task:** Log F-020 iCloud sync wipe + add G-ARCH-003
+> **Last:** 2026-02-10 | **Flags:** 12 | **Task:** O365 PA Agent Phase 0 COMPLETE — all foundation infra in place
 > **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
-> **Summary:** Completed F-020 post-mortem (parallel session sync wipe that destroyed 8 builder/ files). Added G-ARCH-003 to GLOBAL_STANDARDS + CRITICAL_RULES: never run parallel write sessions to same ClaudeHub repo. 32 rules, 23 critical. Next: recover wiped files from git history, complete remaining 6 workflow specs, get Eats365 API for WF02 test.
+> **Summary:** Phase 0 complete: Azure AD app (claude-o365-agent), Dataverse security role, n8n OAuth2 creds (Dataverse + Graph), PnP CLI installed. Phase 1 ready: build WF-PA-HEALTHCHECK first.
 
 ---
 
@@ -22,23 +22,32 @@
 | ⚪ Open | Solartech | Large deal win rate 20.9% vs 37.8% | 4d |
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
+| ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent Architecture v2.1 — Phase 0 COMPLETE, ready for Phase 1 | 0d |
+| ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
+| ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
 
 ---
 
 ## Next Focus
 
-**Immediate:** Builder Agent generates all 7 n8n workflows
-- Builder skill running `build all` — generates workflow JSONs from specs
-- Import generated workflows into n8n on Railway
-- ~~Add Telegram bot credentials to n8n~~ ✅ Done (telegram_bot_token + TELEGRAM_CHAT_ID variable)
-- Request Eats365 API access (Merchant Portal → Integration → Developer Portal → Connect New App)
-- Recreate builder/ files wiped by iCloud sync (BUILD_LOG, CHECKLIST, RULES, WF02 JSON, runbooks, specs)
-- Test first workflow (Kinme Daily Sales) end-to-end
-- Remaining workflow specs needed: Solartech Pipeline, Hippos/WCI Weekly, Trading Daily, Finance Listener, Morning Brief, Watchdog
+**Immediate:**
+- ~~Phase 0 O365 PA Agent — Chok-owned~~ ✅ Done — Azure AD app reg, Dataverse security role, n8n credential setup, PnP CLI install. Claude creates runbook.
+- Resume builder work and performance management
+  - ~~Install skills~~ ✅ Done — startup_v2 + builder_v3 installed, validated in perf startup
+  - ~~Test new startup~~ ✅ Done — profile-aware loading working (CORE_RULES.md loaded, perf mode correct)
+  - Disable Control Chrome connector — Saves ~3-5K tokens/turn from duplicate browser tools
+  - Verify rules split — Check for duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected)
+  - ~~Delete root orphans~~ ✅ Deleted by Chok between sessions
+- Phase 1 O365 PA Agent — Build WF-PA-HEALTHCHECK (validation gate), then WF-PA-DEPLOY, WF-PA-SOLUTION, WF-PA-MONITOR
 
-**Then:** Fill in role KPI targets
-- Solartech roles have templates, need actual RM targets
-- Hippos/WCI need role definitions
+**Then:** Resume builder work and performance management
+- Performance management structure — Medium priority deliverable from TOKEN_EFFICIENCY_AUDIT.md Section 4.7
+- Resume WF03 Solartech Pipeline Risk — Phase 2 reference implementation (originally deferred for efficiency audit)
+  - Redesign WF03 for action-oriented workflow (not just alerts)
+  - Two-way Telegram (alert + prepared action + inline buttons + callback)
+  - Action execution (Zoho API: send email, create task, update deal stage)
+- Fill in role KPI targets (Solartech roles have templates, need actual RM targets; Hippos/WCI need role definitions)
 
 **Completed:**
 - PTL 100-pt framework (bizos/00_Holding/PTL_FRAMEWORK.md)
@@ -48,19 +57,26 @@
 - F-012, F-013 logged + G-DOC-005, G-SKILL-001 added
 
 **Cleanup backlog** (fix opportunistically while working in this space):
-- [ ] `REVIEW_FRAMEWORK.md` at bizos root — not documented in STRUCTURE.md. Add to STRUCTURE.md or move to 00_Holding/
-- [ ] `automation/` folder at bizos root — Zoho Python client, not in STRUCTURE.md. Document in STRUCTURE.md under a new "Automation" section
+- [x] `REVIEW_FRAMEWORK.md` at bizos root — ✅ Documented in STRUCTURE.md
+- [x] `automation/` folder at bizos root — ✅ Documented in STRUCTURE.md (Special Folders)
 - [ ] Hippos, WCI, Kinme roles/ — scaffolded only (_ROLES_INDEX.md). Populate when doing entity work
-- [ ] 00_Holding/ has extra files (N8N_AUTOMATIONS, SETUP_CHECKLIST, SETUP_PLAYBOOK, thresholds.json) not listed in STRUCTURE.md
+- [x] 00_Holding/ extra files — ✅ N8N_AUTOMATIONS, SETUP_CHECKLIST, SETUP_PLAYBOOK, thresholds.json added to STRUCTURE.md
+- [ ] _INBOX pipeline has zero monitoring — was broken 7 days undetected (F-029). Add "last file received" staleness check to WF08 Watchdog. Threshold: alert if no _INBOX file in 48 hours.
+- [x] `O365_PA_AGENT_ARCHITECTURE.md` — ✅ Already correctly in cto-brain/designs/ (not orphaned)
+- [x] `_skill_installers/` at ClaudeHub root — ✅ Deleted
+- [x] `startup_v2.skill` + `builder_v3.skill` at ClaudeHub root — ✅ Deleted
+- [ ] 1 duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected) — minor, needs grep to identify
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
-**Agent Infrastructure (new):**
-- Strategy: `cto-brain/designs/AGENT_STRATEGY_v1.md`
+**Agent Infrastructure:**
+- Strategy: `cto-brain/designs/AGENT_STRATEGY_v2.md` (action-oriented, cross-domain learning)
+- Domain goals: `bizos/AGENT_GOALS.md` (to be created), `trading/AGENT_GOALS.md`, `personal-finance/AGENT_GOALS.md`
 - Builder: `cto-brain/builder/` (BUILD_LOG, CHECKLIST, RULES, specs/, artifacts/, runbooks/)
 - n8n: `https://n8n-production-f0e6.up.railway.app` (Railway, Asia/Kuala_Lumpur TZ)
-- Telegram: @chokops_bot (chat ID: 8412712971)
+- Telegram: @chokops_bot — 7 domain chats (Solartech, Hippos, WCI, Kinme, Trading, Finance, System)
 - Builder skill: installed in Cowork (invoke with `builder`)
+- Build sequence: WF03 Solartech → WF04 Hippos → WF05 WCI → WF06 Trading → WF07 Finance → WF02 Kinme → WF08 Watchdog
 
 ---
 
@@ -68,7 +84,7 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Solartech | 🟢 Structured | Feb 7 | Zoho context merged into _ENTITY.md, zoho/ZOHO_STANDARDS.md created |
+| Solartech | 🟡 In Progress | Feb 9 | WF03 credentials clean, using n8n native credentials. Ready for e2e test. |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Structured | Feb 7 | TTL_KPIS.md created, RM 227K/mo, stock alerts active |

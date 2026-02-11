@@ -2,7 +2,7 @@
 
 > Canonical map of what should exist. Validate at session start and end.
 
-**Last Updated:** 2026-02-07
+**Last Updated:** 2026-02-10
 
 ---
 
@@ -13,6 +13,8 @@
 | `_CONTEXT.md` | Session memory - read at startup, update at end | ✓ |
 | `STRUCTURE.md` | This file - canonical structure map | ✓ |
 | `README.md` | Repo overview for humans | ✓ |
+| `AGENT_GOALS.md` | Domain-specific goals for BizOS agents (CRM Ops, Perf Mgmt) | ✓ |
+| `REVIEW_FRAMEWORK.md` | Defines what to monitor, when, for whom, and what action to take | |
 
 ---
 
@@ -33,6 +35,10 @@
 |------|---------|
 | `BIZOS_GUIDE.md` | How bizos works |
 | `PTL_FRAMEWORK.md` | Universal PTL scoring model |
+| `N8N_AUTOMATIONS.md` | n8n workflow inventory and status |
+| `SETUP_CHECKLIST.md` | Entity setup checklist for new deployments |
+| `SETUP_PLAYBOOK.md` | Detailed setup playbook (step-by-step) |
+| `thresholds.json` | Alert threshold config for monitoring |
 
 ---
 
@@ -87,6 +93,7 @@ Each entity folder (`[NN]_[Name]/`) should have:
 | `_archive/` | Superseded/deprecated files (includes pre-structured learnings.md, decisions.md) |
 | `_briefs/` | Daily brief outputs (if active) |
 | `_INBOX/` | Processing queue |
+| `automation/` | Zoho CRM Python client (zoho_client.py, connection tests) |
 
 ---
 
