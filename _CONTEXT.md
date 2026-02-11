@@ -23,8 +23,9 @@
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
 | ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
-| 🟡 ACTIVE | System | O365 PA Agent — WF-PA-HEALTHCHECK v1 operational (full mode HEALTHY, 1 warning). Phase 1 gate open. | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 Template Library started. PnP CLI MCP operational (auth: cl.chok@waterhippos.com, 134+ flows visible). First template parameterized. | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
+| ⚪ Open | System | FORMAT_GAP: ARM export → Dataverse clientdata transformation untested. connectionReferences format + host.apiId may need adjustment on first real deploy. | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
 | ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
 
@@ -41,7 +42,10 @@
   - Verify rules split — Check for duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected)
   - ~~Delete root orphans~~ ✅ Deleted by Chok between sessions
 - ~~Phase 1 O365 PA Agent — Build WF-PA-HEALTHCHECK~~ ✅ Healthcheck v1 operational (6/6 checks pass)
-- Phase 1 O365 PA Agent — Build PTL 121 scoring & delivery flows (healthcheck gate open)
+- ~~Phase 1 Steps 1.7-1.9 — PnP CLI MCP~~ ✅ Installed, authenticated, verified (flow list, SP list read)
+- ~~Phase 2 Step 1 — Seed flow~~ ✅ PTL_Seed_Scheduled_SP_Read created, exported, parameterized
+- Phase 2 — Validate template via canary deploy (blocked by F-036 until security role resolved OR test with System Admin)
+- Phase 2 — Write PA01 spec (PTL 121 Scoring) using scheduled_sp_process template
 - F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
 **Then:** Resume builder work and performance management
@@ -79,6 +83,8 @@
 - Builder: `cto-brain/builder/` (BUILD_LOG, CHECKLIST, RULES, specs/, artifacts/, runbooks/)
 - n8n: `https://n8n-production-f0e6.up.railway.app` (Railway, Asia/Kuala_Lumpur TZ)
 - Telegram: @chokops_bot — 7 domain chats (Solartech, Hippos, WCI, Kinme, Trading, Finance, System)
+- PnP CLI MCP: authenticated as cl.chok@waterhippos.com (env: Default-1d05fa1e, 134+ flows, `--asAdmin` required for flow ops)
+- PA Templates: `cto-brain/builder/templates/pa/` (scheduled_sp_process.json parameterized, raw exports in _raw/)
 - Builder skill: installed in Cowork (invoke with `builder`)
 - Build sequence: WF03 Solartech → WF04 Hippos → WF05 WCI → WF06 Trading → WF07 Finance → WF02 Kinme → WF08 Watchdog
 
