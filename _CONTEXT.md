@@ -81,6 +81,9 @@
 - [ ] cto-brain/builder/artifacts/_test_dv_create.sh — diagnostic script, safe to delete manually
 - [ ] dv_create_body.json at ClaudeHub root — temp file from canary test, needs manual delete
 - [ ] Multiple stale active sessions in _SESSIONS/active/ — needs cleanup
+- [ ] n8n MCP connector disconnected — marketplace connector doesn't support self-hosted Railway URLs. Need custom MCP server config with API key.
+- [ ] n8n volume removed after Railway crash — running without volume, encryption key set as env var. Re-add volume at `/home/node/.n8n` if needed.
+- [ ] Old n8n credentials (saved via n8n Credential UI) lost — encryption key changed. WF03 uses inline creds so unaffected. Re-enter any other n8n-stored credentials if needed.
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
