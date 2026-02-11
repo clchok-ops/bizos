@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-10 | **Flags:** 12 | **Mode:** 🔧 Build
+**Last:** 2026-02-11 | **Flags:** 13 | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-10 | **Flags:** 12 | **Task:** O365 PA Agent Phase 0 COMPLETE — all foundation infra in place
+> **Last:** 2026-02-11 | **Flags:** 13 | **Task:** WF-PA-HEALTHCHECK v1 operational — gate open for PTL 121 flows
 > **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
-> **Summary:** Phase 0 complete: Azure AD app (claude-o365-agent), Dataverse security role, n8n OAuth2 creds (Dataverse + Graph), PnP CLI installed. Phase 1 ready: build WF-PA-HEALTHCHECK first.
+> **Summary:** Healthcheck gate passed. schemaVersion fix (F-035→G-BUILD-005), n8n error body stripping learned (F-036→G-BUILD-006). Custom security role gap open (F-036, System Admin interim). Next: PTL 121 scoring & delivery flows.
 
 ---
 
@@ -40,7 +40,9 @@
   - Disable Control Chrome connector — Saves ~3-5K tokens/turn from duplicate browser tools
   - Verify rules split — Check for duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected)
   - ~~Delete root orphans~~ ✅ Deleted by Chok between sessions
-- Phase 1 O365 PA Agent — Build WF-PA-HEALTHCHECK (validation gate), then WF-PA-DEPLOY, WF-PA-SOLUTION, WF-PA-MONITOR
+- ~~Phase 1 O365 PA Agent — Build WF-PA-HEALTHCHECK~~ ✅ Healthcheck v1 operational (6/6 checks pass)
+- Phase 1 O365 PA Agent — Build PTL 121 scoring & delivery flows (healthcheck gate open)
+- F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
 **Then:** Resume builder work and performance management
 - Performance management structure — Medium priority deliverable from TOKEN_EFFICIENCY_AUDIT.md Section 4.7
@@ -67,6 +69,7 @@
 - [x] `_skill_installers/` at ClaudeHub root — ✅ Deleted
 - [x] `startup_v2.skill` + `builder_v3.skill` at ClaudeHub root — ✅ Deleted
 - [ ] 1 duplicate rule across CORE/BUILD/REFERENCE split (43 total vs 42 expected) — minor, needs grep to identify
+- [ ] cto-brain/builder/artifacts/_test_dv_create.sh — diagnostic script, safe to delete manually
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
