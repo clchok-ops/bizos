@@ -23,7 +23,8 @@
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
 | ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
-| 🟡 ACTIVE | System | O365 PA Agent Architecture v2.1 — Phase 0 COMPLETE, ready for Phase 1 | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent — WF-PA-HEALTHCHECK v1 operational (full mode HEALTHY, 1 warning). Phase 1 gate open. | 0d |
+| 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
 | ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
 
