@@ -23,10 +23,10 @@
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
 | ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
-| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 Template Library. FORMAT_GAP validated ✅ — canary deploy+verify+cleanup clean. Template format confirmed. Ready for PA01 spec. | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 steps 2.1-2.5 COMPLETE. All reference files created (PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE). Ready for PA01 spec (step 2.6). | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
 | ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
-| 🟡 ACTIVE | System | Zoho Infra Agent — scoped, API access verified (`zoho_infra_settings` credential in n8n). Next: build Cowork skill. See K-BIZ-001. | 0d |
+| 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. Sample Solartech quote artifacts generated. Next: deploy WF03, then deploy quote template to Writer+CRM. | 0d |
 | ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
 | 🔴 URGENT | System | K-008: 4 artifacts built, 0 deployed since Feb 8 — deploy-before-expand discipline needed | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
