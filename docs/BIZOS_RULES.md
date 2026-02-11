@@ -2,8 +2,8 @@
 
 *Rules generated from business operations failures and near-misses. Prevents recurring mistakes.*
 
-**Last Updated:** 2026-02-07
-**Total Rules:** 1
+**Last Updated:** 2026-02-11
+**Total Rules:** 3
 
 ---
 
@@ -85,6 +85,30 @@ Rules are tagged by layer and category:
 **Why:** `_CONTEXT.md` is shared mutable state. Direct edits bypass reconciliation, risk merge conflicts with parallel sessions, and create duplicate work (handoff still needs to capture the same changes). The handoff pattern exists specifically to serialize writes.
 
 **Exception:** Entity files (`_ENTITY.md`) are OK to edit directly — they're per-entity with low collision risk.
+
+---
+
+### [R-BIZ-PROC-002] Never Queue Deployment of Business-Facing Artifacts Without User Sign-Off
+**Severity:** 🔴 Critical
+**Added:** 2026-02-11
+**Origin:** Failure (F-BIZ-003: quote template generated with assumed requirements, framed as deploy-ready)
+
+**Rule:** Business-facing artifacts (quote templates, proposal templates, pricing configs, customer-facing emails, workflow rules that affect deal flow) must go through an explicit user requirements and review step before deployment is discussed. Thread next-steps must reflect the actual validation state.
+
+**Required workflow:**
+1. **Scope** — User defines what they want (layout, content, fields, business rules)
+2. **Generate** — Agent produces draft artifacts based on user requirements
+3. **Review** — User reviews artifacts, provides feedback
+4. **Iterate** — Agent revises until user approves
+5. **Deploy** — Only after explicit user sign-off
+
+**Thread next-step language:**
+- ✅ "Review quote template draft with user" (honest — draft needs validation)
+- ❌ "Deploy quote template to Writer+CRM" (misleading — implies it's ready)
+
+**Proof-of-concept exception:** Generating artifacts to validate the *skill works* is fine, but label them clearly as "POC / draft — needs user requirements" in the thread history and next-step.
+
+**Why:** Customer-facing artifacts with wrong payment terms, warranty periods, or legal text create real business risk. Builder momentum ("it generated output, so let's deploy it") skips the most important step: does the user actually want this?
 
 ---
 
