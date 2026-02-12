@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-11 | **Flags:** 16 | **Mode:** 💬 Lite
+**Last:** 2026-02-12 | **Flags:** 17 | **Mode:** 📊 CRM
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-11 | **Flags:** 14 (2 resolved) | **Task:** K-008 RESOLVED — WF03 + Callback deployed, tested all-green
-> **Mode:** 🔧 Build | **Suggested next:** 📊 CRM
-> **Summary:** WF03 Solartech Pipeline Risk Monitor (Phase 2) deployed to n8n with callback handler. Both active, shadow mode on. Tested all nodes green. Railway Postgres recovered from crash. n8n volume removed (env var encryption key set instead). n8n MCP connector needs reconnect (marketplace doesn't support self-hosted URLs).
+> **Last:** 2026-02-12 | **Flags:** 15 (2 resolved) | **Task:** Zoho API readiness audit complete — CRM + Writer verified, two-token OAuth established
+> **Mode:** 📊 CRM | **Suggested next:** 📊 CRM
+> **Summary:** Full Zoho API audit done. CRM (fields/validation/records) + Writer (docs) working via n8n. Two-token OAuth (CRM + Writer scopes separate). WF03 refresh token updated. F-038 logged (MCP payload cascade). Design team workflow established for templates.
 
 ---
 
@@ -85,6 +85,10 @@
 - [x] n8n MCP connector — custom MCP server built (`cto-brain/mcp-servers/n8n/`), deployed, verified. 8 tools: list/get/create/update/activate/deactivate workflows + list/get executions.
 - [ ] n8n volume removed after Railway crash — running without volume, encryption key set as env var. Re-add volume at `/home/node/.n8n` if needed.
 - [ ] Old n8n credentials (saved via n8n Credential UI) lost — encryption key changed. WF03 uses inline creds so unaffected. Re-enter any other n8n-stored credentials if needed.
+- [ ] 10 stale active sessions in _SESSIONS/active/ need manual deletion on Mac (Operation not permitted from Cowork VM)
+- [ ] zoho-infra skill reference files (ZOHO_API_PATTERNS.md, WRITER_TEMPLATE_GUIDE.md) need update with verified endpoints — skills dir is read-only in Cowork, needs reinstall or manual edit
+- [ ] Writer template upload endpoint (multipart POST) needs verification when design team provides first template
+- [ ] n8n TEST_Zoho_API_Verify workflow (GhLqhLA45kMuiSzP) can be archived/deleted — testing complete
 
 **Parked:** PTL 121 Flow 5, Kaizen Architecture Phase 1
 
@@ -106,7 +110,7 @@
 
 | Entity | Status | Last | Quick Note |
 |--------|--------|------|------------|
-| Solartech | 🟡 In Progress | Feb 11 | Zoho Infra skill built, quote artifacts generated. Entity values needed for Writer upload. |
+| Solartech | 🟡 In Progress | Feb 12 | Zoho API verified (CRM + Writer). Two-token OAuth. WF03 token updated. Design team workflow for templates. |
 | Hippos | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | WCI | 🟢 Structured | Feb 6 | TTL_KPIS.md, roles/ scaffolded |
 | Kinme | 🟢 Structured | Feb 7 | TTL_KPIS.md created, RM 227K/mo, stock alerts active |
