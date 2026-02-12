@@ -88,6 +88,27 @@ When scoping any Zoho automation project. Classify each piece of work as API-dep
 
 ---
 
+### [P-BIZ-003] End-Session Handoffs Must Include Setup Steps for Next Session
+**Added:** 2026-02-12
+**Layer:** Process
+**Entity:** Cross-entity
+
+**The Pattern:**
+Every end-session handoff should include a "Setup for Next Session" section with concrete manual steps Chok needs to complete before the next session starts. These are things that require human hands — importing a flow to Power Automate, testing in a browser portal, creating test data in SharePoint, verifying a deployment in Zoho, etc. The section should be actionable (not vague), ordered by priority, and indicate what's blocking vs nice-to-have.
+
+**Why It Works:**
+Claude builds artifacts but can't always deploy them — many platforms require manual import, browser interaction, or portal access. Without an explicit list of manual steps, the next session wastes time re-discovering what's pending, re-reading the BUILD_LOG, or asking "where were we?" The setup steps bridge the gap between what Claude produced and what's ready for the next build cycle.
+
+**Evidence:**
+- PA01 flow built this session but needs manual import + SP connection mapping + test data creation before the next session can verify or iterate on it
+- Previous sessions had similar gaps (WF03 needed credential re-linking, Deluge function needed manual paste)
+- Setup steps take 5-15 min of Chok's time but save 10-20 min of next session's context-building
+
+**When to Use:**
+Every `end session` command. The end-session skill should always produce a "Setup for Next Session" section in the handoff file, listing what Chok needs to do manually before the next session picks up the thread.
+
+---
+
 ## Pattern Candidates
 
 *Migrated from `_archive/learnings.md` — need validation before graduating to full patterns:*
