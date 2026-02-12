@@ -1,12 +1,12 @@
 # BizOS Context
 > Claude's working memory. Read at startup. Update at session end.
 
-**Last:** 2026-02-12 | **Flags:** 17 | **Mode:** 📊 CRM
+**Last:** 2026-02-12 | **Flags:** 19 | **Mode:** 🔧 Build
 
 > **SESSION SNAPSHOT** (Quick Read)
-> **Last:** 2026-02-12 | **Flags:** 15 (2 resolved) | **Task:** Zoho API readiness audit complete — CRM + Writer verified, two-token OAuth established
-> **Mode:** 📊 CRM | **Suggested next:** 📊 CRM
-> **Summary:** Full Zoho API audit done. CRM (fields/validation/records) + Writer (docs) working via n8n. Two-token OAuth (CRM + Writer scopes separate). WF03 refresh token updated. F-038 logged (MCP payload cascade). Design team workflow established for templates.
+> **Last:** 2026-02-12 | **Flags:** 17 (2 new, 4 resolved) | **Task:** PTL architecture firmed up. PTL_ARCHITECTURE_v2.docx produced. Phase 0 SP cleanup scoped.
+> **Mode:** 🔧 Build | **Suggested next:** 🔧 Build
+> **Summary:** Full PTL architecture alignment with Chok. SP audit (130+ lists). Gap analysis: 10 gaps, 5 conflicts, 6 challenged outcomes. 18-page arch doc produced. Phase 0 cleanup: duplicate SP columns, Entity column, On_System flag. PA01 spec revision blocked until cleanup.
 
 ---
 
@@ -23,7 +23,8 @@
 | ⚪ Open | Kinme | Tuesday lowest revenue - promo opportunity | 4d |
 | ⚪ Open | Kinme | Food costs not in POS | 4d |
 | ⚪ Open | System | _INBOX pipeline has zero monitoring — add staleness check to WF08 Watchdog (48hr threshold) | 0d |
-| 🟡 ACTIVE | System | O365 PA Agent — Phase 2 steps 2.1-2.5 COMPLETE. All reference files created (PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE). Ready for PA01 spec (step 2.6). | 0d |
+| 🟡 ACTIVE | System | O365 PA Agent — PTL architecture approved. Phase 0 SP cleanup required before PA01 spec revision. | 0d |
+| 🟡 ACTIVE | All | PTL Phase 0 cleanup required — PTL_Score duplicate columns (121/Kaizen/Customer), needs Entity column, On_System flag on People list | 0d |
 | 🟡 ACTIVE | System | F-036: Custom Dataverse security role cannot create cloud flows — System Admin interim, exact missing privilege TBD | 0d |
 | ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
 | 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. WF03 deployed ✅. Next: deploy quote template to Writer+CRM. | 0d |
@@ -50,7 +51,8 @@
 - ~~Phase 2 Step 1 — Seed flow~~ ✅ PTL_Seed_Scheduled_SP_Read created, exported, parameterized
 - ~~Phase 2 — Validate template via canary deploy~~ ✅ Canary created, verified via PnP CLI (triggers+actions+connRefs intact), cleaned up. Format validated.
 - ~~Phase 2 Steps 2.1-2.5~~ ✅ COMPLETE — PA_RULES, PA_CHECKLIST, PA_CONNECTIONS, PA_EXPRESSION_GUIDE, PA_SPEC_TEMPLATE created
-- Phase 2 — Write PA01 spec (PTL 121 Scoring) using PA_SPEC_TEMPLATE.md (step 2.6)
+- Phase 0 — SP infrastructure cleanup (duplicate columns, Entity column, On_System flag) → then PA01 spec revision
+- Phase 2 — Write PA01 spec (PTL 121 Scoring) using PA_SPEC_TEMPLATE.md (step 2.6) — BLOCKED until Phase 0 complete
 - ~~Deploy WF03 Solartech Pipeline Risk to n8n (K-008 priority)~~ ✅ Deployed + tested all-green. Shadow mode. First run tomorrow 7:30 AM MYT.
 - F-036 investigation — enumerate System Admin vs custom role privileges for cloud flow creation
 
