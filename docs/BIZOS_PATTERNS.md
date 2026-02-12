@@ -109,6 +109,39 @@ Every `end session` command. The end-session skill should always produce a "Setu
 
 ---
 
+### [P-BIZ-004] Full Architecture Scan Before Any Solution Design
+**Added:** 2026-02-12
+**Layer:** Process
+**Entity:** Cross-entity (Solartech proven, applies to Hippo's Zoho + all platforms)
+
+**The Pattern:**
+Before proposing any changes to a live platform (validation rules, workflow rules, blueprints, field modifications, automation), run a comprehensive architecture scan that dumps every module, field, layout, relationship, picklist, and existing rule. Analyze the full picture BEFORE designing anything. Never assume you understand a CRM's architecture from documentation or partial exploration — scan the actual system.
+
+Sequence:
+1. **Build a reusable scanner** — API-based tool that dumps the entire platform config in one call (e.g., WF-ZOHO-DEPLOY v1.1 `scan` action: 11 modules × 4 endpoints + blueprints + workflow rules = 54 API calls, 161KB of data)
+2. **Analyze comprehensively** — Map every module's fields (types, picklists, lookups), cross-module relationships, existing validation/workflow rules, layouts, and pipelines
+3. **Document the architecture** — Produce a reference report covering module stats, relationship maps, business process insights, and picklist value sets
+4. **Only then design** — Propose changes informed by the actual architecture, not assumptions
+
+**Why It Works:**
+The CRM scan revealed that 3 of 4 proposed validation rules were wrong. We assumed deals follow a single linear pipeline — the scan showed 29 stages serving fundamentally different purposes (sales stages, regulatory/compliance stages like CAS/NEM/ST&TNB, delivery stages, lifecycle stages like Idle/Reactivate/Retention) across 4 distinct layouts (Direct, Project, Trading, Troubleshoot). Stage-gate validation rules (which assume linearity) would have broken live deals on a production system.
+
+The scan also revealed 0 workflow rules (team doing everything manually), T&C as a master data hub with 3-way relationships, and 176 custom fields in Deals alone — none of which was visible from partial API exploration.
+
+**Evidence:**
+- Pre-scan: 3 of 4 proposed validation rules INVALID — would have broken live CRM
+- Post-scan: clear picture of 29 stages as parallel processes per layout, not a single pipeline
+- Architecture report: 1,349 lines covering 11 modules, 560+ fields, 50+ lookup relationships
+- Reusable scanner: WF-ZOHO-DEPLOY v1.1 `scan` action works for any Zoho CRM instance
+- Time investment: ~45 min to build scanner + run + analyze. Time saved: avoided deploying 3 breaking changes to production
+
+**When to Use:**
+Every time before proposing changes to ANY live platform — Zoho CRM, Zoho Inventory, SharePoint, Power Automate, n8n, or any system with complex configuration. Build the scanner once per platform, reuse for every entity (Solartech today, Hippo's Zoho tomorrow). The scanner is an investment that pays dividends across every future engagement with that platform.
+
+**Cross-reference:** cto-brain S-019 (cross-system version of this pattern)
+
+---
+
 ## Pattern Candidates
 
 *Migrated from `_archive/learnings.md` — need validation before graduating to full patterns:*
