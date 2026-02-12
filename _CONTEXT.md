@@ -28,6 +28,7 @@
 | ✅ RESOLVED | System | FORMAT_GAP resolved — parameterized template (Dataverse clientdata) accepted by API. connectionReferences + host.apiId format correct. | 0d |
 | 🟡 ACTIVE | System | Zoho Infra Agent — skill v1 BUILT. WF03 deployed ✅. Next: deploy quote template to Writer+CRM. | 0d |
 | ⚪ Open | Solartech | 7 quote-to-delivery pain points mapped — slow quoting, stale prices, hot/junk leads, quote-BOM disconnect, workplan gaps, missed SalesIQ, no onboarding | 0d |
+| 🟡 ACTIVE | Solartech | Zoho API verified — CRM fields/validation/records + Writer docs working. Workflow rules and Writer templates endpoint still blocked. | 0d |
 | ✅ RESOLVED | System | K-008 RESOLVED: WF03 + Callback deployed to n8n, tested all-green. Shadow mode active. First scheduled run: tomorrow 7:30 AM MYT. | 0d |
 | ✅ RESOLVED | System | Token efficiency restructure — rules split done, skills installed, validated in perf startup | 0d |
 | ⚪ Backlog | System | Performance Management structure — deferred, medium priority per TOKEN_EFFICIENCY_AUDIT.md Section 4.7 | 0d |
