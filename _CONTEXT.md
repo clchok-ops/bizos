@@ -14,7 +14,7 @@
 
 | Priority | Entity | Flag | Age |
 |----------|--------|------|-----|
-| 🔴 URGENT | Solartech | PD-000127 (RM 1.59M) stuck 347 days | 4d |
+| ✅ RESOLVED | Solartech | PD-000127 (RM 1.59M) — addressed with owner (Feb 12). | 4d |
 | 🟡 ACTIVE | Solartech | RM 20.5M at risk (24 high + 62 medium) | 4d |
 | 🟡 ACTIVE | Kinme | Premium whisky low: Hibiki 21, Yamazaki 12, Hakushu 18 | 2d |
 | 🟡 ACTIVE | Kinme | House umeshu 2020 out of stock | 2d |
