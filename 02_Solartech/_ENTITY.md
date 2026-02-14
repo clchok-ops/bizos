@@ -1,6 +1,6 @@
 # Solartech Operations
 
-**Status:** 🟡 PTL Flow 5 ready to build | **Last:** 2026-02-07
+**Status:** 🟡 CRM enforcement scan complete, layout walkthrough queued | **Last:** 2026-02-14
 **Type:** Parent company, B2B distribution (solar/boiler/water)
 **Systems:** Zoho CRM (MCP connected), Zoho Inventory, SalesIQ
 
@@ -122,6 +122,15 @@ Thresholds: 0-20 Low | 21-50 Medium | 51-100 High
 **Documentation (in cto-brain/modules/grow-ptl/):**
 - PTL_Flow5_Implementation.md (step-by-step build guide)
 - PTL_121_System_Overview.md (complete architecture diagram)
+
+**CRM Enforcement Scan:**
+- [x] Deploy WF-ZOHO-DEPLOY v1.2 enhanced scan
+- [x] Fix OAuth scopes (settings.ALL + workflow_rules.ALL)
+- [x] Scan complete — 57 workflow rules across 8 modules
+- [ ] Walk through 4 Deals layouts (Direct, Project, Trading, Troubleshoot) with Chok
+- [ ] Review blueprints + Kiosk Studio visually (no API)
+- [ ] Map 57 rules to layouts, identify actual gaps
+- [ ] Correct ROOT_CAUSE_ANALYSIS.md (currently says "zero enforcement" — wrong)
 
 **Pipeline Risk:**
 - [x] Map systems → Zoho
