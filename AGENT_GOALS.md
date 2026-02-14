@@ -145,6 +145,7 @@ This agent writes to:
 ## Shared Standards
 
 All BizOS agents follow:
+- cto-brain/BUILD_CYCLE.md (the operating loop — probe → plan → build → test → review → fix → learn)
 - cto-brain/CORE_RULES.md (universal engineering rules)
 - bizos/STRUCTURE.md (file organization)
 - Session coordination via _SESSIONS/ (no parallel writes to same entity)
